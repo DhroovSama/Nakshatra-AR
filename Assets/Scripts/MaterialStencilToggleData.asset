@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ee6bfe08610264fa4d252be4b54ac0, type: 3}
+  m_Name: MaterialStencilToggleData
+  m_EditorClassIdentifier: 
+  LanderBody:
+  - {fileID: 2100000, guid: 9c73bb1d3e994ed4a946dcac65b70d5b, type: 2}
+  - {fileID: 2100000, guid: 04a9e2108d607274baf493e6c2d208f5, type: 2}
+  - {fileID: 2100000, guid: 32bf87c9c6a27fd4981b7ec10fe8f1ac, type: 2}
+  - {fileID: 2100000, guid: 5ebfc6bbdb776154eb08c1e2c3322210, type: 2}
+  - {fileID: 2100000, guid: 8741f2fe710dfd041afc9b20148b7f9a, type: 2}
+  - {fileID: 2100000, guid: 881bc0cefe58fae429893ddb0441b10a, type: 2}
+  - {fileID: 2100000, guid: c1391d811e39509478a832bcd0b38499, type: 2}
+  - {fileID: 2100000, guid: dc5a5d7f92725a143b839aa4e09ef0d3, type: 2}
+  - {fileID: 2100000, guid: 5e294e2fd274a9b419d1fa5a9f1f342c, type: 2}
+  - {fileID: 2100000, guid: 3172d9d52763433428ee730bc62ebf7f, type: 2}
+  - {fileID: 2100000, guid: be4b4aa9a5ecfc14b971ac9f5f894e5c, type: 2}
+  - {fileID: 2100000, guid: b77562ea25e447a4f93abc00d4d7ebf3, type: 2}
+  - {fileID: 2100000, guid: fa80c1c8d2fb3504f8513ce53539de31, type: 2}
+  - {fileID: 2100000, guid: 0c48100006e6709418f1273b35219489, type: 2}
+  - {fileID: 2100000, guid: 534526f5abcace342abb53d868cbca74, type: 2}
+  - {fileID: 2100000, guid: 83a94a5773a36194c9804d45f58bfb01, type: 2}
+  - {fileID: 2100000, guid: 864f9921d9ad5db4bb2c0f4338472b69, type: 2}
+  - {fileID: 2100000, guid: 73949f5454418854b96eb1e675d69a06, type: 2}
+  - {fileID: 2100000, guid: 6858891150585e446b082b786b6a4bc9, type: 2}
+  - {fileID: 2100000, guid: 95c4c88a3dc8948409a18bb6b9f0b75f, type: 2}
+  - {fileID: 2100000, guid: aaff3dfc75fe2ef43a6bae2567ae9f29, type: 2}
+  - {fileID: 2100000, guid: 421dc7e6d30c07640946c02109505e24, type: 2}
+  - {fileID: 2100000, guid: 766e727f2cfc391449803c966404b7ea, type: 2}
+  - {fileID: 2100000, guid: 5dd8a10cf90d61841943ee5c970ba5fe, type: 2}
+  - {fileID: 2100000, guid: f71ecfdde35678f49ad7d24c221ac4fd, type: 2}
+  - {fileID: 2100000, guid: 9a3050e8ccf776145a545b4e917556fd, type: 2}
+  - {fileID: 2100000, guid: 91186cafde1cbd540a6b2bc6a2b828fe, type: 2}
+  - {fileID: 2100000, guid: fbc3e1f8255bc9f469f0f2abde905c3f, type: 2}
+  - {fileID: 2100000, guid: b77ee1a5df706f9458ef5b4b90130b0e, type: 2}
+  - {fileID: 2100000, guid: 1568ee9986b2c9f439e9d4df0bd222a9, type: 2}
+  - {fileID: 2100000, guid: dde7bbabe6b60da48ac457bd6f8b60b3, type: 2}
+  - {fileID: 2100000, guid: 808b8277f67fd594282147ace7933134, type: 2}
+  LanderDoor:
+  - {fileID: 2100000, guid: 2bd7fbd12bceac64d8b52c6daa4450cc, type: 2}
+  - {fileID: 2100000, guid: a2436886afcf8ee43b3eedf1f21dae36, type: 2}
+  - {fileID: 2100000, guid: ff0b11f81d9fb2246807a4120bab4c3e, type: 2}
+  - {fileID: 2100000, guid: 130170c55266cdd4c8bad40a894fc0ea, type: 2}
+  - {fileID: 2100000, guid: d27f969e3f3fe6b4480a7f0e67f4af37, type: 2}
+  - {fileID: 2100000, guid: f32248ed8a4a0ab4f91135cb06c02508, type: 2}
+  RoverBody:
+  - {fileID: 2100000, guid: d4d1cbc2710de1540ad666f2097b06f3, type: 2}
+  - {fileID: 2100000, guid: 754f30db4b46e094080ff48263d159e9, type: 2}
+  - {fileID: 2100000, guid: 9d9ab04a0d0cf7b4cb735231f4cfcfd7, type: 2}
+  - {fileID: 2100000, guid: 168d621d73bd3c94a86df4b53ae796e2, type: 2}
+  - {fileID: 2100000, guid: 42a48b30a47567a478e334137a12abe7, type: 2}
+  - {fileID: 2100000, guid: be0ddf62736ae19438a5c94b7dc24d89, type: 2}
+  - {fileID: 2100000, guid: 80be30a2ecb5d8b4fab7d3a48ded5549, type: 2}
+  - {fileID: 2100000, guid: c6439c5a636233c4c9c73073f0a5964e, type: 2}
+  - {fileID: 2100000, guid: 2eb510014ebf9ca43a78dd574dc0cd70, type: 2}
+  - {fileID: 2100000, guid: 8b9cb61a07e1ada46bf0e4db4a3d5264, type: 2}
+  - {fileID: 2100000, guid: 9dac56f8d5ffe7e40acb965c386d7bd4, type: 2}
+  - {fileID: 2100000, guid: 7f2c79cd5e8b25e48889c4520ec331ce, type: 2}
+  - {fileID: 2100000, guid: ea46d2ae51d850d4bb3374e8597666fd, type: 2}
+  - {fileID: 2100000, guid: 2320a4f86e18ae64a9bea53a472c47df, type: 2}
+  RoverSolarPanels:
+  - {fileID: 2100000, guid: 45c8f174094541740a1f5da128901374, type: 2}
+  - {fileID: 2100000, guid: f794594167764e24eb3c3a11458713fd, type: 2}
+  - {fileID: 2100000, guid: 117b67ad32e9f904eb2ac527c924733d, type: 2}
+  Wheels:
+  - {fileID: 2100000, guid: fb0663c33078bc642a9ffbb5de4867a2, type: 2}
+  Terrain:
+  - {fileID: 2100000, guid: 77f6a700717554f478ee83c7fe79005f, type: 2}
+  NightSky:
+  - {fileID: 2100000, guid: 9b82da680ac516543bb13cf34c4f0e1a, type: 2}
+  - {fileID: 2100000, guid: 6a29d35b1655ed04081c135d8ffa2e3d, type: 2}
+  - {fileID: 2100000, guid: 80525b354992ee9478e88bee23803ed6, type: 2}
+  - {fileID: 2100000, guid: 92ca11cac0ac4bc4d9e79f1a2214bb4d, type: 2}
+  - {fileID: 2100000, guid: 523ce07a722b50a4f983179ddd13a375, type: 2}
+  AsteroidsOnTerrain:
+  - {fileID: 2100000, guid: 9b784b13bb862e842995556897044352, type: 2}
