@@ -26,8 +26,8 @@ public class InScreenUI_Manager : MonoBehaviour
     [SerializeField]
     private GameObject AllTheBestTextbox;
 
-    [SerializeField]
-    private GameObject sliderInstructions_PopUp4;
+    //[SerializeField]
+    //private GameObject sliderInstructions_PopUp4;
 
     [Space] 
     [SerializeField]
@@ -84,7 +84,7 @@ public class InScreenUI_Manager : MonoBehaviour
 
     public void DisablePopup_LanderTutorial()
     {
-        sliderInstructions_PopUp4.SetActive(false);
+        //sliderInstructions_PopUp4.SetActive(false);
 
         AllTheBestTextbox.SetActive(true);
 
