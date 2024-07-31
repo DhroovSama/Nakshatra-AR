@@ -11,8 +11,8 @@ public class TriggerTerrainScanner : MonoBehaviour
     [SerializeField]
     private Button EnableTerrainScanner;
 
-    [SerializeField]
-    private Slider terrainScannedCompletionSlider;
+    //[SerializeField]
+    //private Slider terrainScannedCompletionSlider;
 
     [SerializeField]
     private Material terrainNoLandZoneMaterial;
@@ -51,7 +51,7 @@ public class TriggerTerrainScanner : MonoBehaviour
         terrainNoLandZoneMaterial.SetFloat("_Fade", 1);
         terrainNoLandZoneMaterial.SetInt("_RimFalloff", 0);
 
-        terrainScannedCompletionSlider.maxValue = sliderMaxValue;
+        //terrainScannedCompletionSlider.maxValue = sliderMaxValue;
     }
 
     private void Update()
@@ -74,7 +74,7 @@ public class TriggerTerrainScanner : MonoBehaviour
             terrainScanner.SpawnTerrainScanner();
             GlobalAudioPlayer.getPlaySound(terrainScanSFX);
             terrainPulseCount++;
-            terrainScannedCompletionSlider.value = terrainPulseCount;
+            //terrainScannedCompletionSlider.value = terrainPulseCount;
 
             DisplayNoLandingZones();
 
