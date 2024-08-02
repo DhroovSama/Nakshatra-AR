@@ -8334,7 +8334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1607557237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9980,7 +9980,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainScanner: {fileID: 0}
   EnableTerrainScanner: {fileID: 633539432}
-  terrainScannedCompletionSlider: {fileID: 0}
   terrainNoLandZoneMaterial: {fileID: 2100000, guid: 90f8f173f0b5ebf43b614e072e2ab0e6, type: 2}
   terrainScanSFX: {fileID: 8300000, guid: c88b391bf6c989b4c9bdb8f6e73bcd25, type: 3}
   globalAudioPLayer: {fileID: 0}

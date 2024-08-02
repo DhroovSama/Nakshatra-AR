@@ -5556,30 +5556,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moon Base
       objectReference: {fileID: 0}
-    - target: {fileID: 8371182386581741040, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
-      propertyPath: m_Size.x
-      value: 0.68025
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371182386581741040, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
-      propertyPath: m_Size.y
-      value: 1.0505964
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371182386581741040, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
-      propertyPath: m_Size.z
-      value: 0.68025
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371182386581741040, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
-      propertyPath: m_Center.x
-      value: 0.0000001288749
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371182386581741040, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
-      propertyPath: m_Center.y
-      value: 0.025294892
-      objectReference: {fileID: 0}
-    - target: {fileID: 8371182386581741040, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
-      propertyPath: m_Center.z
-      value: -0.0000001288749
-      objectReference: {fileID: 0}
     - target: {fileID: 8885003453382505760, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -34.18
