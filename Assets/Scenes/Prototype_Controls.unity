@@ -11517,10 +11517,10 @@ MonoBehaviour:
   AltitudeValueUI: {fileID: 0}
   initialFuel: 100
   thrustDirection: {x: 0, y: 0, z: 0}
-  directionForceMagnitudeApplied: 0
+  directionForceMagnitudeApplied: 5
   directionsThrustValue: 1.5
   degreesToRotate: 15
-  sliderThrustValue: 0
+  sliderThrustValue: 25
   offsetVector: {x: 5, y: 4, z: -7.5}
   worldPositionToSpawn: {x: -2.5, y: 6, z: 37.22}
   landerRB: {fileID: 0}

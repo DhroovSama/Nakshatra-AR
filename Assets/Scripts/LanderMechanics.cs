@@ -140,7 +140,7 @@ public class LanderMechanics : MonoBehaviour
 
         if(PlaceOnPlane.IsMoonSurfaceSpawned() && moonTerrain == null)
         {
-            moonTerrain = FindObjectOfType<Terrain>().gameObject;
+            moonTerrain = GameObject.FindGameObjectWithTag("moon");
         }
 
         AddThrust();
@@ -249,7 +249,7 @@ public class LanderMechanics : MonoBehaviour
 
         if (landerDirectionalThrustJoystick.Horizontal != 0)
         {
-            targetRotationAngleZ = landerDirectionalThrustJoystick.Horizontal * degreesToRotate;
+            targetRotationAngleZ = -landerDirectionalThrustJoystick.Horizontal * degreesToRotate;
         }
 
         if (landerDirectionalThrustJoystick.Vertical != 0)
@@ -257,7 +257,7 @@ public class LanderMechanics : MonoBehaviour
             targetRotationAngleX = landerDirectionalThrustJoystick.Vertical * degreesToRotate;
         }
 
-        Quaternion targetRotation = Quaternion.Euler(targetRotationAngleX, 0, -targetRotationAngleZ);
+        Quaternion targetRotation = Quaternion.Euler(targetRotationAngleX, 0, targetRotationAngleZ);
         Quaternion currentRotation = landerRB.rotation;
 
         float rotationSpeed = 5f;
