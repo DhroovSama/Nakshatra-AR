@@ -9863,6 +9863,7 @@ GameObject:
   - component: {fileID: 1911400744}
   - component: {fileID: 1911400745}
   - component: {fileID: 1911400746}
+  - component: {fileID: 1911400747}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -9988,6 +9989,21 @@ MonoBehaviour:
   rimFalloffDuration: 0.75
   cooldownTime: 2
   nextCooldownTime: 0
+--- !u!114 &1911400747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911400738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7340fd2421a6624a90846cdd5b5c34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TerrainScannerPrefab: {fileID: 3329149502399107851, guid: 19fc8a9a569d6c843aa48508b1a32d8d, type: 3}
+  duration: 2.5
+  size: 100
 --- !u!1 &1941547692
 GameObject:
   m_ObjectHideFlags: 0

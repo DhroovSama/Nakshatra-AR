@@ -9,10 +9,10 @@ public class TerrainScanner : MonoBehaviour
     private GameObject TerrainScannerPrefab;
 
     [SerializeField]
-    private float duration = 10;
+    private float duration = 2.5f;
 
     [SerializeField]
-    private float size = 500;
+    private float size = 100;
 
     public void SpawnTerrainScanner()
     {
