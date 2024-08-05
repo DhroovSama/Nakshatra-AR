@@ -124,7 +124,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fade: 0.5
+    - _Fade: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -135,7 +135,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimFalloff: 1
+    - _RimFalloff: 0
     - _RimStrenght: 2
     - _ScanStr: 0.233
     - _ScanStr2: 0
