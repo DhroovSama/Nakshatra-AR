@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FootprintColliderManager : MonoBehaviour
@@ -6,6 +7,9 @@ public class FootprintColliderManager : MonoBehaviour
     //private FootPrintPath footPrintPath;
 
     [SerializeField] private GameObject nextFootPrint;
+
+    [SerializeField]
+    private bool isLastFoot;
 
     private void Start()
     {
@@ -19,9 +23,16 @@ public class FootprintColliderManager : MonoBehaviour
         {
             //footPrintPath.SpawnFootprints();
 
-            this.gameObject.SetActive(false);
+            if(isLastFoot)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
 
-            nextFootPrint.SetActive(true);
+                nextFootPrint.SetActive(true);
+            }   
         }
     }
 }
