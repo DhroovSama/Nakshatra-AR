@@ -15,7 +15,10 @@ public class LanderCollisionHandler : MonoBehaviour
     [SerializeField] float speed;
 
     private bool hasLandedSafely = false;
+    public bool HasLandedSafely { get { return hasLandedSafely; } }
+
     private bool hasNotLandedSafely = false;
+    public bool HadNotLandedSafely { get { return hasNotLandedSafely; } }
 
     [SerializeField] Vector3 contactPoint;
 

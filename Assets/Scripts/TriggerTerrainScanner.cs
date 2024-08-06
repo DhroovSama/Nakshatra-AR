@@ -60,6 +60,8 @@ public class TriggerTerrainScanner : MonoBehaviour
         {
             terrainScanner = FindObjectOfType<TerrainScanner>();
         }
+
+        DisableNoLandingZones();
     }
 
     private void OnDestroy()
@@ -122,6 +124,42 @@ public class TriggerTerrainScanner : MonoBehaviour
         terrainNoLandZoneMaterial.SetFloat("_RimFalloff", finalRimFalloff);
     }
 
+    public void DisableNoLandingZones()
+    {
+        GameObject noLandingZones = GameObject.FindGameObjectWithTag("No Landing Zones");
+
+        if (LanderCollisionHandler.Instance.HasLandedSafely || LanderCollisionHandler.Instance.HadNotLandedSafely)
+        {
+            StartCoroutine(FadeOutNoLandingZones());
+
+            noLandingZones.SetActive(false);
+        }
+    }
+
+    private IEnumerator FadeOutNoLandingZones()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        float fadeDelay = 0.1f;
+        float fadeStartTime = Time.time + fadeDelay;
+        while (Time.time < fadeStartTime + 1f)
+        {
+            float t = (Time.time - fadeStartTime) / 1f;
+            terrainNoLandZoneMaterial.SetFloat("_Fade", Mathf.Lerp(1, 0.5f, t));
+            yield return null;
+        }
+
+        // Cooldown phase
+        float cooldownStartTime = Time.time;
+        while (Time.time < cooldownStartTime + 2f) // Cooldown lasts 2 seconds
+        {
+            float t = (Time.time - cooldownStartTime) / 2f;
+            terrainNoLandZoneMaterial.SetFloat("_RimFalloff", Mathf.Lerp(1, 0, t));
+            terrainNoLandZoneMaterial.SetFloat("_Fade", Mathf.Lerp(0.5f, 1, t));
+            yield return null;
+        }
+    }
+
     #region Needed if you want the no landing zone to fade in and fade out after some time
     //private IEnumerator DisplayLandingAreasCoroutine()
     //{
@@ -156,7 +194,7 @@ public class TriggerTerrainScanner : MonoBehaviour
     //        terrainNoLandZoneMaterial.SetFloat("_Fade", Mathf.Lerp(0.5f, 1, t));
     //        yield return null;
     //    }
-    //} 
+    //}
     #endregion
 
 }

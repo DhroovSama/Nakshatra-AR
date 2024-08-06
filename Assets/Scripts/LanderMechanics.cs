@@ -264,8 +264,6 @@ public class LanderMechanics : MonoBehaviour
         landerRB.MoveRotation(Quaternion.Lerp(currentRotation, targetRotation, rotationSpeed * Time.deltaTime));
     }
 
-
-
     private void VelocityManager()
     {
         descendVelocityValue = landerRB.velocity.y;
