@@ -9,6 +9,9 @@ public class FootprintColliderManager : MonoBehaviour
     [SerializeField] private GameObject nextFootPrint;
 
     [SerializeField]
+    private GameObject PlayerCheckerCircle;
+
+    [SerializeField]
     private bool isLastFoot;
 
     private void Start()
@@ -25,6 +28,8 @@ public class FootprintColliderManager : MonoBehaviour
 
             if(isLastFoot)
             {
+                PlayerCheckerCircle.SetActive(true);
+
                 this.gameObject.SetActive(false);
             }
             else

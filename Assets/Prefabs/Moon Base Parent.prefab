@@ -3127,6 +3127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Checker
       objectReference: {fileID: 0}
+    - target: {fileID: 3788359695543598108, guid: e98cc94db3e283d4b9179d5e0c26e808, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3789748174564943141, guid: e98cc94db3e283d4b9179d5e0c26e808, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.09
@@ -3188,6 +3192,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e98cc94db3e283d4b9179d5e0c26e808, type: 3}
+--- !u!1 &3427906434391350329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3788359695543598108, guid: e98cc94db3e283d4b9179d5e0c26e808, type: 3}
+  m_PrefabInstance: {fileID: 1945743810611142693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3429289136987866368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3789748174564943141, guid: e98cc94db3e283d4b9179d5e0c26e808, type: 3}
@@ -3245,6 +3254,10 @@ PrefabInstance:
       propertyPath: nextFootPrint
       value: 
       objectReference: {fileID: 6371638028430668873}
+    - target: {fileID: 1315225052890432171, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
+      propertyPath: PlayerCheckerCircle
+      value: 
+      objectReference: {fileID: 3427906434391350329}
     - target: {fileID: 3915696751185866569, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35
@@ -3408,6 +3421,10 @@ PrefabInstance:
       propertyPath: nextFootPrint
       value: 
       objectReference: {fileID: 3150983593792198664}
+    - target: {fileID: 1315225052890432171, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
+      propertyPath: PlayerCheckerCircle
+      value: 
+      objectReference: {fileID: 3427906434391350329}
     - target: {fileID: 3915696751185866569, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35
@@ -3607,6 +3624,10 @@ PrefabInstance:
       propertyPath: nextFootPrint
       value: 
       objectReference: {fileID: 6547394647031828372}
+    - target: {fileID: 1315225052890432171, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
+      propertyPath: PlayerCheckerCircle
+      value: 
+      objectReference: {fileID: 3427906434391350329}
     - target: {fileID: 3915696751185866569, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35
@@ -3794,6 +3815,10 @@ PrefabInstance:
       propertyPath: isLastFoot
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1315225052890432171, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
+      propertyPath: PlayerCheckerCircle
+      value: 
+      objectReference: {fileID: 3427906434391350329}
     - target: {fileID: 3915696751185866569, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35
@@ -4282,6 +4307,10 @@ PrefabInstance:
       propertyPath: nextFootPrint
       value: 
       objectReference: {fileID: 8827719266621174067}
+    - target: {fileID: 1315225052890432171, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
+      propertyPath: PlayerCheckerCircle
+      value: 
+      objectReference: {fileID: 3427906434391350329}
     - target: {fileID: 3915696751185866569, guid: e2c9a080e090cf44a9be6a590c9e87a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35
