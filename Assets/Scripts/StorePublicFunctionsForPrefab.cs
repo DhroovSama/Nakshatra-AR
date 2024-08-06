@@ -20,6 +20,8 @@ public class StorePublicFunctionsForPrefab : MonoBehaviour
 
     public void EnableRoverFPV_UI()
     {
+        roverMechanics.RoverControls.SetActive(true);
+
         roverMechanics.RoverFPV.SetActive(true);
 
         roverFPVCamera.SetActive(true);

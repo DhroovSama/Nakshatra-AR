@@ -56,6 +56,7 @@ public class RoverMechanics : MonoBehaviour
 
     [Space]
     [SerializeField] private GameObject roverControls;
+    public GameObject RoverControls { get { return roverControls; } set { roverControls = value; } }
 
     [Space]
     [SerializeField] private GameObject roverFPV;
@@ -148,8 +149,6 @@ public class RoverMechanics : MonoBehaviour
             thrustSliderUI.SetActive(false);
             velocityLanderUI.SetActive(false);
             directionalThrustUI.SetActive(false);
-
-            roverControls.SetActive(true);
         }
     }
 

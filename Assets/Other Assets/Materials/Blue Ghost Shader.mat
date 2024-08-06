@@ -135,7 +135,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimFalloff: 0
+    - _RimFalloff: 1
     - _RimStrenght: 2
     - _ScanStr: 0.233
     - _ScanStr2: 0
