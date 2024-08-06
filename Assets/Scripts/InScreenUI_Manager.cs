@@ -104,4 +104,14 @@ public class InScreenUI_Manager : MonoBehaviour
     {
         LanderControlsUIManager.getLanderSpawnerButtonContainer().SetActive(true);
     }
+
+    public void EnableTerrainScannerButtonUI()
+    {
+        LanderControlsUIManager.getTerrainScannerButton().SetActive(true);
+    }
+
+    public void DisableTerrainScannerButtonUI()
+    {
+        LanderControlsUIManager.getTerrainScannerButton().SetActive(false);
+    }
 }
