@@ -296,6 +296,7 @@ public class LanderMechanics : MonoBehaviour
             LoaderUtility.Deinitialize();
             LoaderUtility.Initialize();
 
+            Screen.orientation = ScreenOrientation.Portrait;
             SceneManager.LoadScene(sceneNumber, LoadSceneMode.Single);
         }
         else
