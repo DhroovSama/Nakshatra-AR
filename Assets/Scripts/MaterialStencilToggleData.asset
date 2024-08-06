@@ -74,7 +74,7 @@ MonoBehaviour:
   Wheels:
   - {fileID: 2100000, guid: fb0663c33078bc642a9ffbb5de4867a2, type: 2}
   Terrain:
-  - {fileID: 2100000, guid: 77f6a700717554f478ee83c7fe79005f, type: 2}
+  - {fileID: 2100000, guid: dbf5e253b36268b4685b9c4ef69b7fd1, type: 2}
   NightSky:
   - {fileID: 2100000, guid: 9b82da680ac516543bb13cf34c4f0e1a, type: 2}
   - {fileID: 2100000, guid: 6a29d35b1655ed04081c135d8ffa2e3d, type: 2}
