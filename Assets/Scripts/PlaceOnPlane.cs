@@ -11,43 +11,32 @@ using TMPro;
 public class PlaceOnPlane : MonoBehaviour
 {
     [SerializeField] GameObject moonSurfacePrefab;
-
     [SerializeField] private DisableARPlaneWhenObjectSpawned disableARPlane;
-
 
     GameObject spawnedObjectMoonSurface;
     public GameObject SpawnedObjectMoonSurface
     {
         get { return spawnedObjectMoonSurface; }
-        set { spawnedObjectMoonSurface = value;}
+        set { spawnedObjectMoonSurface = value; }
     }
 
     TouchControls controls;
-
     bool isPressed;
-
     ARRaycastManager aRRaycastManager;
-
-    //[SerializeField] private bool isMoon = false;
-    //public bool IsMoon { get { return isMoon; } }
-
-
+    ARPlaneManager aRPlaneManager;
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     [Space]
     [SerializeField] private bool isMoonSurfaceSpawned = false;
 
     private static PlaceOnPlane instance;
-    
 
     private void Awake()
     {
         instance = this;
-
         aRRaycastManager = GetComponent<ARRaycastManager>();
-
+        aRPlaneManager = GetComponent<ARPlaneManager>();
         controls = new TouchControls();
-
         controls.control.touch.performed += _ => isPressed = true;
         controls.control.touch.canceled += _ => isPressed = false;
     }
@@ -59,32 +48,40 @@ public class PlaceOnPlane : MonoBehaviour
 
         var touchPosition = Pointer.current.position.ReadValue();
 
-        if (aRRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon)) 
+        if (aRRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             var hitPose = hits[0].pose;
 
             if (spawnedObjectMoonSurface == null && !isMoonSurfaceSpawned)
             {
-                spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, hitPose.position, hitPose.rotation);
+                ARPlane lowestPlane = GetLowestPlane();
 
-                isMoonSurfaceSpawned = true;
-
-                disableARPlane.getDisableARPlane();
-
-                //isMoon = true;
-
-                //_MoonSurfaceSpawned();
+                if (lowestPlane != null)
+                {
+                    spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, lowestPlane.center, Quaternion.identity);
+                    isMoonSurfaceSpawned = true;
+                    disableARPlane.getDisableARPlane();
+                }
             }
         }
     }
 
-    //public void SetMoonSurfaceSpawned()
-    //{
-    //    isMoonSurfaceSpawned = true;
-    //    // Assuming you have a reference to UI_Manager or a way to access it
-    //    // For example, if UI_Manager is a singleton or you have a static reference to it
-    //    UI_Manager.Instance.landerSpawnerButtonSequence();
-    //}
+    private ARPlane GetLowestPlane()
+    {
+        ARPlane lowestPlane = null;
+        float lowestY = float.MaxValue;
+
+        foreach (var plane in aRPlaneManager.trackables)
+        {
+            if (plane.transform.position.y < lowestY)
+            {
+                lowestY = plane.transform.position.y;
+                lowestPlane = plane;
+            }
+        }
+
+        return lowestPlane;
+    }
 
     private void OnEnable()
     {
@@ -95,7 +92,6 @@ public class PlaceOnPlane : MonoBehaviour
     {
         controls.control.Disable();
     }
-
 
     private void _MoonSurfaceSpawned()
     {
@@ -111,7 +107,4 @@ public class PlaceOnPlane : MonoBehaviour
     {
         return instance.spawnedObjectMoonSurface;
     }
-
-
 }
-
