@@ -9,6 +9,9 @@ public class TriggerTerrainScanner : MonoBehaviour
     private TerrainScanner terrainScanner;
 
     [SerializeField]
+    private TerrainTextureChanger terrainTextureChanger;
+
+    [SerializeField]
     private Button EnableTerrainScanner;
 
     //[SerializeField]
@@ -122,6 +125,11 @@ public class TriggerTerrainScanner : MonoBehaviour
         // Ensure final values are set
         terrainNoLandZoneMaterial.SetFloat("_Fade", finalFade);
         terrainNoLandZoneMaterial.SetFloat("_RimFalloff", finalRimFalloff);
+
+        yield return new WaitForSeconds(0.5f);
+
+        //Add Sound Later when the texture changes to indicate landing
+        terrainTextureChanger.ChangeTexture_LandingZone();
     }
 
     public void DisableNoLandingZones()
@@ -158,6 +166,12 @@ public class TriggerTerrainScanner : MonoBehaviour
             terrainNoLandZoneMaterial.SetFloat("_Fade", Mathf.Lerp(0.5f, 1, t));
             yield return null;
         }
+
+        
+        yield return new WaitForSeconds(0.5f);
+
+        //Add Sound When Landing area visual cue Reverted back
+        terrainTextureChanger.ChangeTexture_NormalTerrain();
     }
 
     #region Needed if you want the no landing zone to fade in and fade out after some time

@@ -1791,7 +1791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5789019379902948509
 Transform:
   m_ObjectHideFlags: 0
@@ -3129,7 +3129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3788359695543598108, guid: e98cc94db3e283d4b9179d5e0c26e808, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3789748174564943141, guid: e98cc94db3e283d4b9179d5e0c26e808, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4145,6 +4145,11 @@ PrefabInstance:
     - target: {fileID: 3309424185493626640, guid: 795b497c66b04294aa741cb406cc34f9, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768682255231008326, guid: 795b497c66b04294aa741cb406cc34f9, type: 3}
+      propertyPath: m_text
+      value: Use the surface scanner button to detect no-landing zones, reveal favorable
+        landing areas, and unlock special powers later.
       objectReference: {fileID: 0}
     - target: {fileID: 3786705380774579419, guid: 795b497c66b04294aa741cb406cc34f9, type: 3}
       propertyPath: m_IsActive

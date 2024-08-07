@@ -4250,7 +4250,7 @@ MonoBehaviour:
   roverRotationSpeed: 30
   wheelsRotationForForward: 240
   wheelsRotationForBackward: 240
-  forceAmount: 18
+  forceAmount: 9
   thrustSliderUI: {fileID: 1253717767}
   velocityLanderUI: {fileID: 1127827022}
   directionalThrustUI: {fileID: 1823706543}
@@ -10194,6 +10194,7 @@ GameObject:
   - component: {fileID: 1911400745}
   - component: {fileID: 1911400746}
   - component: {fileID: 1911400747}
+  - component: {fileID: 1911400748}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -10310,6 +10311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainScanner: {fileID: 0}
+  terrainTextureChanger: {fileID: 1911400748}
   EnableTerrainScanner: {fileID: 633539432}
   terrainNoLandZoneMaterial: {fileID: 2100000, guid: 90f8f173f0b5ebf43b614e072e2ab0e6, type: 2}
   terrainScanSFX: {fileID: 8300000, guid: c88b391bf6c989b4c9bdb8f6e73bcd25, type: 3}
@@ -10334,6 +10336,21 @@ MonoBehaviour:
   TerrainScannerPrefab: {fileID: 3329149502399107851, guid: 19fc8a9a569d6c843aa48508b1a32d8d, type: 3}
   duration: 2.5
   size: 100
+--- !u!114 &1911400748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911400738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bdd529a72c9b4a49b66c8c75dfc0713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialToChange: {fileID: 2100000, guid: dbf5e253b36268b4685b9c4ef69b7fd1, type: 2}
+  landingZoneAlbedo: {fileID: 2800000, guid: bf0c157dff52be049902d8f407cbc126, type: 3}
+  normalTerrainAlbedo: {fileID: 2800000, guid: 4b8056f2843729946b79cf206466e0ee, type: 3}
 --- !u!1 &1941547692
 GameObject:
   m_ObjectHideFlags: 0
