@@ -15,10 +15,10 @@ public class PortalDoor : MonoBehaviour
     private bool isPortalPassed = false;
     public bool IsPortalPassed {  get { return isPortalPassed; } }
 
-    private bool isPortalPassedOnce = false;
+    //private bool isPortalPassedOnce = false;
 
-    [SerializeField]
-    private VoiceOverData welcomeVO;
+    //[SerializeField]
+    //private VoiceOverData welcomeVO;
 
     private void OnTriggerStay(Collider other)
     {
@@ -32,12 +32,12 @@ public class PortalDoor : MonoBehaviour
         {
             //Debug.Log("hot");
 
-            if(!isPortalPassedOnce)
-            {
-                isPortalPassedOnce = true;
+            //if(!isPortalPassedOnce)
+            //{
+            //    isPortalPassedOnce = true;
 
-                VoiceOverManager.Instance.TriggerVoiceOver(welcomeVO);
-            }
+            //    VoiceOverManager.Instance.TriggerVoiceOver(welcomeVO);
+            //}
             
             isCollisionProcessing = true;
             StartCoroutine(ProcessCollision(other)); 

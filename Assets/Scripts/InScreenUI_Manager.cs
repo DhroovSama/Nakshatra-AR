@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class InScreenUI_Manager : MonoBehaviour
@@ -36,6 +37,10 @@ public class InScreenUI_Manager : MonoBehaviour
     [SerializeField]
     [Tooltip("time for Popup 1 of foot to Enable in seconds")]
     private float timeforPopup1Enable;
+
+    [Space]
+    [SerializeField]
+    private VoiceOverData followFootstepSO;
 
     private void Update()
     {
@@ -113,5 +118,10 @@ public class InScreenUI_Manager : MonoBehaviour
     public void DisableTerrainScannerButtonUI()
     {
         LanderControlsUIManager.getTerrainScannerButton().SetActive(false);
+    }
+
+    public void playFollowFootstepsVO()
+    {
+        VoiceOverManager.Instance.TriggerVoiceOver(followFootstepSO);
     }
 }

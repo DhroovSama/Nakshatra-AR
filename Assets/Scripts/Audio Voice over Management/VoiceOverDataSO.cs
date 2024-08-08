@@ -15,4 +15,11 @@ public class VoiceOverData : ScriptableObject
     }
 
     public List<SubtitleLine> subtitles = new List<SubtitleLine>();
+
+    // Fields for the button
+    public bool showButtonAtEnd;
+    public string buttonText;
+
+    // Reference to another VoiceOverData to play after the button is clicked
+    public VoiceOverData nextVoiceOverData;
 }

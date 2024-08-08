@@ -20,4 +20,7 @@ MonoBehaviour:
     displayDuration: 2.5
   - sentence: and you are about to witness the historic soft landing of the Vikram
       lander on the Moon's surface.
-    displayDuration: 4
+    displayDuration: 2.5
+  showButtonAtEnd: 1
+  buttonText: Who are you?
+  nextVoiceOverData: {fileID: 11400000, guid: cd45ec46384e4fe48bf2b1771a4adeb6, type: 2}

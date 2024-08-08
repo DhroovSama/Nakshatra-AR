@@ -19,7 +19,15 @@ public class VoiceOverManager : MonoBehaviour
 
     public void TriggerVoiceOver(VoiceOverData voiceOverData)
     {
+        // Play the audio clip associated with this voice-over data
         AudioManager.Instance.PlayAudioClip(voiceOverData.voiceOverClip);
-        SubtitleManager.Instance.DisplaySubtitles(voiceOverData.subtitles);
+
+        // Pass the subtitles, button options, and next VoiceOverData to the SubtitleManager
+        SubtitleManager.Instance.DisplaySubtitles(
+            voiceOverData.subtitles,
+            voiceOverData.showButtonAtEnd,
+            voiceOverData.buttonText,
+            voiceOverData.nextVoiceOverData 
+        );
     }
 }

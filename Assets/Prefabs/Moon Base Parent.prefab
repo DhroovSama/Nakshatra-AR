@@ -2603,6 +2603,7 @@ MonoBehaviour:
   AllTheBestTextbox: {fileID: 5316909472614567457}
   isPopup_1_enabled: 0
   timeforPopup1Enable: 1
+  followFootstepSO: {fileID: 11400000, guid: d327efbb82135574bb8d007644ef4936, type: 2}
 --- !u!1 &7563325647852309272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,6 +2800,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4419416009792807865}
+        m_TargetAssemblyTypeName: InScreenUI_Manager, Assembly-CSharp
+        m_MethodName: playFollowFootstepsVO
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

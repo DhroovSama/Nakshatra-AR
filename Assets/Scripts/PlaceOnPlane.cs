@@ -31,8 +31,8 @@ public class PlaceOnPlane : MonoBehaviour
 
     private static PlaceOnPlane instance;
 
-    //[SerializeField]
-    //private VoiceOverData MoonSurfaceInitialisedSO;
+    [SerializeField]
+    private VoiceOverData MoonSurfaceInitialisedSO;
 
     private void Awake()
     {
@@ -66,7 +66,7 @@ public class PlaceOnPlane : MonoBehaviour
                     disableARPlane.getDisableARPlane();
                 }
 
-                //VoiceOverManager.Instance.TriggerVoiceOver(MoonSurfaceInitialisedSO);
+                VoiceOverManager.Instance.TriggerVoiceOver(MoonSurfaceInitialisedSO);
             }
         }
     }
