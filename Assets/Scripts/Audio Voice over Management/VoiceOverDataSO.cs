@@ -22,4 +22,9 @@ public class VoiceOverData : ScriptableObject
 
     // Reference to another VoiceOverData to play after the button is clicked
     public VoiceOverData nextVoiceOverData;
+
+    public void PlayVoiceOver()
+    {
+        VoiceOverManager.Instance.TriggerVoiceOver(this);
+    }
 }

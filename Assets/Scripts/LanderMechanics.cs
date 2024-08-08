@@ -110,6 +110,9 @@ public class LanderMechanics : MonoBehaviour
     [SerializeField]
     private float altitudeDifference;
 
+    [Space]
+    [SerializeField]
+    private VoiceOverData landerMissionFailFuel_VO;
 
     private void Awake()
     {
@@ -218,6 +221,8 @@ public class LanderMechanics : MonoBehaviour
             {
                 if (!missionFailed) 
                 {
+                    VoiceOverManager.Instance.TriggerVoiceOver(landerMissionFailFuel_VO);
+
                     landerCollisionHandler.StartMissionFailSequence();
                     missionFailed = true; 
                     currentFuel = 0; 

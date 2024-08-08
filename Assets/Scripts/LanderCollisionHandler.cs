@@ -22,6 +22,10 @@ public class LanderCollisionHandler : MonoBehaviour
 
     [SerializeField] Vector3 contactPoint;
 
+    [Space]
+    [SerializeField]
+    private VoiceOverData landerMissionPassVO, landerMissionFailVO;
+
     public static LanderCollisionHandler Instance { get; private set; }
 
     private void Awake()
@@ -64,6 +68,8 @@ public class LanderCollisionHandler : MonoBehaviour
     {
         if (!hasNotLandedSafely && speed <= -2)
         {
+            VoiceOverManager.Instance.TriggerVoiceOver(landerMissionFailVO);
+
             Debug.Log("DieSequenceToBeAdded");
 
             StartMissionFailSequence();
@@ -84,6 +90,8 @@ public class LanderCollisionHandler : MonoBehaviour
     {
         if (!hasLandedSafely && !hasNotLandedSafely && speed >= -2.1)
         {
+            VoiceOverManager.Instance.TriggerVoiceOver(landerMissionPassVO);
+
             Debug.Log("safely landed at " + landingPoint);
 
             LanderControlsUIManager.getsliderControls().value = 0;

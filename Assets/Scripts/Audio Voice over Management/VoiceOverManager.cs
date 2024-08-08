@@ -27,7 +27,7 @@ public class VoiceOverManager : MonoBehaviour
             voiceOverData.subtitles,
             voiceOverData.showButtonAtEnd,
             voiceOverData.buttonText,
-            voiceOverData.nextVoiceOverData 
+            voiceOverData.nextVoiceOverData // Pass the next VoiceOverData here
         );
     }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: ScanTheSurface_vo
+  m_EditorClassIdentifier: 
+  voiceOverClip: {fileID: 8300000, guid: 17acb0eae1f74b44f99f12303b6ad6b8, type: 3}
+  subtitles:
+  - sentence: 'Scan the surface below with your camera, '
+    displayDuration: 1.35
+  - sentence: then tap on the scanned area to start the simulation.
+    displayDuration: 2.5
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

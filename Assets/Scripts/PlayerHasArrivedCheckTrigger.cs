@@ -15,6 +15,10 @@ public class PlayerHasArrivedCheckTrigger : MonoBehaviour
     [SerializeField]
     private bool isPlayerArrivedAtLandingZone = false;
 
+    [Space]
+    [SerializeField]
+    private VoiceOverData LanderTutorial_1_vo;
+
     private void Awake()
     {
         instance = this;
@@ -24,6 +28,8 @@ public class PlayerHasArrivedCheckTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
+            VoiceOverManager.Instance.TriggerVoiceOver(LanderTutorial_1_vo);
+
             isPlayerArrivedAtLandingZone = true;
 
             LanderTutorial.SetActive(true);
