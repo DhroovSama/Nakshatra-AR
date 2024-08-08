@@ -1932,6 +1932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materialStencilData: {fileID: 11400000, guid: 433e2444f63c5e04ebcab91bf1be1012, type: 2}
   isPortalPassed: 0
+  welcomeVO: {fileID: 11400000, guid: c034ed71bbab039478a0b9f4f7082535, type: 2}
 --- !u!1 &5917558674637783551
 GameObject:
   m_ObjectHideFlags: 0

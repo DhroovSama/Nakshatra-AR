@@ -7875,7 +7875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitleText: {fileID: 1358243508}
-  displayDuration: 5
   typewriterSpeed: 0.05
 --- !u!4 &1392358715
 Transform:
@@ -10957,7 +10956,6 @@ MonoBehaviour:
   moonSurfacePrefab: {fileID: 8306865213219369652, guid: 6855139f200bf6d41b6d00b15454042f, type: 3}
   disableARPlane: {fileID: 1941876818}
   isMoonSurfaceSpawned: 0
-  MoonSurfaceInitialisedSO: {fileID: 11400000, guid: c034ed71bbab039478a0b9f4f7082535, type: 2}
 --- !u!114 &1941876813
 MonoBehaviour:
   m_ObjectHideFlags: 0

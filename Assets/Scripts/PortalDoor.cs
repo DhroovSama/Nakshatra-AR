@@ -15,6 +15,11 @@ public class PortalDoor : MonoBehaviour
     private bool isPortalPassed = false;
     public bool IsPortalPassed {  get { return isPortalPassed; } }
 
+    private bool isPortalPassedOnce = false;
+
+    [SerializeField]
+    private VoiceOverData welcomeVO;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("MainCamera"))
@@ -25,7 +30,14 @@ public class PortalDoor : MonoBehaviour
 
         if (other.gameObject.CompareTag("MainCamera") && !isCollisionProcessing)
         {
-            Debug.Log("hot");
+            //Debug.Log("hot");
+
+            if(!isPortalPassedOnce)
+            {
+                isPortalPassedOnce = true;
+
+                VoiceOverManager.Instance.TriggerVoiceOver(welcomeVO);
+            }
             
             isCollisionProcessing = true;
             StartCoroutine(ProcessCollision(other)); 

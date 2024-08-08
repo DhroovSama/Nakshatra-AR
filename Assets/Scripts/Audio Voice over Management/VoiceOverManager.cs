@@ -20,6 +20,6 @@ public class VoiceOverManager : MonoBehaviour
     public void TriggerVoiceOver(VoiceOverData voiceOverData)
     {
         AudioManager.Instance.PlayAudioClip(voiceOverData.voiceOverClip);
-        SubtitleManager.Instance.DisplaySubtitle(voiceOverData.subtitle);
+        SubtitleManager.Instance.DisplaySubtitles(voiceOverData.subtitles);
     }
 }
