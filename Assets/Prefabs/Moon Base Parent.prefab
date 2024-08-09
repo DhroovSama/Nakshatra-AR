@@ -3063,6 +3063,30 @@ PrefabInstance:
       propertyPath: m_TagString
       value: No Landing Zones
       objectReference: {fileID: 0}
+    - target: {fileID: 4654246719448777031, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15.763264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654246719448777031, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15.763264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654246719448777031, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 15.763264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654246719448777031, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.422
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654246719448777031, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.9691
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654246719448777031, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 69.641
+      objectReference: {fileID: 0}
     - target: {fileID: 6414471084004809782, guid: bde8ac5d0e5bbc14bb6fbdadd90af6c2, type: 3}
       propertyPath: m_Name
       value: Moon Base
