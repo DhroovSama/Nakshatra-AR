@@ -4476,12 +4476,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774456024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1227.7585, y: 344.8131, z: -70.96573}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 923.2112, y: 212.2885, z: -42.69214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775130497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &774456026
 MonoBehaviour:
@@ -4550,6 +4550,10 @@ Transform:
   - {fileID: 1920401726}
   - {fileID: 1392358715}
   - {fileID: 816890971}
+  - {fileID: 1708822814}
+  - {fileID: 2110330185}
+  - {fileID: 774456025}
+  - {fileID: 2016075571}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796734957
@@ -10127,6 +10131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708822814}
   - component: {fileID: 1708822813}
+  - component: {fileID: 1708822815}
   m_Layer: 0
   m_Name: Lander Controls UI Manager
   m_TagString: Untagged
@@ -10173,13 +10178,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708822812}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1069.5957, y: 381.59164, z: -33.344448}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 765.04834, y: 249.06703, z: -5.070856}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775130497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1708822815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708822812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd81ad82df4b0d4bae14551ba631478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landerMechanics: {fileID: 2110330184}
+  fuelValue: {fileID: 551669704}
+  thrustValue: {fileID: 1526392180}
+  altitudeValue: {fileID: 896740435}
+  fuel: 0
+  thrust: 0
+  altitude: 0
 --- !u!1 &1779559192
 GameObject:
   m_ObjectHideFlags: 0
@@ -12572,12 +12596,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016075569}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6967087, y: 4.071274, z: 27.001976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -310.24405, y: -128.45334, z: 55.275566}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775130497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2060251186 stripped
 MonoBehaviour:
@@ -12985,12 +13009,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110330183}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -304.54733, y: -132.52461, z: 28.273592}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 775130497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2110330186
 MonoBehaviour:
@@ -13262,10 +13286,6 @@ SceneRoots:
   - {fileID: 937316074}
   - {fileID: 1023101703}
   - {fileID: 775130497}
-  - {fileID: 1708822814}
-  - {fileID: 2110330185}
-  - {fileID: 774456025}
-  - {fileID: 2016075571}
   - {fileID: 1607557240}
   - {fileID: 4741706131835421357}
   - {fileID: 936330822}

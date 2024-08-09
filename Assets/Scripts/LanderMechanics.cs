@@ -167,7 +167,8 @@ public class LanderMechanics : MonoBehaviour
 
         if(landerInstanceChild != null)
         {
-            altitudeDifference = landerInstanceChild.transform.position.y - moonTerrain.transform.position.y;
+            //altitudeDifference = landerInstanceChild.transform.position.y - moonTerrain.transform.position.y;
+            altitudeDifference = landerInstanceChild.transform.position.y;
 
             AltitudeValueUI.text = altitudeDifference.ToString("F1") + " m";
         }
