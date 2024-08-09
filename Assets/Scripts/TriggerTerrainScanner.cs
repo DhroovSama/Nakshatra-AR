@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TriggerTerrainScanner : MonoBehaviour
 {
@@ -46,6 +47,11 @@ public class TriggerTerrainScanner : MonoBehaviour
     private float cooldownTime = 1f; 
     [SerializeField]
     private float nextCooldownTime = 0f;
+
+    [SerializeField]
+    private GameObject noLandingZones;
+
+    public GameObject NoLandingZones { get { return noLandingZones; } }
 
     private void Start()
     {
@@ -134,7 +140,7 @@ public class TriggerTerrainScanner : MonoBehaviour
 
     public void DisableNoLandingZones()
     {
-        GameObject noLandingZones = GameObject.FindGameObjectWithTag("No Landing Zones");
+        noLandingZones = GameObject.FindGameObjectWithTag("No Landing Zones");
 
         if (LanderCollisionHandler.Instance.HasLandedSafely || LanderCollisionHandler.Instance.HadNotLandedSafely)
         {
