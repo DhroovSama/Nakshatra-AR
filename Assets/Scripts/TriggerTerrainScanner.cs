@@ -128,8 +128,8 @@ public class TriggerTerrainScanner : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        //Add Sound Later when the texture changes to indicate landing
-        terrainTextureChanger.ChangeTexture_LandingZone();
+        ////Add Sound Later when the texture changes to indicate landing
+        //terrainTextureChanger.ChangeTexture_LandingZone();
     }
 
     public void DisableNoLandingZones()

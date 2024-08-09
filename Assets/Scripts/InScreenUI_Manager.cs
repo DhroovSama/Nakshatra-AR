@@ -11,6 +11,10 @@ public class InScreenUI_Manager : MonoBehaviour
     [SerializeField]
     private GameObject footPrints;
 
+    [Space]
+    [SerializeField]
+    private TerrainTextureChanger terrainTextureChanger;
+
     [Header("In Screen UI")]
 
     [SerializeField]
@@ -41,6 +45,13 @@ public class InScreenUI_Manager : MonoBehaviour
     [Space]
     [SerializeField]
     private VoiceOverData followFootstepSO;
+
+    
+
+    private void Awake()
+    {
+        terrainTextureChanger = FindObjectOfType<TerrainTextureChanger>();
+    }
 
     private void Update()
     {
@@ -123,5 +134,11 @@ public class InScreenUI_Manager : MonoBehaviour
     public void playFollowFootstepsVO()
     {
         VoiceOverManager.Instance.TriggerVoiceOver(followFootstepSO);
+    }
+
+    public void ChangeTerrainTex_LandingZone()
+    {
+        //Add Sound Later when the texture changes to indicate landing
+        terrainTextureChanger.ChangeTexture_LandingZone();
     }
 }
