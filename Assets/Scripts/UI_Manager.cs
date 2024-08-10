@@ -45,6 +45,9 @@ public class UI_Manager : MonoBehaviour
     [SerializeField]
     private bool isTerrainScannerButtonClickedOnce = false;
 
+    [SerializeField]
+    private VoiceOverData dontLandInRedZone_VO;
+
     private void Awake()
     {
         if (Instance == null)
@@ -155,6 +158,8 @@ public class UI_Manager : MonoBehaviour
     {
         if (!isTerrainScannerButtonClickedOnce)
         {
+            VoiceOverManager.Instance.TriggerVoiceOver(dontLandInRedZone_VO);
+
             landerSpawnerButtonContainer.SetActive(true); 
 
             LanderControlsUIManager.getTerrainScannerControlButton().SetActive(false); 
