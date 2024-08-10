@@ -42,6 +42,9 @@ public class UI_Manager : MonoBehaviour
         private set { hasLanderSpawned = value; }
     }
 
+    [SerializeField]
+    private bool isTerrainScannerButtonClickedOnce = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -147,4 +150,17 @@ public class UI_Manager : MonoBehaviour
     {
         landerSpawnerButtonSequence();
     }
+
+    public void LandingButtonDisableFor_TerrainScannerButton()
+    {
+        if (!isTerrainScannerButtonClickedOnce)
+        {
+            landerSpawnerButtonContainer.SetActive(true); 
+
+            LanderControlsUIManager.getTerrainScannerControlButton().SetActive(false); 
+
+            isTerrainScannerButtonClickedOnce = true;
+        }
+    }
+
 }

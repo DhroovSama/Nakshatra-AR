@@ -1281,15 +1281,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: SCAN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae0233b273378af438b716c0b33db63e, type: 2}
+  m_sharedMaterial: {fileID: -6804021714716769182, guid: ae0233b273378af438b716c0b33db63e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3665,12 +3665,12 @@ GameObject:
   - component: {fileID: 633539433}
   - component: {fileID: 633539432}
   m_Layer: 5
-  m_Name: Terrain Scanner (TESTING PURPOSES)
+  m_Name: Terrain Scanner Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &633539431
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3684,11 +3684,11 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 289558544}
-  m_Father: {fileID: 880246572}
+  m_Father: {fileID: 937316074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 433.00043, y: -795.39087}
+  m_AnchoredPosition: {x: 433, y: -892.71265}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &633539432
@@ -3747,6 +3747,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1911400739}
+        m_TargetAssemblyTypeName: UI_Manager, Assembly-CSharp
+        m_MethodName: LandingButtonDisableFor_TerrainScannerButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &633539433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3767,8 +3779,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1c67b1cbf73a1d44686b89f311f95d39, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5020,8 +5032,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 1c67b1cbf73a1d44686b89f311f95d39, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5068,7 +5080,6 @@ RectTransform:
   m_Children:
   - {fileID: 1253717768}
   - {fileID: 1823706544}
-  - {fileID: 633539431}
   m_Father: {fileID: 937316074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5639,10 +5650,11 @@ RectTransform:
   - {fileID: 1980583378}
   - {fileID: 1574854544}
   - {fileID: 880246572}
+  - {fileID: 633539431}
   - {fileID: 158478692}
   - {fileID: 2071851323}
-  - {fileID: 1994421276}
   - {fileID: 357456782}
+  - {fileID: 1994421276}
   - {fileID: 1627615518}
   - {fileID: 190728249}
   - {fileID: 1358243507}
@@ -7517,15 +7529,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: SCAN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae0233b273378af438b716c0b33db63e, type: 2}
+  m_sharedMaterial: {fileID: -6804021714716769182, guid: ae0233b273378af438b716c0b33db63e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10243,7 +10255,8 @@ MonoBehaviour:
   landerSpawnerButtonContainer: {fileID: 168041339}
   LanderMissionPass: {fileID: 1516544390}
   LanderMissionFail: {fileID: 1199077963}
-  TerrainScannerButton: {fileID: 871387247}
+  TerrainScannerTutorialButton: {fileID: 871387247}
+  TerrainScannerControlButton: {fileID: 633539430}
 --- !u!4 &1708822814
 Transform:
   m_ObjectHideFlags: 0

@@ -106,7 +106,7 @@ public class InScreenUI_Manager : MonoBehaviour
 
         OtherUI_Popup4.SetActive(false);
 
-        enable_LanderSpawnerButtonContainer();
+        //enable_LanderSpawnerButtonContainer();
 
         Invoke("disable_Popup3_LanderTutorial", 1.5f);
     }
@@ -123,12 +123,12 @@ public class InScreenUI_Manager : MonoBehaviour
 
     public void EnableTerrainScannerButtonUI()
     {
-        LanderControlsUIManager.getTerrainScannerButton().SetActive(true);
+        LanderControlsUIManager.getTerrainScannerTutorialButton().SetActive(true);
     }
 
     public void DisableTerrainScannerButtonUI()
     {
-        LanderControlsUIManager.getTerrainScannerButton().SetActive(false);
+        LanderControlsUIManager.getTerrainScannerTutorialButton().SetActive(false);
     }
 
     public void playFollowFootstepsVO()
@@ -141,4 +141,15 @@ public class InScreenUI_Manager : MonoBehaviour
         //Add Sound Later when the texture changes to indicate landing
         terrainTextureChanger.ChangeTexture_LandingZone();
     }
+
+    public void EnableTerrainScannerControlButton()
+    {
+        LanderControlsUIManager.getTerrainScannerControlButton().SetActive(true);
+    }
+
+    public void DisableTerrainScannerControlButton()
+    {
+        LanderControlsUIManager.getTerrainScannerControlButton().SetActive(false);
+    }
+
 }

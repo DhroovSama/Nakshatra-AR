@@ -40,7 +40,10 @@ public class LanderControlsUIManager : MonoBehaviour
     [SerializeField] private GameObject LanderMissionFail;
 
     [Header("Terrain Scanner UI")]
-    [SerializeField] private GameObject TerrainScannerButton;
+    [SerializeField] private GameObject TerrainScannerTutorialButton;
+
+    [Space]
+    [SerializeField] private GameObject TerrainScannerControlButton;
 
 
     private void Awake()
@@ -134,8 +137,13 @@ public class LanderControlsUIManager : MonoBehaviour
     {
         return instance.landerSpawnerButtonContainer;
     }
-    public static GameObject getTerrainScannerButton()
+    public static GameObject getTerrainScannerTutorialButton()
     {
-        return instance.TerrainScannerButton;
+        return instance.TerrainScannerTutorialButton;
+    }
+
+    public static GameObject getTerrainScannerControlButton()
+    {
+        return instance.TerrainScannerControlButton;
     }
 }
