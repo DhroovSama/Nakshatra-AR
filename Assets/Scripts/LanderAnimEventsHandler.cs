@@ -18,6 +18,10 @@ public class LanderAnimEventsHandler : MonoBehaviour
     [SerializeField]
     private GameObject RoverTutorialUI;
 
+    [SerializeField]
+    [Space]
+    private VoiceOverData RoverTutorial_1_VO;
+
 
     public GameObject RoverPrefab
     {
@@ -62,6 +66,8 @@ public class LanderAnimEventsHandler : MonoBehaviour
 
     private void RoverAnimationEndEvent()
     {
+        VoiceOverManager.Instance.TriggerVoiceOver(RoverTutorial_1_VO);
+
         RoverTutorialUI.SetActive(true);
 
         landerAnimation.OnRoverAnimationEnd();

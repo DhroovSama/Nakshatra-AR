@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Rover tutorial 3 so
+  m_EditorClassIdentifier: 
+  voiceOverClip: {fileID: 8300000, guid: 90e4fa61c4da8c3428aa48478e12faf5, type: 3}
+  subtitles:
+  - sentence: "Explore the Moon\u2019s surface with the ROVER"
+    displayDuration: 1.25
+  - sentence: ' or take a moonwalk on FOOT!'
+    displayDuration: 1
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}
