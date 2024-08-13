@@ -3759,6 +3759,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1911400746}
+        m_TargetAssemblyTypeName: TriggerTerrainScanner, Assembly-CSharp
+        m_MethodName: ShowAndHideFactsUIElements
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &633539433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6622,7 +6634,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 922509380}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1.5
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -10257,6 +10269,7 @@ MonoBehaviour:
   LanderMissionFail: {fileID: 1199077963}
   TerrainScannerTutorialButton: {fileID: 871387247}
   TerrainScannerControlButton: {fileID: 633539430}
+  isAllFactsContainerSetActive: 0
 --- !u!4 &1708822814
 Transform:
   m_ObjectHideFlags: 0
@@ -11248,6 +11261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainScanner: {fileID: 0}
   terrainTextureChanger: {fileID: 1911400748}
+  locationButtonUIProvider: {fileID: 0}
+  uiManager: {fileID: 1911400739}
   EnableTerrainScanner: {fileID: 633539432}
   terrainNoLandZoneMaterial: {fileID: 2100000, guid: 90f8f173f0b5ebf43b614e072e2ab0e6, type: 2}
   terrainScanSFX: {fileID: 8300000, guid: c88b391bf6c989b4c9bdb8f6e73bcd25, type: 3}
@@ -11258,6 +11273,8 @@ MonoBehaviour:
   cooldownTime: 2
   nextCooldownTime: 0
   noLandingZones: {fileID: 0}
+  uiList: []
+  uiListContainGameobjects: []
 --- !u!114 &1911400747
 MonoBehaviour:
   m_ObjectHideFlags: 0

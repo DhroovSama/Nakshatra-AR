@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class InScreenUI_Manager : MonoBehaviour
 {
@@ -45,6 +46,9 @@ public class InScreenUI_Manager : MonoBehaviour
     [Space]
     [SerializeField]
     private VoiceOverData followFootstepSO;
+
+    [SerializeField]
+    private GameObject allFactsContainer;
 
     
 
@@ -150,6 +154,13 @@ public class InScreenUI_Manager : MonoBehaviour
     public void DisableTerrainScannerControlButton()
     {
         LanderControlsUIManager.getTerrainScannerControlButton().SetActive(false);
+    }
+
+    public void EnableAllFactsContainer()
+    {
+        LanderControlsUIManager.SetIsAllFactsContainerSetActive(true);
+
+        allFactsContainer.SetActive(true);
     }
 
 }

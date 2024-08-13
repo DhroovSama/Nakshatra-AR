@@ -13,6 +13,12 @@ public class TriggerTerrainScanner : MonoBehaviour
     private TerrainTextureChanger terrainTextureChanger;
 
     [SerializeField]
+    private LocationButtonUIProvider locationButtonUIProvider;
+
+    [SerializeField]
+    private UI_Manager uiManager;
+
+    [SerializeField]
     private Button EnableTerrainScanner;
 
     //[SerializeField]
@@ -53,6 +59,11 @@ public class TriggerTerrainScanner : MonoBehaviour
 
     public GameObject NoLandingZones { get { return noLandingZones; } }
 
+    [SerializeField]
+    private List<RawImage> uiList = new List<RawImage>();
+    [SerializeField]
+    private List<GameObject> uiListContainGameobjects = new List<GameObject>();
+
     private void Start()
     {
         EnableTerrainScanner.onClick.AddListener(() => TriggerTerrainScanEffect());
@@ -68,6 +79,15 @@ public class TriggerTerrainScanner : MonoBehaviour
         if (PlaceOnPlane.IsMoonSurfaceSpawned())
         {
             terrainScanner = FindObjectOfType<TerrainScanner>();
+
+            locationButtonUIProvider = FindObjectOfType<LocationButtonUIProvider>();
+
+            if (locationButtonUIProvider != null)
+            {
+                uiListContainGameobjects = locationButtonUIProvider.GetLocationUIListContainGameobjects();
+                uiList = locationButtonUIProvider.GetLocationUIList();
+            }
+            else { Debug.LogWarning("locationButtonUIProvider is null"); }
         }
 
         DisableNoLandingZones();
@@ -178,6 +198,73 @@ public class TriggerTerrainScanner : MonoBehaviour
 
         //Add Sound When Landing area visual cue Reverted back
         terrainTextureChanger.ChangeTexture_NormalTerrain();
+    }
+
+    public void ShowAndHideFactsUIElements()
+    {
+        if(uiManager.HasLanderSpawned)
+        {
+            StartCoroutine(ShowAndHideUIElementsCoroutine());
+        }
+    }
+
+    private IEnumerator ShowAndHideUIElementsCoroutine()
+    {
+        foreach (GameObject uiObject in uiListContainGameobjects)
+        {
+            uiObject.SetActive(true);
+        }
+
+        yield return LerpUIAlpha(1f, 1f);
+
+        // Wait for 3 seconds
+        yield return new WaitForSeconds(3f);
+
+        // Lerp alpha of RawImages back to 0
+        yield return LerpUIAlpha(1f, 0f);
+
+        // Disable all GameObjects in the list
+        foreach (GameObject uiObject in uiListContainGameobjects)
+        {
+            uiObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator LerpUIAlpha(float duration, float targetAlpha)
+    {
+        float elapsedTime = 0f;
+
+        List<float> initialAlphas = new List<float>();
+        foreach (RawImage uiImage in uiList)
+        {
+            initialAlphas.Add(uiImage.color.a);
+        }
+
+        // Lerp the alpha values
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+
+            for (int i = 0; i < uiList.Count; i++)
+            {
+                RawImage uiImage = uiList[i];
+                Color newColor = uiImage.color;
+                newColor.a = Mathf.Lerp(initialAlphas[i], targetAlpha, t);
+                uiImage.color = newColor;
+            }
+
+            yield return null;
+        }
+
+        // Ensure the final alpha is set correctly
+        for (int i = 0; i < uiList.Count; i++)
+        {
+            RawImage uiImage = uiList[i];
+            Color newColor = uiImage.color;
+            newColor.a = targetAlpha;
+            uiImage.color = newColor;
+        }
     }
 
     #region Needed if you want the no landing zone to fade in and fade out after some time
