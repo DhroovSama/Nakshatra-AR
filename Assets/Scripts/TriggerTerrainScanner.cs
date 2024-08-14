@@ -218,7 +218,7 @@ public class TriggerTerrainScanner : MonoBehaviour
         yield return LerpUIAlpha(1f, 1f);
 
         // Wait for 3 seconds
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(7.5f);
 
         // Lerp alpha of RawImages back to 0
         yield return LerpUIAlpha(1f, 0f);

@@ -10095,6 +10095,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
+        m_TargetAssemblyTypeName: VibrationController, Assembly-CSharp
+        m_MethodName: VibratePhone_Light
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1911400742}
         m_TargetAssemblyTypeName: SceneOrientationController, Assembly-CSharp
         m_MethodName: CHangeOrientation
@@ -11663,6 +11675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moonSurfacePrefab: {fileID: 8306865213219369652, guid: 6855139f200bf6d41b6d00b15454042f, type: 3}
   disableARPlane: {fileID: 1941876818}
+  vibrationController: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
   isMoonSurfaceSpawned: 0
   MoonSurfaceInitialisedSO: {fileID: 11400000, guid: c034ed71bbab039478a0b9f4f7082535, type: 2}
 --- !u!114 &1941876813

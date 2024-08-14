@@ -12,6 +12,9 @@ public class PortalDoor : MonoBehaviour
     private MaterialStencilToggleDataSO materialStencilData;
 
     [SerializeField]
+    private VibrationController vibrationController;
+
+    [SerializeField]
     private bool isPortalPassed = false;
     public bool IsPortalPassed {  get { return isPortalPassed; } }
 
@@ -24,6 +27,8 @@ public class PortalDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
+            vibrationController.VibratePhone_Medium();
+
             isPortalPassed = true;
 
         }
@@ -38,7 +43,9 @@ public class PortalDoor : MonoBehaviour
 
             //    VoiceOverManager.Instance.TriggerVoiceOver(welcomeVO);
             //}
-            
+
+            vibrationController.VibratePhone_Medium();
+
             isCollisionProcessing = true;
             StartCoroutine(ProcessCollision(other)); 
         }

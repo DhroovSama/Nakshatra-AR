@@ -8,6 +8,8 @@ Library: Z:\Unity Projects\Chandrayaan AR 27-07-2024\Chandrayaan AR\NakshatraAr\
 --float-precision=Standard
 --target-framework=NetFramework
 --assembly-defines=Assembly-CSharp;
+--assembly-defines=CandyCoded.HapticFeedback.Android;
+--assembly-defines=CandyCoded.HapticFeedback;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
 --assembly-defines=System.Configuration;
@@ -143,6 +145,8 @@ Library: Z:\Unity Projects\Chandrayaan AR 27-07-2024\Chandrayaan AR\NakshatraAr\
 --target-framework=NetFramework
 --float-mode=Fast
 --assembly-defines=Assembly-CSharp;
+--assembly-defines=CandyCoded.HapticFeedback.Android;
+--assembly-defines=CandyCoded.HapticFeedback;
 --assembly-defines=Mono.Security;
 --assembly-defines=mscorlib;
 --assembly-defines=System.Configuration;

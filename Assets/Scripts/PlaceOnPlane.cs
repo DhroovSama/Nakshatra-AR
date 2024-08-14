@@ -13,6 +13,9 @@ public class PlaceOnPlane : MonoBehaviour
     [SerializeField] GameObject moonSurfacePrefab;
     [SerializeField] private DisableARPlaneWhenObjectSpawned disableARPlane;
 
+    [SerializeField]
+    private VibrationController vibrationController;
+
     GameObject spawnedObjectMoonSurface;
     public GameObject SpawnedObjectMoonSurface
     {
@@ -65,6 +68,8 @@ public class PlaceOnPlane : MonoBehaviour
                     isMoonSurfaceSpawned = true;
                     disableARPlane.getDisableARPlane();
                 }
+
+                vibrationController.VibratePhone_Medium();
 
                 VoiceOverManager.Instance.TriggerVoiceOver(MoonSurfaceInitialisedSO);
             }
