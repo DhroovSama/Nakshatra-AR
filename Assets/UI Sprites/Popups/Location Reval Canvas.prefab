@@ -158,7 +158,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7712215085398997717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458e79441b1002e478c3a29022958480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loactionRevealUI: {fileID: 7864363051245504223}
-  amplitude: 0.54
-  frequency: 4.73
+  loactionRevealUI: {fileID: 0}
+  amplitude: 0.15
+  frequency: 4

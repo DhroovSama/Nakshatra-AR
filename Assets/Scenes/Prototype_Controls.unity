@@ -4475,6 +4475,124 @@ RectTransform:
   m_AnchoredPosition: {x: 797, y: -357}
   m_SizeDelta: {x: 323.8362, y: 110.1776}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &754985547
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 937316074}
+    m_Modifications:
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -251
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910053562846850428, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135556354334401881, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_Name
+      value: Collectible Progress Bar Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135556354334401881, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770683802258343756, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770683802258343756, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+--- !u!224 &754985548 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1864217929787897304, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+  m_PrefabInstance: {fileID: 754985547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &774456024
 GameObject:
   m_ObjectHideFlags: 0
@@ -5670,6 +5788,7 @@ RectTransform:
   - {fileID: 1627615518}
   - {fileID: 190728249}
   - {fileID: 1358243507}
+  - {fileID: 754985548}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7441,6 +7560,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217370370}
   m_CullTransparentMesh: 1
+--- !u!1 &1226828400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4135556354334401881, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+  m_PrefabInstance: {fileID: 754985547}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1226828401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1910053562846850428, guid: 6a8abe3fc14c02b418f097abd4190bff, type: 3}
+  m_PrefabInstance: {fileID: 754985547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226828400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253717767
 GameObject:
   m_ObjectHideFlags: 0
@@ -11271,9 +11406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18792e936ec6a754b942471a05c7a203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainScanner: {fileID: 0}
+  terrainScanner: {fileID: 1911400747}
   terrainTextureChanger: {fileID: 1911400748}
   locationButtonUIProvider: {fileID: 0}
+  collectibleRaycast: {fileID: 1966862291}
   uiManager: {fileID: 1911400739}
   EnableTerrainScanner: {fileID: 633539432}
   terrainNoLandZoneMaterial: {fileID: 2100000, guid: 90f8f173f0b5ebf43b614e072e2ab0e6, type: 2}
@@ -11285,8 +11421,9 @@ MonoBehaviour:
   cooldownTime: 2
   nextCooldownTime: 0
   noLandingZones: {fileID: 0}
+  ListContainCollectibleGameobjects: []
   uiList: []
-  uiListContainGameobjects: []
+  durationForLoactionRevealUI: 7.5
 --- !u!114 &1911400747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12020,6 +12157,7 @@ GameObject:
   - component: {fileID: 1966862283}
   - component: {fileID: 1966862282}
   - component: {fileID: 1966862290}
+  - component: {fileID: 1966862291}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12349,6 +12487,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformText: {fileID: 1980583379}
+--- !u!114 &1966862291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966862280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a25916254b8db47b55e45ef1590fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectiblesProgressBarGameobject: {fileID: 1226828400}
+  collectiblesProgressBar: {fileID: 1226828401}
+  raycastRange: 250
+  fillDuration: 2
+  resetDelay: 0.5
+  durationForLoactionRevealUI: 7.5
+  triggerTerrainScanner: {fileID: 1911400746}
+  enableTerrainScannerButton: {fileID: 633539432}
+  collectibleManager: {fileID: 0}
 --- !u!1 &1980583377
 GameObject:
   m_ObjectHideFlags: 0
@@ -13420,6 +13579,6 @@ SceneRoots:
   - {fileID: 1023101703}
   - {fileID: 775130497}
   - {fileID: 1607557240}
-  - {fileID: 4741706131835421357}
   - {fileID: 936330822}
+  - {fileID: 4741706131835421357}
   - {fileID: 1651632129}

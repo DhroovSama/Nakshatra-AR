@@ -9,6 +9,11 @@ TagManager:
   - Rover
   - Lander
   - No Landing Zones
+  - Collectible 1
+  - Collectible 2
+  - Collectible 3
+  - Collectible 4
+  - Collectible 5
   layers:
   - Default
   - TransparentFX

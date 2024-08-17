@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -14,7 +13,7 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
     private RawImage factToDisplay_RawImage;
 
     [SerializeField]
-    private GameObject factCylinder;
+    private GameObject Collider;
 
     [SerializeField]
     private UnityEvent onFactEnabled;
@@ -27,23 +26,18 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
         {
             factToDisplay.SetActive(true);
 
-
-            if(factToDisplay.activeSelf)
+            if (factToDisplay.activeSelf)
             {
                 FactToDisplayToGlobalFactDisplayer(factToDisplay_RawImage.texture);
 
                 onFactEnabled.Invoke();
 
-                if(onFactEnabledAction != null)
-                {
-                    onFactEnabledAction();
-                }
+                onFactEnabledAction?.Invoke(); // Trigger the event for the CollectibleManager
 
             }
             else { Debug.Log("factToDisplay is setActive is false"); }
 
-
-            factCylinder.SetActive(false);
+            Collider.SetActive(false);
 
             FactsCollectedGlobal.getIncrementFactsCollected(1);
         }
@@ -55,5 +49,4 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
 
         SharedGameManagerEventSystem.TriggerNewFactToDisplay(displayTexture);
     }
-
 }

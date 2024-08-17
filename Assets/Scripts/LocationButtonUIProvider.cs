@@ -11,13 +11,21 @@ public class LocationButtonUIProvider : MonoBehaviour
     [SerializeField]
     private List<GameObject> loactionUIListContainGameobjects = new List<GameObject>();
 
+    //[SerializeField]
+    //private List<GameObject> collectiblesGameobjects = new List<GameObject>();
+
     public List<RawImage> GetLocationUIList()
     {
-        return locationUIList;
+        return locationUIList; 
     }
 
     public List<GameObject> GetLocationUIListContainGameobjects()
     {
         return loactionUIListContainGameobjects;
     }
+
+    //public List<GameObject> GetCollectiblesGameobjects()
+    //{
+    //    return collectiblesGameobjects;
+    //}
 }

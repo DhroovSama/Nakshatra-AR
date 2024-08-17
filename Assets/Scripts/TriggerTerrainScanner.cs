@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class TriggerTerrainScanner : MonoBehaviour
 {
@@ -16,13 +15,13 @@ public class TriggerTerrainScanner : MonoBehaviour
     private LocationButtonUIProvider locationButtonUIProvider;
 
     [SerializeField]
+    private TriggerCollectibleThroughRaycast collectibleRaycast;
+
+    [SerializeField]
     private UI_Manager uiManager;
 
     [SerializeField]
     private Button EnableTerrainScanner;
-
-    //[SerializeField]
-    //private Slider terrainScannedCompletionSlider;
 
     [SerializeField]
     private Material terrainNoLandZoneMaterial;
@@ -41,16 +40,14 @@ public class TriggerTerrainScanner : MonoBehaviour
     private int sliderMaxValue = 10;
 
     [Header("Material Shader Values")]
-
     [SerializeField]
     private float rimFalloffDuration = 0.75f;
 
     private bool isScanning = false;
 
-
     [Header("Cooldown variables")]
     [SerializeField]
-    private float cooldownTime = 1f; 
+    private float cooldownTime = 1f;
     [SerializeField]
     private float nextCooldownTime = 0f;
 
@@ -60,9 +57,20 @@ public class TriggerTerrainScanner : MonoBehaviour
     public GameObject NoLandingZones { get { return noLandingZones; } }
 
     [SerializeField]
-    private List<RawImage> uiList = new List<RawImage>();
+    [Tooltip("Will be assigned Automatically")]
+    public List<GameObject> ListContainCollectibleGameobjects = new List<GameObject>(); // Updated to public to be accessed by TriggerCollectibleThroughRaycast
+
     [SerializeField]
-    private List<GameObject> uiListContainGameobjects = new List<GameObject>();
+    [Tooltip("Will be assigned Automatically")]
+    private List<RawImage> uiList = new List<RawImage>();
+
+    [SerializeField]
+    [Space]
+    [Tooltip("Time for which the Location Reveal UI will be visible for when the Terrain Scanner Button is clicked and then disappear again")]
+    private float durationForLoactionRevealUI = 0f;
+
+    [SerializeField]
+    public GameObject targetCollectible;
 
     private void Start()
     {
@@ -70,8 +78,6 @@ public class TriggerTerrainScanner : MonoBehaviour
 
         terrainNoLandZoneMaterial.SetFloat("_Fade", 1);
         terrainNoLandZoneMaterial.SetInt("_RimFalloff", 0);
-
-        //terrainScannedCompletionSlider.maxValue = sliderMaxValue;
     }
 
     private void Update()
@@ -84,7 +90,7 @@ public class TriggerTerrainScanner : MonoBehaviour
 
             if (locationButtonUIProvider != null)
             {
-                uiListContainGameobjects = locationButtonUIProvider.GetLocationUIListContainGameobjects();
+                ListContainCollectibleGameobjects = locationButtonUIProvider.GetLocationUIListContainGameobjects();
                 uiList = locationButtonUIProvider.GetLocationUIList();
             }
             else { Debug.LogWarning("locationButtonUIProvider is null"); }
@@ -105,7 +111,6 @@ public class TriggerTerrainScanner : MonoBehaviour
             terrainScanner.SpawnTerrainScanner();
             GlobalAudioPlayer.getPlaySound(terrainScanSFX);
             terrainPulseCount++;
-            //terrainScannedCompletionSlider.value = terrainPulseCount;
 
             DisplayNoLandingZones();
 
@@ -123,13 +128,11 @@ public class TriggerTerrainScanner : MonoBehaviour
         float duration = 1.5f;
         float elapsedTime = 0f;
 
-        // Initial values
         float initialFade = 1f;
         float finalFade = 0.5f;
         float initialRimFalloff = 0f;
         float finalRimFalloff = 1f;
 
-        // Set initial values
         terrainNoLandZoneMaterial.SetFloat("_Fade", initialFade);
         terrainNoLandZoneMaterial.SetFloat("_RimFalloff", initialRimFalloff);
 
@@ -138,7 +141,6 @@ public class TriggerTerrainScanner : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
 
-            // Lerp values
             float fadeValue = Mathf.Lerp(initialFade, finalFade, t);
             float rimFalloffValue = Mathf.Lerp(initialRimFalloff, finalRimFalloff, t);
 
@@ -148,14 +150,10 @@ public class TriggerTerrainScanner : MonoBehaviour
             yield return null;
         }
 
-        // Ensure final values are set
         terrainNoLandZoneMaterial.SetFloat("_Fade", finalFade);
         terrainNoLandZoneMaterial.SetFloat("_RimFalloff", finalRimFalloff);
 
         yield return new WaitForSeconds(0.5f);
-
-        ////Add Sound Later when the texture changes to indicate landing
-        //terrainTextureChanger.ChangeTexture_LandingZone();
     }
 
     public void DisableNoLandingZones()
@@ -183,9 +181,8 @@ public class TriggerTerrainScanner : MonoBehaviour
             yield return null;
         }
 
-        // Cooldown phase
         float cooldownStartTime = Time.time;
-        while (Time.time < cooldownStartTime + 2f) // Cooldown lasts 2 seconds
+        while (Time.time < cooldownStartTime + 2f)
         {
             float t = (Time.time - cooldownStartTime) / 2f;
             terrainNoLandZoneMaterial.SetFloat("_RimFalloff", Mathf.Lerp(1, 0, t));
@@ -193,42 +190,75 @@ public class TriggerTerrainScanner : MonoBehaviour
             yield return null;
         }
 
-        
         yield return new WaitForSeconds(0.5f);
-
-        //Add Sound When Landing area visual cue Reverted back
         terrainTextureChanger.ChangeTexture_NormalTerrain();
     }
 
     public void ShowAndHideFactsUIElements()
     {
-        if(uiManager.HasLanderSpawned)
+        if (uiManager.HasLanderSpawned)
         {
             StartCoroutine(ShowAndHideUIElementsCoroutine());
+
+            if (collectibleRaycast != null)
+            {
+                collectibleRaycast.StartRaycasting();
+                StartCoroutine(StopRaycastingAfterDuration());
+            }
+        }
+    }
+
+    private IEnumerator StopRaycastingAfterDuration()
+    {
+        yield return new WaitForSeconds(durationForLoactionRevealUI);
+
+        if (collectibleRaycast != null)
+        {
+            collectibleRaycast.StopRaycasting();
         }
     }
 
     private IEnumerator ShowAndHideUIElementsCoroutine()
     {
-        foreach (GameObject uiObject in uiListContainGameobjects)
+        // Enable all collectibles in the list
+        foreach (GameObject uiObject in ListContainCollectibleGameobjects)
         {
             uiObject.SetActive(true);
         }
 
+        // Gradually show the UI elements
         yield return LerpUIAlpha(1f, 1f);
 
-        // Wait for 3 seconds
-        yield return new WaitForSeconds(7.5f);
+        // Wait for the specified duration
+        yield return new WaitForSeconds(durationForLoactionRevealUI);
 
-        // Lerp alpha of RawImages back to 0
+        // Gradually hide the UI elements
         yield return LerpUIAlpha(1f, 0f);
 
-        // Disable all GameObjects in the list
-        foreach (GameObject uiObject in uiListContainGameobjects)
+        // Disable all collectibles except the one that was looked at
+        foreach (GameObject uiObject in ListContainCollectibleGameobjects)
         {
-            uiObject.SetActive(false);
+            if (uiObject != targetCollectible)
+            {
+                uiObject.SetActive(false);
+            }
+        }
+
+        // Ensure the target collectible stays active
+        if (targetCollectible != null)
+        {
+            targetCollectible.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("targetCollectible is NULL");
         }
     }
+
+
+
+
+
 
     private IEnumerator LerpUIAlpha(float duration, float targetAlpha)
     {
@@ -240,7 +270,6 @@ public class TriggerTerrainScanner : MonoBehaviour
             initialAlphas.Add(uiImage.color.a);
         }
 
-        // Lerp the alpha values
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
@@ -257,7 +286,6 @@ public class TriggerTerrainScanner : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the final alpha is set correctly
         for (int i = 0; i < uiList.Count; i++)
         {
             RawImage uiImage = uiList[i];
@@ -266,42 +294,4 @@ public class TriggerTerrainScanner : MonoBehaviour
             uiImage.color = newColor;
         }
     }
-
-    #region Needed if you want the no landing zone to fade in and fade out after some time
-    //private IEnumerator DisplayLandingAreasCoroutine()
-    //{
-    //    terrainNoLandZoneMaterial.SetFloat("_Fade", 0.5f);
-    //    terrainNoLandZoneMaterial.SetInt("_RimFalloff", 1);
-
-    //    float rimStartTime = Time.time;
-    //    while (Time.time < rimStartTime + rimFalloffDuration)
-    //    {
-    //        float t = (Time.time - rimStartTime) / rimFalloffDuration;
-    //        terrainNoLandZoneMaterial.SetFloat("_RimFalloff", Mathf.Lerp(terrainNoLandZoneMaterial.GetInt("_RimFalloff"), 1, t));
-    //        yield return null;
-    //    }
-
-    //    yield return new WaitForSeconds(0.25f); // Short delay before starting the fade
-
-    //    float fadeDelay = 0.1f;
-    //    float fadeStartTime = Time.time + fadeDelay;
-    //    while (Time.time < fadeStartTime + 1f)
-    //    {
-    //        float t = (Time.time - fadeStartTime) / 1f;
-    //        terrainNoLandZoneMaterial.SetFloat("_Fade", Mathf.Lerp(1, 0.5f, t));
-    //        yield return null;
-    //    }
-
-    //    // Cooldown phase
-    //    float cooldownStartTime = Time.time;
-    //    while (Time.time < cooldownStartTime + 2f) // Cooldown lasts 2 seconds
-    //    {
-    //        float t = (Time.time - cooldownStartTime) / 2f;
-    //        terrainNoLandZoneMaterial.SetFloat("_RimFalloff", Mathf.Lerp(1, 0, t));
-    //        terrainNoLandZoneMaterial.SetFloat("_Fade", Mathf.Lerp(0.5f, 1, t));
-    //        yield return null;
-    //    }
-    //}
-    #endregion
-
 }
