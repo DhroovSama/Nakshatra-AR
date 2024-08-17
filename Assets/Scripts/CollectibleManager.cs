@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class CollectibleManager : MonoBehaviour
 {
     [SerializeField]
-    private DisplayFactsWhenTriggered displayFactsScript;
+    private LanderControlsUIManager landerControlsUIManager;
 
     [SerializeField]
     private List<GameObject> collectibles;
@@ -19,7 +20,7 @@ public class CollectibleManager : MonoBehaviour
             collectibleState[collectible] = true; // All collectibles are initially active
 
             // Subscribe to the event in DisplayFactsWhenTriggered
-            displayFactsScript = collectible.GetComponent<DisplayFactsWhenTriggered>();
+            var displayFactsScript = collectible.GetComponent<DisplayFactsWhenTriggered>();
             if (displayFactsScript != null)
             {
                 displayFactsScript.onFactEnabledAction += () => OnCollectibleTriggered(collectible);
@@ -31,6 +32,7 @@ public class CollectibleManager : MonoBehaviour
     {
         // This method is called when a collectible's fact is triggered
         DisableCollectible(collectible);
+        EnableNextCollectible();
     }
 
     public void DisableCollectible(GameObject collectible)
@@ -47,17 +49,28 @@ public class CollectibleManager : MonoBehaviour
         return collectibleState.ContainsKey(collectible) && collectibleState[collectible];
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void EnableNextCollectible()
     {
-        if (other.CompareTag("Rover") || other.CompareTag("MainCamera"))
+        foreach (var collectible in collectibles)
         {
-            foreach (var collectible in collectibles)
+            if (collectibleState[collectible]) // Enable the next uncollected collectible
             {
-                if (collectible.activeSelf && Vector3.Distance(other.transform.position, collectible.transform.position) < 1.0f)
-                {
-                    DisableCollectible(collectible);
-                }
+                collectible.SetActive(true);
+                break;
             }
         }
+    }
+
+    public void OnRoverCollision(GameObject collectible)
+    {
+        //if (!IsCollectibleActive(collectible)) return;
+
+        DisableCollectible(collectible);
+        EnableTerrainScanner();
+    }
+
+    private void EnableTerrainScanner()
+    {
+        LanderControlsUIManager.getTerrainScannerControl().interactable = true;
     }
 }

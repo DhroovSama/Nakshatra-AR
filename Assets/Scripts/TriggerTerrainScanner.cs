@@ -21,6 +21,9 @@ public class TriggerTerrainScanner : MonoBehaviour
     private UI_Manager uiManager;
 
     [SerializeField]
+    private CollectibleManager collectibleManager;
+
+    [SerializeField]
     private Button EnableTerrainScanner;
 
     [SerializeField]
@@ -85,6 +88,8 @@ public class TriggerTerrainScanner : MonoBehaviour
         if (PlaceOnPlane.IsMoonSurfaceSpawned())
         {
             terrainScanner = FindObjectOfType<TerrainScanner>();
+
+            collectibleManager = FindObjectOfType<CollectibleManager>();    
 
             locationButtonUIProvider = FindObjectOfType<LocationButtonUIProvider>();
 
@@ -223,7 +228,10 @@ public class TriggerTerrainScanner : MonoBehaviour
         // Enable all collectibles in the list
         foreach (GameObject uiObject in ListContainCollectibleGameobjects)
         {
-            uiObject.SetActive(true);
+            if (collectibleManager.IsCollectibleActive(uiObject)) // Enable only those not yet collected
+            {
+                uiObject.SetActive(true);
+            }
         }
 
         // Gradually show the UI elements
@@ -238,7 +246,7 @@ public class TriggerTerrainScanner : MonoBehaviour
         // Disable all collectibles except the one that was looked at
         foreach (GameObject uiObject in ListContainCollectibleGameobjects)
         {
-            if (uiObject != targetCollectible)
+            if (uiObject != targetCollectible && collectibleManager.IsCollectibleActive(uiObject))
             {
                 uiObject.SetActive(false);
             }
@@ -254,11 +262,6 @@ public class TriggerTerrainScanner : MonoBehaviour
             Debug.LogWarning("targetCollectible is NULL");
         }
     }
-
-
-
-
-
 
     private IEnumerator LerpUIAlpha(float duration, float targetAlpha)
     {

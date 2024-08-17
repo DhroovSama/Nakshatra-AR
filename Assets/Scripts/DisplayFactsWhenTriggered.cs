@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -20,6 +19,13 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
 
     public event Action onFactEnabledAction;
 
+    private CollectibleManager collectibleManager;
+
+    private void Start()
+    {
+        collectibleManager = FindObjectOfType<CollectibleManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Rover") || other.gameObject.CompareTag("MainCamera"))
@@ -34,6 +40,10 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
 
                 onFactEnabledAction?.Invoke(); // Trigger the event for the CollectibleManager
 
+                if (collectibleManager != null)
+                {
+                    collectibleManager.OnRoverCollision(gameObject);
+                }
             }
             else { Debug.Log("factToDisplay is setActive is false"); }
 

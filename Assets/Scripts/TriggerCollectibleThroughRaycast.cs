@@ -7,6 +7,9 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
     public static TriggerCollectibleThroughRaycast Instance { get; private set; }
 
     [SerializeField]
+    private VibrationController vibration;  // Reference to the VibrationController
+
+    [SerializeField]
     private GameObject collectiblesProgressBarGameobject;
 
     [SerializeField]
@@ -34,7 +37,7 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
     private CollectibleManager collectibleManager;
 
     [SerializeField]
-    public GameObject CurrentTargetCollectible; 
+    public GameObject CurrentTargetCollectible;
 
     private bool isFilling = false;
     private bool shouldRaycast = false;
@@ -63,7 +66,7 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
 
     private void Update()
     {
-        if(PlaceOnPlane.IsMoonSurfaceSpawned())
+        if (PlaceOnPlane.IsMoonSurfaceSpawned())
         {
             collectibleManager = FindObjectOfType<CollectibleManager>();
         }
@@ -108,6 +111,9 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
             StopCoroutine(fillCoroutine);
         }
         fillCoroutine = StartCoroutine(FillCollectiblesProgressBar(CurrentTargetCollectible));
+
+        // Trigger light vibration when the progress bar starts to fill
+        vibration.VibratePhone_Light();
     }
 
     private void StopFillingAndReset()
@@ -175,6 +181,9 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
             yield return null;
         }
 
+        // Trigger medium vibration when the progress bar is completely filled
+        vibration.VibratePhone_Medium();
+
         collectiblesProgressBar.value = 1;
         collectible.SetActive(true);
 
@@ -188,7 +197,6 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
 
         isFilling = false;
     }
-
 
     private void DisableOtherCollectibles(GameObject collectible)
     {
