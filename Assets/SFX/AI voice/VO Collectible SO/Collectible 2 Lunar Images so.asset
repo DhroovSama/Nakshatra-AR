@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Collectible 2 Lunar Images so
+  m_EditorClassIdentifier: 
+  voiceOverClip: {fileID: 8300000, guid: 99e4701747de2e84d8df493f85a7f032, type: 3}
+  subtitles:
+  - sentence: 'Objective: Lunar Surface Imaging'
+    displayDuration: 1
+  - sentence: This experiment aimed to capture high-resolution images
+    displayDuration: 1.5
+  - sentence: of the lunar surface to study its terrain,
+    displayDuration: 1.5
+  - sentence: 'identify landmarks, and assess potential areas of interest '
+    displayDuration: 1.5
+  - sentence: for further exploration.
+    displayDuration: 1
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

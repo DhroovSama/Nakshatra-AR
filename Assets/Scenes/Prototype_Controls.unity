@@ -12512,6 +12512,11 @@ MonoBehaviour:
   triggerTerrainScanner: {fileID: 1911400746}
   enableTerrainScannerButton: {fileID: 633539432}
   collectibleManager: {fileID: 0}
+  Collectible_1_vo: {fileID: 11400000, guid: ca20ba9cd4fc4f24691cb3b693d6c109, type: 2}
+  Collectible_2_vo: {fileID: 11400000, guid: 4c03e5c05b1f7664b84684aa4697645e, type: 2}
+  Collectible_3_vo: {fileID: 11400000, guid: e100c3b5aa1bf324db8676a03ce5f86f, type: 2}
+  Collectible_4_vo: {fileID: 11400000, guid: 073bbe8c1e3c8ef469507b4393352b80, type: 2}
+  Collectible_5_vo: {fileID: 11400000, guid: f3fc930d2f9a5544d8c124e7f6c0ad8f, type: 2}
   CurrentTargetCollectible: {fileID: 0}
 --- !u!1 &1980583377
 GameObject:

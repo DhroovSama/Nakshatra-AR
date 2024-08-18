@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Collectible 5 South pole study so
+  m_EditorClassIdentifier: 
+  voiceOverClip: {fileID: 8300000, guid: 79e9f27fc4d0b284891cbad35354913a, type: 3}
+  subtitles:
+  - sentence: 'Objective: South Pole Study'
+    displayDuration: 1
+  - sentence: 'This experiment focused on gathering data about the '
+    displayDuration: 1.5
+  - sentence: Moon's south polar region, particularly its unique
+    displayDuration: 1.5
+  - sentence: characteristics and the presence of water ice in shadowed craters.
+    displayDuration: 1.5
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

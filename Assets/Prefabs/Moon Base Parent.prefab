@@ -71,7 +71,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factToDisplay: {fileID: 1458080410382954674}
   factToDisplay_RawImage: {fileID: 12475418224523522}
-  Collider: {fileID: 0}
   onFactEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -704,7 +703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factToDisplay: {fileID: 363739905885382609}
   factToDisplay_RawImage: {fileID: 7947901634065653655}
-  Collider: {fileID: 0}
   onFactEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -779,7 +777,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factToDisplay: {fileID: 1290943119196859061}
   factToDisplay_RawImage: {fileID: 1394628761389947751}
-  Collider: {fileID: 0}
   onFactEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -1828,7 +1825,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factToDisplay: {fileID: 8119920801955083563}
   factToDisplay_RawImage: {fileID: 8004107560012715264}
-  Collider: {fileID: 0}
   onFactEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -2420,6 +2416,19 @@ MonoBehaviour:
   - {fileID: 1211015245741542952}
   - {fileID: 5460098586921164185}
   - {fileID: 8501433672655344411}
+  collectible_1_Element:
+  - {fileID: 2311854722487730981}
+  collectible_2_LunarSurfaceImages:
+  - {fileID: 5255200541860126322}
+  - {fileID: 8286696045845482874}
+  collectible_3_TempratureData:
+  - {fileID: 8231273877839279420}
+  - {fileID: 7019125233251824188}
+  collectible_4_TopographicalData:
+  - {fileID: 1841350258614369961}
+  collectible_5_SouthPole:
+  - {fileID: 7616975033491445724}
+  - {fileID: 101925207901147947}
 --- !u!114 &3064956599005597224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2432,7 +2441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7107d0286b8bb478da1d3a996a9022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayFactsScript: {fileID: 0}
+  landerControlsUIManager: {fileID: 0}
   collectibles:
   - {fileID: 1029211636761696626}
   - {fileID: 149414953561141376}
@@ -2965,7 +2974,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factToDisplay: {fileID: 6700410228684667347}
   factToDisplay_RawImage: {fileID: 834677297637425938}
-  Collider: {fileID: 0}
   onFactEnabled:
     m_PersistentCalls:
       m_Calls: []
@@ -3275,7 +3283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3451753509608855485, guid: d70cc65762cdfc64aaa1e4a88272b67d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3339,7 +3347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7157361773735661428, guid: 36b95610109da2b429f9a69e34581df0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7502959803015697870, guid: 36b95610109da2b429f9a69e34581df0, type: 3}
       propertyPath: m_LocalScale.x
@@ -3769,7 +3777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184448455646339430, guid: 78876e52cb5cdd14d8cd7898ea3f105c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3833,7 +3841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6137305064366393823, guid: f8d828fc0c955714eb3b171efeb6e3f9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6802624414479520613, guid: f8d828fc0c955714eb3b171efeb6e3f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3993,7 +4001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8059599254134022213, guid: 654fe7801d1060c428542667a6151c24, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4247,7 +4255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2906502850287898655, guid: f46f18a50ed66374d856cc790b1ec50b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4729,7 +4737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3450044843951277456, guid: 023d704cc3599374385e5835528b0f24, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6079,7 +6087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6aa9c8d0fce5c404bbbbadd7fd73f1c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
