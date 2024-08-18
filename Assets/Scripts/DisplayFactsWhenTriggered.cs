@@ -11,8 +11,8 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
     [SerializeField]
     private RawImage factToDisplay_RawImage;
 
-    [SerializeField]
-    private GameObject Collider;
+    //[SerializeField]
+    //private GameObject Collider;
 
     [SerializeField]
     private UnityEvent onFactEnabled;
@@ -47,7 +47,7 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
             }
             else { Debug.Log("factToDisplay is setActive is false"); }
 
-            Collider.SetActive(false);
+            //Collider.SetActive(false);
 
             FactsCollectedGlobal.getIncrementFactsCollected(1);
         }
