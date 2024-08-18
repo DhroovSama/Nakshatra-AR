@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class CollectibleManager : MonoBehaviour
@@ -32,7 +31,7 @@ public class CollectibleManager : MonoBehaviour
     {
         // This method is called when a collectible's fact is triggered
         DisableCollectible(collectible);
-        EnableNextCollectible();
+        EnableTerrainScanner(); // Only enable the scanner, don't enable the next collectible yet
     }
 
     public void DisableCollectible(GameObject collectible)
@@ -44,29 +43,25 @@ public class CollectibleManager : MonoBehaviour
         }
     }
 
+    public void EnableCollectible(GameObject collectible)
+    {
+        if (collectibleState.ContainsKey(collectible))
+        {
+            collectibleState[collectible] = true;
+            collectible.SetActive(true);
+        }
+    }
+
     public bool IsCollectibleActive(GameObject collectible)
     {
         return collectibleState.ContainsKey(collectible) && collectibleState[collectible];
     }
 
-    public void EnableNextCollectible()
-    {
-        foreach (var collectible in collectibles)
-        {
-            if (collectibleState[collectible]) // Enable the next uncollected collectible
-            {
-                collectible.SetActive(true);
-                break;
-            }
-        }
-    }
-
     public void OnRoverCollision(GameObject collectible)
     {
-        //if (!IsCollectibleActive(collectible)) return;
-
+        // Logic to handle when the rover collides with a collectible
         DisableCollectible(collectible);
-        EnableTerrainScanner();
+        EnableTerrainScanner();  // Enable the terrain scanner button
     }
 
     private void EnableTerrainScanner()

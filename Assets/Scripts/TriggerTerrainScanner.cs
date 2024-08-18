@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -89,7 +89,7 @@ public class TriggerTerrainScanner : MonoBehaviour
         {
             terrainScanner = FindObjectOfType<TerrainScanner>();
 
-            collectibleManager = FindObjectOfType<CollectibleManager>();    
+            collectibleManager = FindObjectOfType<CollectibleManager>();
 
             locationButtonUIProvider = FindObjectOfType<LocationButtonUIProvider>();
 
@@ -118,6 +118,8 @@ public class TriggerTerrainScanner : MonoBehaviour
             terrainPulseCount++;
 
             DisplayNoLandingZones();
+
+            //EnableNextCollectible(); // Enable the next collectible here when scanner is used
 
             nextCooldownTime = Time.time + cooldownTime;
         }
@@ -161,7 +163,7 @@ public class TriggerTerrainScanner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
     }
 
-    public void DisableNoLandingZones()
+    private void DisableNoLandingZones()
     {
         noLandingZones = GameObject.FindGameObjectWithTag("No Landing Zones");
 
@@ -197,6 +199,18 @@ public class TriggerTerrainScanner : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         terrainTextureChanger.ChangeTexture_NormalTerrain();
+    }
+
+    private void EnableNextCollectible()
+    {
+        foreach (var collectible in ListContainCollectibleGameobjects)
+        {
+            if (collectibleManager.IsCollectibleActive(collectible))
+            {
+                collectibleManager.EnableCollectible(collectible); 
+                break;
+            }
+        }
     }
 
     public void ShowAndHideFactsUIElements()
@@ -256,7 +270,9 @@ public class TriggerTerrainScanner : MonoBehaviour
         if (targetCollectible != null)
         {
             targetCollectible.SetActive(true);
-        }
+
+            targetCollectible = null;
+        } 
         else
         {
             Debug.LogWarning("targetCollectible is NULL");

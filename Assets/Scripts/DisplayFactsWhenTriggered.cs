@@ -42,7 +42,7 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
 
                 if (collectibleManager != null)
                 {
-                    collectibleManager.OnRoverCollision(gameObject);
+                    collectibleManager.OnRoverCollision(gameObject); // Correct method call
                 }
             }
             else { Debug.Log("factToDisplay is setActive is false"); }
