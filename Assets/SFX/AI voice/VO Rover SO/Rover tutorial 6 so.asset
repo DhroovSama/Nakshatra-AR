@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover tutorial 6 so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: e49c620a5800cd94a8777c05c43a724f, type: 3}
+  voiceOverClip: {fileID: 8300000, guid: 1acd126b087cf86409a24b3598f8707f, type: 3}
   subtitles:
-  - sentence: "Good Luck user!\r"
-    displayDuration: 0.8
+  - sentence: 'You have until sunlight fades to operate the rover. '
+    displayDuration: 1.25
+  - sentence: 'Once lunar night begins, the rover will be inactive until the '
+    displayDuration: 1.25
+  - sentence: 'next lunar day. A lunar day lasts about 14 Earth days, '
+    displayDuration: 1.25
+  - sentence: "which will in the game \r pass in roughly 3 minutes."
+    displayDuration: 1.25
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}
