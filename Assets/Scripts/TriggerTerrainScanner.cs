@@ -114,7 +114,7 @@ public class TriggerTerrainScanner : MonoBehaviour
         if (Time.time >= nextCooldownTime)
         {
             terrainScanner.SpawnTerrainScanner();
-            GlobalAudioPlayer.getPlaySound(terrainScanSFX);
+            GlobalAudioPlayer.GetPlaySound(terrainScanSFX);
             terrainPulseCount++;
 
             DisplayNoLandingZones();

@@ -19,6 +19,18 @@ public class PlayerHasArrivedCheckTrigger : MonoBehaviour
     [SerializeField]
     private VoiceOverData LanderTutorial_1_vo;
 
+    [Space]
+    [SerializeField]
+    private VibrationController vibrationController;
+
+    [Space]
+    [SerializeField]
+    private UISoundSO soundSO;
+
+    [Space]
+    [SerializeField]
+    private AudioClip playerCheckerSFX;
+
     private void Awake()
     {
         instance = this;
@@ -28,6 +40,12 @@ public class PlayerHasArrivedCheckTrigger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
+            vibrationController.VibratePhone_Medium();
+
+            GlobalAudioPlayer.GetPlaySound(playerCheckerSFX);
+
+            soundSO.PlayPlayerCheckerSound();
+
             VoiceOverManager.Instance.TriggerVoiceOver(LanderTutorial_1_vo);
 
             isPlayerArrivedAtLandingZone = true;

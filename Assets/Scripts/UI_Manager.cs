@@ -48,6 +48,13 @@ public class UI_Manager : MonoBehaviour
     [SerializeField]
     private VoiceOverData dontLandInRedZone_VO;
 
+    [Header("Audio Clips")]
+    [SerializeField]
+    private AudioClip countdownSound;  // Sound for each countdown second
+
+    [SerializeField]
+    private AudioClip zeroSound;  // Sound for when the countdown reaches zero
+
     private void Awake()
     {
         if (Instance == null)
@@ -77,10 +84,14 @@ public class UI_Manager : MonoBehaviour
 
         while (secondsToSpawn > 0)
         {
+            GlobalAudioPlayer.GetPlaySound(countdownSound);  // Play countdown sound
+
             yield return new WaitForSeconds(1);
             secondsToSpawn--;
             landerSpawningTimerCountdown.text = secondsToSpawn.ToString();
         }
+
+        GlobalAudioPlayer.GetPlaySound(zeroSound);  // Play sound for zero
 
         EnableLanderPointingArrow();
 
@@ -90,6 +101,7 @@ public class UI_Manager : MonoBehaviour
 
         SpawnLander();
     }
+
 
     private void EnableLanderPointingArrow()
     {

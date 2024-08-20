@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class VariableThrustSoundUsingSlider : MonoBehaviour
+
+public class VariableThrustSoundUsingSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
     private UnityEngine.UI.Slider thrustSlider;
@@ -14,7 +16,10 @@ public class VariableThrustSoundUsingSlider : MonoBehaviour
     [SerializeField]
     private AudioClip thrustSFX;
 
-    private bool isPlaying = false; 
+    [SerializeField]
+    private VibrationController vibrationController;  // Reference to VibrationController ScriptableObject
+
+    private bool isPlaying = false;
 
     void Start()
     {
@@ -24,6 +29,18 @@ public class VariableThrustSoundUsingSlider : MonoBehaviour
         {
             PlayThrustSound();
         }
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        vibrationController.VibratePhone_Light(); // Trigger vibration when the slider is touched
+
+        Debug.Log("Vibration played once");
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        // Optional: Handle pointer up if needed
     }
 
     void OnSliderValueChanged(float newValue)
@@ -38,9 +55,8 @@ public class VariableThrustSoundUsingSlider : MonoBehaviour
         }
 
         float scaledVolume = newValue / 10f;
-        thrustAudioSource.volume = Mathf.Clamp(scaledVolume, 0, 1); 
+        thrustAudioSource.volume = Mathf.Clamp(scaledVolume, 0, 1);
     }
-
 
     void PlayThrustSound()
     {

@@ -15,6 +15,9 @@ public class PortalDoor : MonoBehaviour
     private VibrationController vibrationController;
 
     [SerializeField]
+    private UISoundSO soundSO;
+
+    [SerializeField]
     private bool isPortalPassed = false;
     public bool IsPortalPassed {  get { return isPortalPassed; } }
 
@@ -44,8 +47,6 @@ public class PortalDoor : MonoBehaviour
             //    VoiceOverManager.Instance.TriggerVoiceOver(welcomeVO);
             //}
 
-            vibrationController.VibratePhone_Medium();
-
             isCollisionProcessing = true;
             StartCoroutine(ProcessCollision(other)); 
         }
@@ -53,6 +54,9 @@ public class PortalDoor : MonoBehaviour
 
     private IEnumerator ProcessCollision(Collider other) 
     {
+        vibrationController.VibratePhone_Medium();
+        soundSO.PlayPortalSound();
+
         isCameraInside = !isCameraInside;
 
         Material[] allMaterials = materialStencilData.GetAllMaterials();

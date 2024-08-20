@@ -30,7 +30,7 @@ public class GlobalAudioPlayer : MonoBehaviour
         }
     }
 
-    public static void getPlaySound(AudioClip clip)
+    public static void GetPlaySound(AudioClip clip)
     {
         Instance?.PlaySound(clip);
     }

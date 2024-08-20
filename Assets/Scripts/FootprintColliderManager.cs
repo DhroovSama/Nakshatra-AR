@@ -14,6 +14,12 @@ public class FootprintColliderManager : MonoBehaviour
     [SerializeField]
     private bool isLastFoot;
 
+    [SerializeField]
+    private VibrationController vibrationController;
+
+    [SerializeField]
+    private AudioClip footStepSFX;
+
     private void Start()
     {
         //// Assuming FootPrintPath is attached to the same GameObject
@@ -25,6 +31,10 @@ public class FootprintColliderManager : MonoBehaviour
         if (other.gameObject.CompareTag("MainCamera"))
         {
             //footPrintPath.SpawnFootprints();
+
+            vibrationController.VibratePhone_Light();
+
+            GlobalAudioPlayer.GetPlaySound(footStepSFX);
 
             if(isLastFoot)
             {

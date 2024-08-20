@@ -26,6 +26,9 @@ public class LanderCollisionHandler : MonoBehaviour
     [SerializeField]
     private VoiceOverData landerMissionPassVO, landerMissionFailVO;
 
+    [SerializeField]
+    private AudioClip landerSuccessSFX;
+
     public static LanderCollisionHandler Instance { get; private set; }
 
     private void Awake()
@@ -99,6 +102,7 @@ public class LanderCollisionHandler : MonoBehaviour
             LanderControlsUIManager.getsliderControlsContainer().SetActive(false);
             LanderControlsUIManager.GetLanderInfoUIContainer().SetActive(false);
 
+            GlobalAudioPlayer.GetPlaySound(landerSuccessSFX);
             LanderControlsUIManager.GetLanderMissioonPassUI().SetActive(true);
             //StartCoroutine(ShowLanderMissionPassUI());
 
