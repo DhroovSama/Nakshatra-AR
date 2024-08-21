@@ -15,11 +15,11 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 66f97a1706d40a1498a05e1a086fe77f, type: 3}
   subtitles:
   - sentence: The Vikram lander is in its descent phase, preparing for a soft landing.
-    displayDuration: 5
+    displayDuration: 1.1
   - sentence: 'Your next task is the precision landing sequence, '
-    displayDuration: 3
+    displayDuration: 0.75
   - sentence: Ensure you land the rover efficiently with the remaining fuel
-    displayDuration: 4
+    displayDuration: 0.85
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

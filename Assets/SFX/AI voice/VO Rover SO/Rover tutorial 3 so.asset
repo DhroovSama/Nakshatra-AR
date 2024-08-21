@@ -15,9 +15,9 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 90e4fa61c4da8c3428aa48478e12faf5, type: 3}
   subtitles:
   - sentence: "Explore the Moon\u2019s surface with the ROVER"
-    displayDuration: 1.25
+    displayDuration: 0.75
   - sentence: ' or take a moonwalk on FOOT!'
-    displayDuration: 1
+    displayDuration: 0.35
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

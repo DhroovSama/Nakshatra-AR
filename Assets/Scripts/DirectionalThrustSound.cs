@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
 public class DirectionalThrustSound : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
@@ -13,13 +12,7 @@ public class DirectionalThrustSound : MonoBehaviour, IPointerDownHandler, IPoint
     private FixedJoystick fixedJoystick;
 
     [SerializeField]
-    private float joystickMagnitude;
-
-    [SerializeField]
     private float maxVolume = 1.0f; // Maximum volume when the joystick is at full input
-
-    [SerializeField]
-    private float minVolume = 0.1f; // Minimum volume when the joystick is at no input
 
     [SerializeField]
     private VibrationController vibrationController; // Reference to VibrationController ScriptableObject
@@ -49,28 +42,25 @@ public class DirectionalThrustSound : MonoBehaviour, IPointerDownHandler, IPoint
 
     private void UpdateThrustSound()
     {
-        joystickMagnitude = fixedJoystick.Direction.magnitude;
-
-        float targetVolume = Mathf.Lerp(minVolume, maxVolume, joystickMagnitude);
+        float joystickMagnitude = fixedJoystick.Direction.magnitude;
 
         if (joystickMagnitude > 0.1f)
         {
+            // Set the volume based on the joystick's magnitude
+            directionalThrustPlayer.volume = joystickMagnitude * maxVolume;
+
+            // Start playing the sound if it's not already playing
             if (!directionalThrustPlayer.isPlaying)
             {
                 directionalThrustPlayer.Play();
             }
-
-            directionalThrustPlayer.volume = targetVolume;
         }
         else
         {
-            if (directionalThrustPlayer.isPlaying && directionalThrustPlayer.volume > minVolume)
+            // Stop the sound if the joystick is not being touched
+            if (directionalThrustPlayer.isPlaying)
             {
-                directionalThrustPlayer.volume = Mathf.Lerp(directionalThrustPlayer.volume, 0f, Time.deltaTime * 2f);
-                if (directionalThrustPlayer.volume <= 0.01f)
-                {
-                    directionalThrustPlayer.Stop();
-                }
+                directionalThrustPlayer.Stop();
             }
         }
     }
@@ -84,5 +74,6 @@ public class DirectionalThrustSound : MonoBehaviour, IPointerDownHandler, IPoint
     public void OnPointerUp(PointerEventData eventData)
     {
         isJoystickTouched = false;
+        directionalThrustPlayer.Stop(); // Stop the sound when the joystick is released
     }
 }

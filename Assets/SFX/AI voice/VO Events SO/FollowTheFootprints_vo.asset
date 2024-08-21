@@ -15,9 +15,9 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: ad0cd67ed46c6f349a3ff8ba07117e63, type: 3}
   subtitles:
   - sentence: Follow the footprints below to reach the landing zone,
-    displayDuration: 2.25
+    displayDuration: 0.75
   - sentence: where you'll be able to safely land the lander.
-    displayDuration: 2.25
+    displayDuration: 0.75
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

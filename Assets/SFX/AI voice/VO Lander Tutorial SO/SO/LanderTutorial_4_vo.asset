@@ -15,9 +15,9 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: f79b4f2bfc68d774da43edb9ce8e826b, type: 3}
   subtitles:
   - sentence: Use the Terrain scanner button to detect no-landing zones,
-    displayDuration: 3.25
+    displayDuration: 1
   - sentence: reveal safe landing areas, and unlock special powers later
-    displayDuration: 3
+    displayDuration: 1
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

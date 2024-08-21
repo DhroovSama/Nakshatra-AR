@@ -1612,16 +1612,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351032963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1818169427}
+  m_Father: {fileID: 1163389759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 157, y: 218}
+  m_AnchoredPosition: {x: 66.37689, y: 144.6232}
   m_SizeDelta: {x: 132.7536, y: 133.2464}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &351032965
@@ -1735,9 +1735,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverRotationSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerDown_PlayRoverTurningSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1763,9 +1763,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverRotationBrakeSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerUp_PlayRoverRotationBrakingSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2554,8 +2554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000013411045, y: -0.0000000037252903}
-  m_SizeDelta: {x: 0.2939, y: 0.063899994}
+  m_AnchoredPosition: {x: 0.00000013411045, y: 0}
+  m_SizeDelta: {x: 0.17052, y: 0.03708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472788209
 MonoBehaviour:
@@ -2664,16 +2664,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512843023}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2071851323}
+  m_Father: {fileID: 734420167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -488, y: -359.09}
+  m_AnchoredPosition: {x: -267.59924, y: -56.04608}
   m_SizeDelta: {x: 182.175, y: 167.963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512843025
@@ -3045,8 +3045,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.035
-  m_fontSizeBase: 0.035
+  m_fontSize: 0.018
+  m_fontSizeBase: 0.018
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3746,11 +3746,11 @@ RectTransform:
   - {fileID: 289558544}
   m_Father: {fileID: 937316074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 433, y: -892.71265}
+  m_AnchorMin: {x: 0.19314581, y: 0.119592585}
+  m_AnchorMax: {x: 0.19314581, y: 0.119592585}
+  m_AnchoredPosition: {x: 0, y: -0.3000183}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &633539432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4473,6 +4473,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718736225}
   m_CullTransparentMesh: 1
+--- !u!1 &734420166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734420167}
+  m_Layer: 5
+  m_Name: Warning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &734420167
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734420166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 512843024}
+  - {fileID: 1825703880}
+  m_Father: {fileID: 2071851323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -295, y: -303.04388}
+  m_SizeDelta: {x: 717.37354, y: 280.05524}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &736150888
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,16 +6076,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087247213}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1818169427}
+  m_Father: {fileID: 1163389759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 251.00002, y: 140}
+  m_AnchoredPosition: {x: 160.3768, y: 66.623215}
   m_SizeDelta: {x: 132.7536, y: 133.2464}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1087247215
@@ -6162,9 +6199,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverMoveSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerDown_PlayRoverMovingSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6190,9 +6227,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverBrakeSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerUp_PlayRoverBrakingSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6911,6 +6948,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1163389758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163389759}
+  m_Layer: 5
+  m_Name: Rover Controls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1163389759
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163389758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1194748438}
+  - {fileID: 1087247214}
+  - {fileID: 351032964}
+  - {fileID: 1941547693}
+  m_Father: {fileID: 1818169427}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.14452852, y: 0.26200002}
+  m_AnchorMax: {x: 0.14452852, y: 0.26200002}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_SizeDelta: {x: 452.266, y: 448.339}
+  m_Pivot: {x: 0.5000001, y: 0.50000006}
 --- !u!1 &1163733845
 GameObject:
   m_ObjectHideFlags: 0
@@ -7231,16 +7307,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194748437}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1818169427}
+  m_Father: {fileID: 1163389759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 251, y: 293}
+  m_AnchoredPosition: {x: 160.37686, y: 219.62317}
   m_SizeDelta: {x: 132.7536, y: 133.2464}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1194748439
@@ -7354,9 +7430,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverMoveSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerDown_PlayRoverMovingSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7382,9 +7458,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverBrakeSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerUp_PlayRoverBrakingSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8191,10 +8267,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 937316074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 41}
-  m_SizeDelta: {x: -700, y: 122.931}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 35}
+  m_SizeDelta: {x: 954.309, y: 96.159}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1358243508
 MonoBehaviour:
@@ -9893,7 +9969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1607557237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10998,10 +11074,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1194748438}
-  - {fileID: 1087247214}
-  - {fileID: 351032964}
-  - {fileID: 1941547693}
+  - {fileID: 1163389759}
   m_Father: {fileID: 937316074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -11038,8 +11111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roverAudioPlayer: {fileID: 1818169430}
-  roverMovingSFX: {fileID: 0}
-  roverTurningSFX: {fileID: 0}
+  roverMovingSFX: {fileID: 8300000, guid: 64c9174cf32f06c48a1d5e00a8098f72, type: 3}
+  roverTurningSFX: {fileID: 8300000, guid: 747a6469a1d24054e984476cb6eb6a25, type: 3}
+  roverBrakingSFX: {fileID: 8300000, guid: 4ad74f0dfa87fba4f8454e22447d3178, type: 3}
+  roverRotationBrakingSFX: {fileID: 8300000, guid: 4ad74f0dfa87fba4f8454e22447d3178, type: 3}
   forward: {fileID: 1194748439}
   backward: {fileID: 1087247215}
   right: {fileID: 351032965}
@@ -11275,17 +11350,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825703879}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1096763823}
-  m_Father: {fileID: 2071851323}
+  m_Father: {fileID: 734420167}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -138, y: -236}
+  m_AnchoredPosition: {x: 82.40076, y: 67.04385}
   m_SizeDelta: {x: 552.572, y: 145.9675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825703881
@@ -11918,16 +11993,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941547692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1818169427}
+  m_Father: {fileID: 1163389759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 349, y: 218}
+  m_AnchoredPosition: {x: 258.37683, y: 144.6232}
   m_SizeDelta: {x: 132.7536, y: 133.2464}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1941547694
@@ -12041,9 +12116,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverRotationSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerDown_PlayRoverTurningSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -12069,9 +12144,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
-          m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
-          m_MethodName: PlayRoverRotationBrakeSound
+        - m_Target: {fileID: 1818169429}
+          m_TargetAssemblyTypeName: RoverSoundManager, Assembly-CSharp
+          m_MethodName: OnPointerUp_PlayRoverRotationBrakingSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -13250,9 +13325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionalThrustPlayer: {fileID: 2060251190}
   fixedJoystick: {fileID: 2060251186}
-  joystickMagnitude: 0
   maxVolume: 1
-  minVolume: 0.1
   vibrationController: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
 --- !u!82 &2060251190
 AudioSource:
@@ -13387,8 +13460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.202, y: -0.002}
-  m_SizeDelta: {x: 0.2939, y: 0.1829}
+  m_AnchoredPosition: {x: 0.1712, y: -0.0031}
+  m_SizeDelta: {x: 0.18649, y: 0.11606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064407788
 MonoBehaviour:
@@ -13494,8 +13567,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 512843024}
-  - {fileID: 1825703880}
+  - {fileID: 734420167}
   m_Father: {fileID: 937316074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

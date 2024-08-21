@@ -15,7 +15,7 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 1a6e2deb9dac6064fb95ee94c67e4f7b, type: 3}
   subtitles:
   - sentence: Swipe the thrust slider on the right side to control the thrust.
-    displayDuration: 3
+    displayDuration: 1
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

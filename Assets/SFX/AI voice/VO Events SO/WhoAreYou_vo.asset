@@ -15,12 +15,12 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 183cbc75251dc3e4aae421193b06129d, type: 3}
   subtitles:
   - sentence: 'I''m Kalpna, your AI assistant for this mission, '
-    displayDuration: 2.25
+    displayDuration: 0.75
   - sentence: 'named after Dr. Kalpna Chawla, the astronaut who inspired many. '
-    displayDuration: 2.25
+    displayDuration: 1
   - sentence: I'll guide you through this simulation and provide insights into the
       Chandrayaan-3 mission.
-    displayDuration: 5
+    displayDuration: 1.25
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

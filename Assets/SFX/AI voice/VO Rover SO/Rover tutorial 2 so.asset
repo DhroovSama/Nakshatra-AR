@@ -15,7 +15,7 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: cc0d3949305eb344ca8514bf7f018a20, type: 3}
   subtitles:
   - sentence: Use the buttons on the LEFT to steer your rover
-    displayDuration: 2
+    displayDuration: 0.8
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

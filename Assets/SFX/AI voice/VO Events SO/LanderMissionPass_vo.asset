@@ -15,9 +15,9 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: dc9535103fc4dd940a95bac61b1a9884, type: 3}
   subtitles:
   - sentence: "Congratulations! You\u2019ve safely landed the lander. "
-    displayDuration: 2
+    displayDuration: 0.75
   - sentence: All systems are working perfectly.
-    displayDuration: 1
+    displayDuration: 0.65
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

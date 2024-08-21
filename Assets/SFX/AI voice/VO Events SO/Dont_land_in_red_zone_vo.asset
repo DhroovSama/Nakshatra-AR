@@ -15,7 +15,7 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 97ffcf52173e7564dbad1d5387968ae6, type: 3}
   subtitles:
   - sentence: Avoid landing in the red zones, doing so will result in mission failure.
-    displayDuration: 4.5
+    displayDuration: 1
   showButtonAtEnd: 1
   buttonText: Tell me more
   nextVoiceOverData: {fileID: 11400000, guid: 8b3afad53aa613d499fc93f945647ed3, type: 2}

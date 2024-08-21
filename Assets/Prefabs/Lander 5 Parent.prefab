@@ -479,6 +479,8 @@ MonoBehaviour:
   isLanderAnimationEnded: 0
   RoverTutorialUI: {fileID: 7519373203590600212}
   RoverTutorial_1_VO: {fileID: 11400000, guid: 701a3002bef21084f99123eff9848a1a, type: 2}
+  landerAudioPlayer: {fileID: 871440793215741720}
+  doorOpeningSFX: {fileID: 8300000, guid: 5efa66fa1fdd3c343abd0be239208b0a, type: 3}
 --- !u!1 &6255655558947515392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1754,10 @@ PrefabInstance:
     - target: {fileID: 3284216392785455015, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}
       propertyPath: m_Name
       value: Rover 1 Parent
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284216392785455015, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7978893135567777381, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}
       propertyPath: m_LocalPosition.x

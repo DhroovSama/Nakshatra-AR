@@ -15,9 +15,9 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 17acb0eae1f74b44f99f12303b6ad6b8, type: 3}
   subtitles:
   - sentence: 'Scan the surface below with your camera, '
-    displayDuration: 1.35
+    displayDuration: 0.65
   - sentence: then tap on the scanned area to start the simulation.
-    displayDuration: 2.5
+    displayDuration: 0.75
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

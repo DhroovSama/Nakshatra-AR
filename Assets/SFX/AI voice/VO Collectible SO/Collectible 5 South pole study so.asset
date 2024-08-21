@@ -15,13 +15,13 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 79e9f27fc4d0b284891cbad35354913a, type: 3}
   subtitles:
   - sentence: 'Objective: South Pole Study'
-    displayDuration: 1
+    displayDuration: 0.35
   - sentence: 'This experiment focused on gathering data about the '
-    displayDuration: 1.5
+    displayDuration: 0.75
   - sentence: Moon's south polar region, particularly its unique
-    displayDuration: 1.5
+    displayDuration: 0.75
   - sentence: characteristics and the presence of water ice in shadowed craters.
-    displayDuration: 1.5
+    displayDuration: 1.1
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

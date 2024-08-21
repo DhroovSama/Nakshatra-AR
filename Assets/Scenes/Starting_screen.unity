@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.67700005}
   m_AnchorMax: {x: 0.5, y: 0.67700005}
-  m_AnchoredPosition: {x: 0, y: -0.0029907227}
+  m_AnchoredPosition: {x: 0, y: -0.0029296875}
   m_SizeDelta: {x: 725.571, y: 80.7515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &160640686
@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.526, y: 0.878718}
   m_AnchorMax: {x: 0.526, y: 0.878718}
-  m_AnchoredPosition: {x: 0, y: 83.90906}
+  m_AnchoredPosition: {x: 0, y: 83.908936}
   m_SizeDelta: {x: 876.9243, y: 167.818}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &170748819
@@ -1133,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.28142738}
   m_AnchorMax: {x: 0.5, y: 0.28142738}
-  m_AnchoredPosition: {x: 0, y: -43.946}
+  m_AnchoredPosition: {x: 0, y: -43.946045}
   m_SizeDelta: {x: 294.6615, y: 87.8925}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1166985344
@@ -1180,6 +1180,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
+        m_TargetAssemblyTypeName: VibrationController, Assembly-CSharp
+        m_MethodName: VibratePhone_Light
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1701003710}
         m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
         m_MethodName: LoadScene1
@@ -1497,6 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcced5cfce91c14bbfccceed74f35f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startChandrayaanSlider: {fileID: 0}
 --- !u!1 &2056741788
 GameObject:
   m_ObjectHideFlags: 0

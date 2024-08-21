@@ -15,7 +15,7 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 0e78ba428edacbf478ac559fccb3946b, type: 3}
   subtitles:
   - sentence: "Use the joystick at the bottom left to control the lander\u2019s movement."
-    displayDuration: 3.25
+    displayDuration: 1.15
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

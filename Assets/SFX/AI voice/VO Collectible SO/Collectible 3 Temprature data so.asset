@@ -15,13 +15,13 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 97b51839f2c3a494fae9488e07402cd7, type: 3}
   subtitles:
   - sentence: 'Objective: Temperature Data'
-    displayDuration: 1
+    displayDuration: 0.35
   - sentence: 'This experiment aimed to measure and monitor the '
-    displayDuration: 1.5
+    displayDuration: 0.75
   - sentence: 'temperature variations on the lunar surface, providing '
-    displayDuration: 1.5
+    displayDuration: 0.75
   - sentence: 'critical insights into the Moon''s thermal environment and '
-    displayDuration: 1.5
+    displayDuration: 0.75
   - sentence: helping understand its surface properties.
     displayDuration: 1.5
   showButtonAtEnd: 0

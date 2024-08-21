@@ -15,7 +15,7 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: ce6d47e843c600f469360acd98e6d01c, type: 3}
   subtitles:
   - sentence: Hello Explorer! Are you ready for your First Spacemission
-    displayDuration: 3
+    displayDuration: 0.85
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

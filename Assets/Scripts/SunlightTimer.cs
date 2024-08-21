@@ -9,38 +9,37 @@ public class SunlightTimer : MonoBehaviour
 
     [SerializeField]
     [Range(0, 300)]
-    private float rotationDuration = 180f; 
+    private float rotationDuration = 180f;
 
     [SerializeField]
-    private GameObject dayCounter; 
+    private GameObject dayCounter;
 
     [SerializeField]
-    private TextMeshProUGUI dayCounterText; 
+    private TextMeshProUGUI dayCounterText;
 
     [SerializeField]
-    private GameObject missionFail; 
+    private GameObject missionFail;
 
     private float totalLunarDays = 14f;
 
     public void StartRotateSunLight_Night()
     {
-        EnableDayCounter(); 
-        StartCoroutine(RotateSunLight(180f)); 
+        EnableDayCounter();
+        StartCoroutine(RotateSunLight(180f));
     }
 
     private IEnumerator RotateSunLight(float targetRotationX)
     {
         float elapsedTime = 0f;
-        float initialRotationX = sunLight.transform.rotation.eulerAngles.x;
-        float finalRotationX = initialRotationX + targetRotationX;
+        Quaternion initialRotation = sunLight.transform.rotation;
+        Quaternion finalRotation = Quaternion.Euler(targetRotationX, initialRotation.eulerAngles.y, initialRotation.eulerAngles.z);
 
         while (elapsedTime < rotationDuration)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / rotationDuration;
 
-            float currentRotationX = Mathf.Lerp(initialRotationX, finalRotationX, t);
-            sunLight.transform.rotation = Quaternion.Euler(currentRotationX, sunLight.transform.rotation.eulerAngles.y, sunLight.transform.rotation.eulerAngles.z);
+            sunLight.transform.rotation = Quaternion.Slerp(initialRotation, finalRotation, t);
 
             float currentLunarDays = Mathf.Lerp(0, totalLunarDays, t);
             dayCounterText.text = $"{Mathf.FloorToInt(currentLunarDays)}/14 days";
@@ -48,7 +47,7 @@ public class SunlightTimer : MonoBehaviour
             yield return null;
         }
 
-        sunLight.transform.rotation = Quaternion.Euler(finalRotationX, sunLight.transform.rotation.eulerAngles.y, sunLight.transform.rotation.eulerAngles.z);
+        sunLight.transform.rotation = finalRotation;
         dayCounterText.text = "14/14 days";
 
         TriggerMissionFail();
@@ -66,7 +65,7 @@ public class SunlightTimer : MonoBehaviour
 
     private void TriggerMissionFail()
     {
-        DisableDayCounter(); 
-        missionFail.SetActive(true); 
+        DisableDayCounter();
+        missionFail.SetActive(true);
     }
 }

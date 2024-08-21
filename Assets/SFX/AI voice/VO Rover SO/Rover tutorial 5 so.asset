@@ -16,7 +16,7 @@ MonoBehaviour:
   subtitles:
   - sentence: Complete the mission and earn a personalized ticket with your name
       on it!
-    displayDuration: 2.5
+    displayDuration: 1.25
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

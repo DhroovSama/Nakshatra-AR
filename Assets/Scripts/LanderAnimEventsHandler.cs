@@ -22,6 +22,14 @@ public class LanderAnimEventsHandler : MonoBehaviour
     [Space]
     private VoiceOverData RoverTutorial_1_VO;
 
+    [Space]
+    [Header("Audio")]
+
+    [SerializeField]
+    private AudioSource landerAudioPlayer;
+
+    [SerializeField]
+    private AudioClip doorOpeningSFX;
 
     public GameObject RoverPrefab
     {
@@ -63,6 +71,18 @@ public class LanderAnimEventsHandler : MonoBehaviour
     {
         landerAnimation.OnDoorAnimationEnd();
     }
+    private void PlayDoorOpeningSFX()
+    {
+        if (landerAudioPlayer != null && doorOpeningSFX != null)
+        {
+            landerAudioPlayer.PlayOneShot(doorOpeningSFX);
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or AudioClip not assigned.");
+        }
+    }
+
 
     private void RoverAnimationEndEvent()
     {

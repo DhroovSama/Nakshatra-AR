@@ -15,10 +15,10 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 9257dc060b8f7c84a91e246c3c7064ed, type: 3}
   subtitles:
   - sentence: Good luck, explorer!
-    displayDuration: 1
+    displayDuration: 0.25
   - sentence: Land the rover in the green area while keeping your speed below 2 meters
       per second.
-    displayDuration: 4.5
+    displayDuration: 1.25
   showButtonAtEnd: 0
   buttonText: What's the current status?
   nextVoiceOverData: {fileID: 11400000, guid: 911a8eaac5260424aa100950d8c1ea89, type: 2}

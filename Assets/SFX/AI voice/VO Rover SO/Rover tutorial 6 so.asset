@@ -15,13 +15,13 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 1acd126b087cf86409a24b3598f8707f, type: 3}
   subtitles:
   - sentence: 'You have until sunlight fades to operate the rover. '
-    displayDuration: 1.25
+    displayDuration: 0.75
   - sentence: 'Once lunar night begins, the rover will be inactive until the '
-    displayDuration: 1.25
+    displayDuration: 1
   - sentence: 'next lunar day. A lunar day lasts about 14 Earth days, '
-    displayDuration: 1.25
-  - sentence: "which will in the game \r pass in roughly 3 minutes."
-    displayDuration: 1.25
+    displayDuration: 0.85
+  - sentence: (3 minutes in-game)
+    displayDuration: 0.35
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

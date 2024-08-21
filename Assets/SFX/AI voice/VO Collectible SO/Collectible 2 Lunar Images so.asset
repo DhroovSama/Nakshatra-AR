@@ -15,15 +15,15 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 99e4701747de2e84d8df493f85a7f032, type: 3}
   subtitles:
   - sentence: 'Objective: Lunar Surface Imaging'
-    displayDuration: 1
+    displayDuration: 0.4
   - sentence: This experiment aimed to capture high-resolution images
-    displayDuration: 1.5
+    displayDuration: 0.85
   - sentence: of the lunar surface to study its terrain,
-    displayDuration: 1.5
+    displayDuration: 0.75
   - sentence: 'identify landmarks, and assess potential areas of interest '
-    displayDuration: 1.5
+    displayDuration: 0.85
   - sentence: for further exploration.
-    displayDuration: 1
+    displayDuration: 0.25
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

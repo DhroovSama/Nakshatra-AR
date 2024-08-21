@@ -15,9 +15,9 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: c4eee2444a2f7e145854ac302ca058fb, type: 3}
   subtitles:
   - sentence: Activate! the terrain scanner and complete the mission objectives!
-    displayDuration: 2.5
+    displayDuration: 1.15
   - sentence: find the hidden artifacts and advance our knowledge
-    displayDuration: 2
+    displayDuration: 0.85
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

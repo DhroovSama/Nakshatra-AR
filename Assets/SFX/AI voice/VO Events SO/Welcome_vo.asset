@@ -15,12 +15,12 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 538eb458261924048ad3c341508c1947, type: 3}
   subtitles:
   - sentence: 'Welcome to the simulation of Chndhryaan-3. '
-    displayDuration: 1.5
+    displayDuration: 0.75
   - sentence: Today is August 23, 2023
-    displayDuration: 2.5
+    displayDuration: 0.55
   - sentence: and you are about to witness the historic soft landing of the Vikram
       lander on the Moon's surface.
-    displayDuration: 2.5
+    displayDuration: 1.25
   showButtonAtEnd: 1
   buttonText: Who are you?
   nextVoiceOverData: {fileID: 11400000, guid: cd45ec46384e4fe48bf2b1771a4adeb6, type: 2}

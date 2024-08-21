@@ -15,9 +15,9 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 8a4b0f7862343a74e8ad817deeb9a74e, type: 3}
   subtitles:
   - sentence: 'Oh no! The mission has failed because the descent was too fast. '
-    displayDuration: 3
+    displayDuration: 1
   - sentence: We'll need to try again and adjust the landing approach.
-    displayDuration: 2.5
+    displayDuration: 0.85
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

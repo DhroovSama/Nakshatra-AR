@@ -16,9 +16,9 @@ MonoBehaviour:
   subtitles:
   - sentence: Alaas!, success was within reach, but the mission has failed as the
       fuel was exhausted
-    displayDuration: 5
+    displayDuration: 1.1
   - sentence: We'll need to review the landing strategy and try again.
-    displayDuration: 2.5
+    displayDuration: 0.75
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: e49c620a5800cd94a8777c05c43a724f, type: 3}
   subtitles:
   - sentence: "Good Luck user!\r"
-    displayDuration: 0.8
+    displayDuration: 0.25
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

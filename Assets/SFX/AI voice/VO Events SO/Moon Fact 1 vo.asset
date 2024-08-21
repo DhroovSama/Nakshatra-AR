@@ -15,13 +15,13 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: ffc1b7fefbb26af4c9437d29837eeb86, type: 3}
   subtitles:
   - sentence: "I\u2019m proud to share that Chndhryaan-3 aims to make"
-    displayDuration: 3.5
+    displayDuration: 0.75
   - sentence: India the first country to achieve a soft landing near the Moon's south
       pole.
-    displayDuration: 3.5
+    displayDuration: 1
   - sentence: This region is of great scientific interest due to its potential water
       ice deposits.
-    displayDuration: 3.5
+    displayDuration: 1
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

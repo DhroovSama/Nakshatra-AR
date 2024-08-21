@@ -15,14 +15,14 @@ MonoBehaviour:
   voiceOverClip: {fileID: 8300000, guid: 5acb066f208240643ab4702121a4dc12, type: 3}
   subtitles:
   - sentence: 'Objective: Element Detection'
-    displayDuration: 2.5
+    displayDuration: 0.35
   - sentence: 'This task involves to identify and analyze elements on the lunar surface. '
-    displayDuration: 2.5
+    displayDuration: 1
   - sentence: This involves using the LIBS and APXS instruments to detect elements
       like
-    displayDuration: 2.5
+    displayDuration: 1.15
   - sentence: 'magnesium, aluminium, and silicon '
-    displayDuration: 1.5
+    displayDuration: 0.45
   - sentence: by examining the composition of rocks and soil.
     displayDuration: 1
   showButtonAtEnd: 0
