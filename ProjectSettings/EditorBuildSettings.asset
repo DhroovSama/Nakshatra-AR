@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Screen.unity
     guid: b94a74c5bbb86664cb1dd3d163dd5e7a
   - enabled: 1
-    path: Assets/Scenes/Chandrayaan 1.unity
+    path: Assets/Scenes/Chandrayaan 3.unity
     guid: c0f0ba4ba8df9074aa0d16c22eca2b6a
   - enabled: 1
     path: Assets/Scenes/Prototype_Controls.unity

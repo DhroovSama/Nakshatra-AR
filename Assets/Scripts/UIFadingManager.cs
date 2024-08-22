@@ -26,123 +26,109 @@ public class UIFadingManager : MonoBehaviour
     private ScrollRect scrollRect;
 
     [SerializeField]
-    private Vector2 scrollPosition;
+    private TextMeshProUGUI timelineText;
 
-    private Vector2 lastScrollPosition;
+    [SerializeField]
+    private GameObject timelineInfo;
+
+    [Space]
+    [SerializeField]
+    private float fadeInDuration = 0.5f;  // Adjust fade-in duration in the Inspector
 
     private CanvasGroup mainScrollUIGroup;
 
+    private Coroutine fadeCoroutine;
+
+    [SerializeField]
+    private VibrationController VibrationController;
+
     void Start()
     {
-        lastScrollPosition = scrollRect.normalizedPosition;
-
         BG_Blur.color = new Color(BG_Blur.color.r, BG_Blur.color.g, BG_Blur.color.b, 0f);
-
         mainScrollUIGroup = mainScrollUI.GetComponent<CanvasGroup>();
+        mainScrollUIGroup.blocksRaycasts = false; // Initially disable raycast blocking
     }
 
     void Update()
     {
-        if (scrollRect.normalizedPosition != lastScrollPosition)
+        // Detect touch or mouse click
+        if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
         {
-            lastScrollPosition = scrollRect.normalizedPosition;
-            scrollPosition = scrollRect.normalizedPosition;
-            FadeTitle();
+            StartFadeIn(fadeInDuration);
         }
-    }
-
-    private void FadeTitle()
-    {
-        float fadeTo;
-        float fadeDuration = 0.15f;
-        float fadeDurationOfCanvasGroup = 0.5f;
-
-        if (scrollRect.normalizedPosition.y < 1)
-        {
-            fadeTo = 0f;
-
-            //mainScrollUI.SetActive(true);
-            StartFadeIn(fadeDurationOfCanvasGroup);
-        }
-        else if (scrollRect.normalizedPosition.y >= 1)
-        {
-            fadeTo = 1f;
-
-            StartFadeOut(fadeDurationOfCanvasGroup);
-            //mainScrollUI.SetActive(false);
-        }
-        else
-        {
-            fadeTo = 1f - Mathf.Abs(scrollRect.normalizedPosition.y);
-        }
-
-        Title.CrossFadeAlpha(fadeTo, fadeDuration, false);
-        text_1.CrossFadeAlpha(fadeTo, fadeDuration, false);
-        text_2.CrossFadeAlpha(fadeTo, fadeDuration, false);
-        text_3.CrossFadeAlpha(fadeTo, fadeDuration, false);
-        text_4.CrossFadeAlpha(fadeTo, fadeDuration, false);
-        text_5.CrossFadeAlpha(fadeTo, fadeDuration, false);
-
-        Color closeButtonColor = closebutton.GetComponent<Image>().color;
-        closeButtonColor.a = fadeTo;
-        closebutton.GetComponent<Image>().color = closeButtonColor;
-        closebutton.interactable = fadeTo > 0f;
-
-        Color lineColor = line.color;
-        lineColor.a = fadeTo;
-        line.color = lineColor;
-
-        float bgBlurAlpha = 1f - fadeTo;
-        Color bgBlurColor = BG_Blur.color;
-        bgBlurColor.a = bgBlurAlpha;
-        BG_Blur.color = bgBlurColor;
-    }
-
-    IEnumerator FadeInMainScrollUI(float duration)
-    {
-        mainScrollUIGroup.interactable = true;
-        mainScrollUIGroup.blocksRaycasts = true;
-
-        float elapsedTime = 0f;
-        float startAlpha = mainScrollUIGroup.alpha;
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            float newAlpha = Mathf.Lerp(startAlpha, 1f, elapsedTime / duration);
-            mainScrollUIGroup.alpha = newAlpha;
-            yield return null; 
-        }
-
-        mainScrollUIGroup.alpha = 1f;
     }
 
     public void StartFadeIn(float duration)
     {
+        VibrationController.VibratePhone_Light();
+
         StartCoroutine(FadeInMainScrollUI(duration));
     }
 
-    IEnumerator FadeOutMainScrollUI(float duration)
+    private IEnumerator FadeInMainScrollUI(float duration)
     {
-        mainScrollUIGroup.interactable = false;
-        mainScrollUIGroup.blocksRaycasts = false;
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
 
+        // Disable the timelineInfo object
+        timelineInfo.SetActive(false);
+
+        // Enable raycast blocking and fade in the mainScrollUI, timelineText, and BG_Blur
+        mainScrollUIGroup.blocksRaycasts = true;
+
+        fadeCoroutine = StartCoroutine(FadeUI(mainScrollUIGroup, 1f, duration));
+        StartCoroutine(FadeText(timelineText, 1f, duration));
+        StartCoroutine(FadeImage(BG_Blur, 1f, duration));
+
+        yield return fadeCoroutine;
+    }
+
+    private IEnumerator FadeUI(CanvasGroup canvasGroup, float targetAlpha, float duration)
+    {
         float elapsedTime = 0f;
-        float startAlpha = mainScrollUIGroup.alpha;
+        float startAlpha = canvasGroup.alpha;
 
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-            float newAlpha = Mathf.Lerp(startAlpha, 0f, elapsedTime / duration);
-            mainScrollUIGroup.alpha = newAlpha;
+            canvasGroup.alpha = Mathf.SmoothStep(startAlpha, targetAlpha, elapsedTime / duration);
             yield return null;
         }
 
-        //mainScrollUIGroup.alpha = 0f;
+        canvasGroup.alpha = targetAlpha;
     }
 
-    public void StartFadeOut(float duration)
+    private IEnumerator FadeText(TextMeshProUGUI textElement, float targetAlpha, float duration)
     {
-        StartCoroutine(FadeOutMainScrollUI(duration));
+        float elapsedTime = 0f;
+        float startAlpha = textElement.alpha;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            textElement.alpha = Mathf.SmoothStep(startAlpha, targetAlpha, elapsedTime / duration);
+            yield return null;
+        }
+
+        textElement.alpha = targetAlpha;
+    }
+
+    private IEnumerator FadeImage(Image image, float targetAlpha, float duration)
+    {
+        float elapsedTime = 0f;
+        Color startColor = image.color;
+        float startAlpha = startColor.a;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float newAlpha = Mathf.SmoothStep(startAlpha, targetAlpha, elapsedTime / duration);
+            image.color = new Color(startColor.r, startColor.g, startColor.b, newAlpha);
+            yield return null;
+        }
+
+        image.color = new Color(startColor.r, startColor.g, startColor.b, targetAlpha);
     }
 }
