@@ -21,6 +21,9 @@ public class PortalDoor : MonoBehaviour
     private VoiceOverData followFootstepsVO;
 
     [SerializeField]
+    private GameObject portalLayer;
+
+    [SerializeField]
     private bool isPortalPassed = false;
     public bool IsPortalPassed {  get { return isPortalPassed; } }
 
@@ -52,7 +55,7 @@ public class PortalDoor : MonoBehaviour
         }
     }
 
-    private IEnumerator ProcessCollision(Collider other) 
+    private IEnumerator ProcessCollision(Collider other)
     {
         vibrationController.VibratePhone_Medium();
 
@@ -73,8 +76,15 @@ public class PortalDoor : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
+        // Rotate the portalLayer by 180 degrees around the Y-axis
+        if (portalLayer != null)
+        {
+            portalLayer.transform.Rotate(180, 0, 0);
+        }
+
         isCollisionProcessing = false;
     }
+
 
 
 }

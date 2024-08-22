@@ -1757,6 +1757,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3284216392785455015, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604029836631739165, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}
+      propertyPath: m_Drag
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604029836631739165, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604029836631739165, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}
+      propertyPath: m_ImplicitCom
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7978893135567777381, guid: 51cb89818759fd4448298bcf60b44fd5, type: 3}

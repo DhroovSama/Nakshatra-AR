@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,6 +80,13 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
     [Tooltip("The current collectible targetted by the raycast.")]
     [SerializeField]
     public GameObject CurrentTargetCollectible;
+
+    [SerializeField]
+    private AudioClip beepSound;
+
+    [SerializeField]
+    private TextMeshProUGUI countdownText;
+
 
     [Space]
     [SerializeField]
@@ -183,7 +191,12 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
 
         // Reset the progress bar with a delay
         StartCoroutine(ResetProgressBarAfterDelay());
+
+        // Reset and hide the countdown text
+        countdownText.text = "";
+        countdownText.gameObject.SetActive(false);
     }
+
 
     private IEnumerator ResetProgressBarAfterDelay()
     {
@@ -198,8 +211,10 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
     {
         shouldRaycast = true;
         collectiblesProgressBarGameobject.SetActive(true);
+        countdownText.gameObject.SetActive(true); // Activate the countdown text
         StartCoroutine(DisableProgressBarAfterDuration());
     }
+
 
     public void StopRaycasting()
     {
@@ -308,6 +323,10 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
     {
         isFilling = true;
         float elapsedTime = 0f;
+        float timeRemaining = fillDuration;
+
+        // Activate the countdown text when filling starts
+        countdownText.gameObject.SetActive(true);
 
         while (elapsedTime < fillDuration)
         {
@@ -318,12 +337,22 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
             }
 
             elapsedTime += Time.deltaTime;
+            timeRemaining -= Time.deltaTime;
+
+            // Update the progress bar
             collectiblesProgressBar.value = Mathf.Lerp(0, 1, elapsedTime / fillDuration);
+
+            // Update the countdown text to show the time remaining to 1 decimal place
+            countdownText.text = timeRemaining.ToString("F1");
+
             yield return null;
         }
 
         // Trigger medium vibration when the progress bar is completely filled
         vibration.VibratePhone_Medium();
+
+        // Play beep sound through the Global Audio Manager
+        GlobalAudioPlayer.GetPlaySound(beepSound);
 
         collectiblesProgressBar.value = 1;
         collectible.SetActive(true);
@@ -339,8 +368,14 @@ public class TriggerCollectibleThroughRaycast : MonoBehaviour
 
         enableTerrainScannerButton.interactable = false;
 
+        // Deactivate the countdown text after the timer finishes
+        countdownText.gameObject.SetActive(false);
+
         isFilling = false;
     }
+
+
+
 
     private void DisableOtherCollectibles(GameObject collectible)
     {

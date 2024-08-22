@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 5004614137717900476}
   - component: {fileID: 5848126750070955579}
   m_Layer: 0
-  m_Name: Portal
+  m_Name: Portal layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1671,6 +1671,7 @@ MonoBehaviour:
   vibrationController: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
   soundSO: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
   followFootstepsVO: {fileID: 11400000, guid: d327efbb82135574bb8d007644ef4936, type: 2}
+  portalLayer: {fileID: 5890656474339349906}
   isPortalPassed: 0
 --- !u!1 &5917558674637783551
 GameObject:

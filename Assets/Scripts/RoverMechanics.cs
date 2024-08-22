@@ -42,7 +42,7 @@ public class RoverMechanics : MonoBehaviour
     private bool isLeftPressed = false;
 
     [SerializeField]
-    [Range(-0.5f, 50f)]
+    [Range(-0.5f, 100f)]
     private float forceAmount = 0f;
 
     #endregion

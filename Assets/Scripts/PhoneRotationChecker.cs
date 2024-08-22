@@ -13,7 +13,7 @@ public class PhoneRotationChecker : MonoBehaviour
     private VibrationController vibrationController;
 
     [SerializeField]
-    private GameObject rotatePhoneCnavas;
+    private GameObject rotatePhoneCnavas, AImuteButton;
 
     public void CheckAndSetLeftLandscape()
     {
@@ -39,6 +39,7 @@ public class PhoneRotationChecker : MonoBehaviour
                     VoiceOverManager.Instance.TriggerVoiceOver(scanSurfaceVO);
                     hasPlayedVoiceOver = true;
                 }
+                AImuteButton.SetActive(true);
 
                 rotatePhoneCnavas.SetActive(false); 
             }

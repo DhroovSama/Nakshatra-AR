@@ -26,24 +26,17 @@ public class RoverSoundManager : MonoBehaviour
         PlaySound(roverMovingSFX);
     }
 
-    // Function to stop rover sound and play braking sound on PointerUp
-    public void OnPointerUp_PlayRoverBrakingSFX()
-    {
-        roverAudioPlayer.Stop();
-        PlaySound(roverBrakingSFX);
-    }
-
     // Function to play rover turning sound on PointerDown
     public void OnPointerDown_PlayRoverTurningSFX()
     {
         PlaySound(roverTurningSFX);
     }
 
-    // Function to stop rover sound and play rotation braking sound on PointerUp
-    public void OnPointerUp_PlayRoverRotationBrakingSFX()
+    // Function to stop rover sound and play braking sound on PointerUp
+    public void OnPointerUp_StopRoverSFX()
     {
-        roverAudioPlayer.Stop();
-        PlaySound(roverRotationBrakingSFX);
+        StopSound();
+        PlaySound(roverBrakingSFX);
     }
 
     // Helper function to play a sound
@@ -51,11 +44,21 @@ public class RoverSoundManager : MonoBehaviour
     {
         if (roverAudioPlayer != null && clip != null)
         {
-            roverAudioPlayer.PlayOneShot(clip);
+            roverAudioPlayer.clip = clip;
+            roverAudioPlayer.Play();
         }
         else
         {
             Debug.LogWarning("AudioSource or AudioClip not assigned.");
+        }
+    }
+
+    // Helper function to stop playing sound
+    private void StopSound()
+    {
+        if (roverAudioPlayer != null)
+        {
+            roverAudioPlayer.Stop();
         }
     }
 }
