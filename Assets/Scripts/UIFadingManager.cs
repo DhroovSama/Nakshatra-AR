@@ -60,13 +60,13 @@ public class UIFadingManager : MonoBehaviour
 
     public void StartFadeIn(float duration)
     {
-        VibrationController.VibratePhone_Light();
-
         StartCoroutine(FadeInMainScrollUI(duration));
     }
 
     private IEnumerator FadeInMainScrollUI(float duration)
     {
+        VibrationController.VibratePhone_Light();
+
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine);

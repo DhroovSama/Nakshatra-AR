@@ -18,6 +18,9 @@ public class PortalDoor : MonoBehaviour
     private UISoundSO soundSO;
 
     [SerializeField]
+    private VoiceOverData followFootstepsVO;
+
+    [SerializeField]
     private bool isPortalPassed = false;
     public bool IsPortalPassed {  get { return isPortalPassed; } }
 
@@ -30,10 +33,7 @@ public class PortalDoor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("MainCamera"))
         {
-            vibrationController.VibratePhone_Medium();
-
             isPortalPassed = true;
-
         }
 
         if (other.gameObject.CompareTag("MainCamera") && !isCollisionProcessing)
@@ -55,6 +55,9 @@ public class PortalDoor : MonoBehaviour
     private IEnumerator ProcessCollision(Collider other) 
     {
         vibrationController.VibratePhone_Medium();
+
+        VoiceOverManager.Instance.TriggerVoiceOver(followFootstepsVO);
+
         soundSO.PlayPortalSound();
 
         isCameraInside = !isCameraInside;
