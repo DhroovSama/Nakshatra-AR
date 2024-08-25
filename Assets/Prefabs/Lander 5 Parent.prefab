@@ -177,6 +177,7 @@ MonoBehaviour:
   landerMissionPassVO: {fileID: 11400000, guid: 0f9a5d5818bf37644808f1572d503e01, type: 2}
   landerMissionFailVO: {fileID: 11400000, guid: 3ad61b7def55f9149a41712d592a7a9d, type: 2}
   landerSuccessSFX: {fileID: 8300000, guid: dbfbd112521b3ba4fb09e3df7e55a566, type: 3}
+  failMissionSFX: {fileID: 8300000, guid: 2ef992b9115f8f74b8ab1fcb14586f7e, type: 3}
 --- !u!82 &871440793215741720
 AudioSource:
   m_ObjectHideFlags: 0

@@ -825,8 +825,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 7796965268973588513, guid: 3ed8b438c6d229c44bf5a1391a332bbb, type: 3}
   projectilePrefab: {fileID: 8318035249995361372, guid: 542b6904976722b42a96089917b7a653, type: 3}
+  plane: {fileID: 0}
+  isPressed: 0
+  aRRaycastManager: {fileID: 0}
   isMoonSurfaceSpawned: 0
   pointer: {fileID: 1407456067}
+  projectileFired: 0
 --- !u!1 &1407456065
 GameObject:
   m_ObjectHideFlags: 0

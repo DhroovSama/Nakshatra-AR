@@ -29,6 +29,9 @@ public class LanderCollisionHandler : MonoBehaviour
     [SerializeField]
     private AudioClip landerSuccessSFX;
 
+    [SerializeField]
+    private AudioClip failMissionSFX;
+
     public static LanderCollisionHandler Instance { get; private set; }
 
     private void Awake()
@@ -87,7 +90,9 @@ public class LanderCollisionHandler : MonoBehaviour
         LanderFireVFX.SetActive(true);
 
         LanderControlsUIManager.GetLanderMissioonFailUI().SetActive(true);
-    }
+
+        GlobalAudioPlayer.GetPlaySound(failMissionSFX);
+    } 
 
     private void IfLanderLandedSafely(Vector3 landingPoint)
     {
