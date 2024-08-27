@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 5120598663857095886}
   - component: {fileID: 5797286717301530505}
   m_Layer: 0
-  m_Name: Lander 5 Parent
+  m_Name: Lander (Simulation)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
