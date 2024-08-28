@@ -595,7 +595,6 @@ MonoBehaviour:
   pinchSpeed: 0.01
   touchCount: 0
   vibrationController: {fileID: 0}
-  lockObject: {fileID: 0}
 --- !u!1 &775130496
 GameObject:
   m_ObjectHideFlags: 0

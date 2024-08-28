@@ -31,8 +31,6 @@ public class Rotatable : MonoBehaviour
     [Space]
     private VibrationController vibrationController;
 
-    [SerializeField]
-    [Space]
     private Button lockObject;
 
     private bool isInteractionAllowed = true;

@@ -13618,6 +13618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'User Warning Canvas '
       objectReference: {fileID: 0}
+    - target: {fileID: 386959850967430508, guid: af4de5d5003d480489e4aca3c670f79e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1727149298524179509, guid: af4de5d5003d480489e4aca3c670f79e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

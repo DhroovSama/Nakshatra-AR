@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Rover 8 Hold Down so
+  m_EditorClassIdentifier: 
+  voiceOverClip: {fileID: 8300000, guid: 3a722764a14f1d34387456771d024ff1, type: 3}
+  subtitles:
+  - sentence: Rover Hold Down
+    displayDuration: 0
+  - sentence: Used as hold down mechanism for holding down the rover inside the lander.
+    displayDuration: 1.2
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

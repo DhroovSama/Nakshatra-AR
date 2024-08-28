@@ -7,6 +7,8 @@ public class GlobalUIProvider : MonoBehaviour
 {
     private static GlobalUIProvider instance;
 
+    [Header("UI Elements")]
+
     [SerializeField]
     private Button resetObejctButton;
 
