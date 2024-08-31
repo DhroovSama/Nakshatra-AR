@@ -42,6 +42,8 @@ public class UIFadingManager : MonoBehaviour
     [SerializeField]
     private VibrationController VibrationController;
 
+    private bool hasVibrated = false; 
+
     void Start()
     {
         BG_Blur.color = new Color(BG_Blur.color.r, BG_Blur.color.g, BG_Blur.color.b, 0f);
@@ -65,17 +67,19 @@ public class UIFadingManager : MonoBehaviour
 
     private IEnumerator FadeInMainScrollUI(float duration)
     {
-        VibrationController.VibratePhone_Light();
+        if (!hasVibrated) 
+        {
+            VibrationController.VibratePhone_Light();
+            hasVibrated = true; 
+        }
 
         if (fadeCoroutine != null)
         {
             StopCoroutine(fadeCoroutine);
         }
 
-        // Disable the timelineInfo object
         timelineInfo.SetActive(false);
 
-        // Enable raycast blocking and fade in the mainScrollUI, timelineText, and BG_Blur
         mainScrollUIGroup.blocksRaycasts = true;
 
         fadeCoroutine = StartCoroutine(FadeUI(mainScrollUIGroup, 1f, duration));

@@ -18,6 +18,7 @@ MonoBehaviour:
   errorSound: {fileID: 0}
   playerCheckerSound: {fileID: 0}
   landerLaunchSound: {fileID: 8300000, guid: c8913d9e6b516bf42885eb0bda83c8df, type: 3}
+  transitionSceneSound: {fileID: 8300000, guid: b49f25c16a0ce9a4e945156ddb2d90b1, type: 3}
   roverMovingSound: {fileID: 8300000, guid: 64c9174cf32f06c48a1d5e00a8098f72, type: 3}
   roverRotationSound: {fileID: 8300000, guid: 747a6469a1d24054e984476cb6eb6a25, type: 3}
   roverBrakeSound: {fileID: 8300000, guid: 4ad74f0dfa87fba4f8454e22447d3178, type: 3}

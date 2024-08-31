@@ -877,6 +877,7 @@ GameObject:
   - component: {fileID: 898649117}
   - component: {fileID: 898649116}
   - component: {fileID: 898649120}
+  - component: {fileID: 898649121}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -983,6 +984,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcced5cfce91c14bbfccceed74f35f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &898649121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898649115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b4d67f7caa4f04797b79cbf9d1fdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneTransition: {fileID: 0}
 --- !u!1001 &904531971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1505,9 +1519,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 898649120}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: LoadScene1
+      - m_Target: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
+        m_TargetAssemblyTypeName: UISoundSO, Assembly-CSharp
+        m_MethodName: PlayTapSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
+        m_MethodName: StartSceneLoadTransition_Scene_1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

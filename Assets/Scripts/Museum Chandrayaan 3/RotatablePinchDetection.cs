@@ -35,6 +35,9 @@ public class Rotatable : MonoBehaviour
 
     private bool isInteractionAllowed = true;
 
+    [SerializeField]
+    private GameObject secondaryObject; // Add this field for the additional GameObject
+
     private void Awake()
     {
         lockObject = GlobalUIProvider.getResetObejctButton();
@@ -138,7 +141,12 @@ public class Rotatable : MonoBehaviour
             newScale.z = Mathf.Max(newScale.z, 0.1f);
         }
 
+        // Update the scale of the primary and secondary GameObjects
         transform.localScale = newScale;
+        if (secondaryObject != null)
+        {
+            secondaryObject.transform.localScale = newScale;
+        }
 
         previousMagnitude = currentMagnitude;
     }
@@ -162,6 +170,4 @@ public class Rotatable : MonoBehaviour
 
         lockObject.colors = colors;
     }
-
-
 }

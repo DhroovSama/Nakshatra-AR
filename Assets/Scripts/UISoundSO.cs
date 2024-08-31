@@ -9,6 +9,7 @@ public class UISoundSO : ScriptableObject
     public AudioClip errorSound;
     public AudioClip playerCheckerSound;
     public AudioClip landerLaunchSound;
+    public AudioClip transitionSceneSound;
 
     [Header("Rover SFX")]
     public AudioClip roverMovingSound;
@@ -61,5 +62,9 @@ public class UISoundSO : ScriptableObject
     public void PlayRoverRotationBrakeSound()
     {
         GlobalAudioPlayer.GetPlaySound(roverRotationBrakeSound);
+    }
+    public void PlaySceneTransitionSound()
+    {
+        GlobalAudioPlayer.GetPlaySound(transitionSceneSound);
     }
 }

@@ -1,9 +1,11 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.UI;
 
 public class ToggleScript : MonoBehaviour
 {
-    [SerializeField]    
+    [SerializeField]
     private bool isEnabled = true;
 
     [SerializeField]
@@ -28,8 +30,7 @@ public class ToggleScript : MonoBehaviour
         }
         else
         {
-            infoVO.PlayVoiceOver(); 
-
+            infoVO.PlayVoiceOver();
             EnableScript();
         }
     }
@@ -38,11 +39,20 @@ public class ToggleScript : MonoBehaviour
     {
         isEnabled = false;
         infoCanvas.SetActive(false);
-    } 
+    }
 
     private void EnableScript()
     {
         isEnabled = true;
         infoCanvas.SetActive(true);
+
+        StartCoroutine(DisableCanvasAfterDelay(10f)); 
+    }
+
+    private IEnumerator DisableCanvasAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        infoCanvas.SetActive(false);
     }
 }
