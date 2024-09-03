@@ -7,9 +7,14 @@ public class StartScenePlayTransition : MonoBehaviour
     [SerializeField]
     private SceneTransition sceneTransition;
 
+    private static bool hasTransitioned = false;
+
     void Start()
     {
-        sceneTransition.SceneLoadTransition_Start();
+        if (!hasTransitioned)
+        {
+            sceneTransition.SceneLoadTransition_Start();
+            hasTransitioned = true; 
+        }
     }
-
 }
