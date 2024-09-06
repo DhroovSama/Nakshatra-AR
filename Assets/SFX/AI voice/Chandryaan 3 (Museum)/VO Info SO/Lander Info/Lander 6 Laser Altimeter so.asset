@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Lander 6 Laser Altimeter so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 4a74ff009cdefae46b4c7e3f6709996a, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 4a74ff009cdefae46b4c7e3f6709996a, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 3b7cfe6816e5dce4c855a710c3d51cde, type: 3}
   subtitles:
   - sentence: Laser Altimeter
     displayDuration: 0.2

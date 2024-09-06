@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover tutorial 3 so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 90e4fa61c4da8c3428aa48478e12faf5, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 90e4fa61c4da8c3428aa48478e12faf5, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 68a5796ffc02ef94489b0af06f2ce066, type: 3}
   subtitles:
   - sentence: "Explore the Moon\u2019s surface with the ROVER"
     displayDuration: 0.75

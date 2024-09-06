@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover tutorial 5 so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: c71ea5666fd2baf4d8d56509d23417af, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: c71ea5666fd2baf4d8d56509d23417af, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 568c5fb5bd0ca6148824948a814fdf46, type: 3}
   subtitles:
   - sentence: Complete the mission and earn a personalized ticket with your name
       on it!

@@ -19,13 +19,24 @@ public class VoiceOverManager : MonoBehaviour
 
     public void TriggerVoiceOver(VoiceOverData voiceOverData)
     {
-        AudioManager.Instance.PlayAudioClip(voiceOverData.voiceOverClip);
+        AudioClip clipToPlay;
+
+        if (LanguageManager.Instance.useHindiAudio && voiceOverData.hindiVoiceOverClip != null)
+        {
+            clipToPlay = voiceOverData.hindiVoiceOverClip;
+        }
+        else
+        {
+            clipToPlay = voiceOverData.englishVoiceOverClip;
+        }
+
+        AudioManager.Instance.PlayAudioClip(clipToPlay);
 
         SubtitleManager.Instance.DisplaySubtitles(
             voiceOverData.subtitles,
             voiceOverData.showButtonAtEnd,
             voiceOverData.buttonText,
-            voiceOverData.nextVoiceOverData 
+            voiceOverData.nextVoiceOverData
         );
     }
 }

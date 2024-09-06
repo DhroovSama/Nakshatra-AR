@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: ScanTheSurfaceMuseum SO
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 776017aa02591e34e8ddb2be9467b184, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 776017aa02591e34e8ddb2be9467b184, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 2443905fa1113ec41a1a9a66b2f02a09, type: 3}
   subtitles:
   - sentence: Scan the surface below with your camera,
     displayDuration: 0.6

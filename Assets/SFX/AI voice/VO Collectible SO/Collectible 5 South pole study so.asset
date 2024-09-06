@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Collectible 5 South pole study so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 79e9f27fc4d0b284891cbad35354913a, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 79e9f27fc4d0b284891cbad35354913a, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 58a93584f78bc50428cf52454904fee1, type: 3}
   subtitles:
   - sentence: 'Objective: South Pole Study'
     displayDuration: 0.35

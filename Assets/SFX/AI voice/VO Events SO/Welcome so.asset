@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Welcome so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 0c2dbc2465e92f940835505f152aff38, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 5e2104b1bfe4f8446a5ed87fb43be7a5, type: 3}
+  subtitles:
+  - sentence: 'Welcome to the simulation of Chandryaan-3. '
+    displayDuration: 0.75
+  - sentence: Today is August 23, 2023
+    displayDuration: 0.55
+  - sentence: and you are about to witness the historic soft landing of the Vikram
+      lander on the Moon's surface.
+    displayDuration: 1.25
+  showButtonAtEnd: 1
+  buttonText: Who are you?
+  nextVoiceOverData: {fileID: 11400000, guid: cd45ec46384e4fe48bf2b1771a4adeb6, type: 2}

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 4 CPU so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 360cad154f81dc0409238bf96f4c218c, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 360cad154f81dc0409238bf96f4c218c, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: af22eb211e2962244b3345267f513433, type: 3}
   subtitles:
   - sentence: Central processing Unit For processing all experiment data
     displayDuration: 1

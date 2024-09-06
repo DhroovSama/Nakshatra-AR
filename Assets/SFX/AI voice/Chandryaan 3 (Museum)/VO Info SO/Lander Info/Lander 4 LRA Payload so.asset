@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Lander 4 LRA Payload so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: e5d70d446a0fd1140ada8b7fabe3f5b0, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: e5d70d446a0fd1140ada8b7fabe3f5b0, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: f78a1c29b259f4a40a5932502a625f24, type: 3}
   subtitles:
   - sentence: LASER Retroreflector Array
     displayDuration: 0.2

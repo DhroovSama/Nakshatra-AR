@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover tutorial 4 so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: c4eee2444a2f7e145854ac302ca058fb, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: c4eee2444a2f7e145854ac302ca058fb, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: a24db9dcb412faa4eac5203882c6b463, type: 3}
   subtitles:
   - sentence: Activate! the terrain scanner and complete the mission objectives!
     displayDuration: 1.15

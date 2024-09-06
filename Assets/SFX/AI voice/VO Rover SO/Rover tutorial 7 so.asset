@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover tutorial 7 so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: e49c620a5800cd94a8777c05c43a724f, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: e49c620a5800cd94a8777c05c43a724f, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 6a8b1b7434e63f24ea9ba6d1cf3cdcaf, type: 3}
   subtitles:
   - sentence: "Good Luck user!\r"
     displayDuration: 0.25

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 1 Bogie Mechanism so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: e357d9b6d60dcb24fbaf4d12381d0150, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: e357d9b6d60dcb24fbaf4d12381d0150, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 7d3d19ec4fb286040ae5a9d6c04f503f, type: 3}
   subtitles:
   - sentence: 'The rocker-bogie design is unsprung and uses split rather '
     displayDuration: 0.8

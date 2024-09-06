@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Collectible 1 Element so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 5acb066f208240643ab4702121a4dc12, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 5acb066f208240643ab4702121a4dc12, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 74782e251d7acfd4a8c616b4d824bf04, type: 3}
   subtitles:
   - sentence: 'Objective: Element Detection'
     displayDuration: 0.35

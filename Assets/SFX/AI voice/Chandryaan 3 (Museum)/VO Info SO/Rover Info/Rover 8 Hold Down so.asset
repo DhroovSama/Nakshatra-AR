@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 8 Hold Down so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 3a722764a14f1d34387456771d024ff1, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 3a722764a14f1d34387456771d024ff1, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 165711945545e8b46b5f930322aba33d, type: 3}
   subtitles:
   - sentence: Rover Hold Down
     displayDuration: 0

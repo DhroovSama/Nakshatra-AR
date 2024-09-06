@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Collectible 3 Temprature data so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 97b51839f2c3a494fae9488e07402cd7, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 97b51839f2c3a494fae9488e07402cd7, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: bab1275b64a14a54f9c7658b17917daa, type: 3}
   subtitles:
   - sentence: 'Objective: Temperature Data'
     displayDuration: 0.35

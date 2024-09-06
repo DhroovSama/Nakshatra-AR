@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 2 APXs X Ray so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 7417c70018fff9046ab8d69d794bae9d, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 7417c70018fff9046ab8d69d794bae9d, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 3a1f145573b9ec44291a9cc538605b53, type: 3}
   subtitles:
   - sentence: 'Alpha Particle X-ray Spectrometer
 

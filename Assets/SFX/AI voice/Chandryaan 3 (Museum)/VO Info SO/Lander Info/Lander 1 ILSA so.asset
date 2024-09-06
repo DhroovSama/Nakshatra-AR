@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Lander 1 ILSA so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: cb191d251c294fd4b8f6c950b77a0894, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: cb191d251c294fd4b8f6c950b77a0894, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: a8fa8ab62a6e6444b944396484dda73f, type: 3}
   subtitles:
   - sentence: "Instrument for Lunar Seismic Activity\r\n\r"
     displayDuration: 0.6

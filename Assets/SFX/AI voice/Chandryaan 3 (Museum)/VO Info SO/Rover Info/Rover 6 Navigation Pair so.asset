@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 6 Navigation Pair so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 04028ad497a21994dad4419023af18dc, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 04028ad497a21994dad4419023af18dc, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: a66d47e55f560a141902332408fef10c, type: 3}
   subtitles:
   - sentence: 'The Navigation Camera Pair '
     displayDuration: 0

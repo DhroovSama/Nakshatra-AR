@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: CurrentStatus so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 66f97a1706d40a1498a05e1a086fe77f, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 618f1fbe70803684dbe4b7671bcf83e1, type: 3}
+  subtitles:
+  - sentence: The Vikram lander is in its descent phase, preparing for a soft landing.
+    displayDuration: 1.1
+  - sentence: 'Your next task is the precision landing sequence, '
+    displayDuration: 0.75
+  - sentence: Ensure you land the rover efficiently with the remaining fuel
+    displayDuration: 0.85
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

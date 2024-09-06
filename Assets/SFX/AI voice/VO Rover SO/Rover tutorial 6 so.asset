@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover tutorial 6 so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 1acd126b087cf86409a24b3598f8707f, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 1acd126b087cf86409a24b3598f8707f, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 28ca5427ff026494f93a90d3ae471513, type: 3}
   subtitles:
   - sentence: 'You have until sunlight fades to operate the rover. '
     displayDuration: 0.75

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Collectible 2 Lunar Images so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 99e4701747de2e84d8df493f85a7f032, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 99e4701747de2e84d8df493f85a7f032, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: d5754845d7f048b45bc4760f32221141, type: 3}
   subtitles:
   - sentence: 'Objective: Lunar Surface Imaging'
     displayDuration: 0.4

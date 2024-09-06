@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 9 Solar Panel so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 3edb0ffcd06ac1b4ab92d684fe18ea14, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 3edb0ffcd06ac1b4ab92d684fe18ea14, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: dbb72768bf2b3b0439bf3da7ac0b0a2b, type: 3}
   subtitles:
   - sentence: Deployable Solar Panel generating 50 W solar power
     displayDuration: 0

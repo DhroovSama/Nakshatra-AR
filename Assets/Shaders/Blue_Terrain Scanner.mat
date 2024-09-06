@@ -12,7 +12,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _ALPHAMODULATE_ON
   - _RECEIVE_SHADOWS_OFF
   - _SPECULAR_SETUP
   - _SURFACE_TYPE_TRANSPARENT
@@ -26,7 +25,7 @@ Material:
   disabledShaderPasses:
   - SHADOWCASTER
   - DepthOnly
-  m_LockedProperties: 
+  m_LockedProperties: _Blend
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -46,16 +45,16 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Blend: 3
+    - _Blend: 0
     - _BlendModePreserveSpecular: 0
     - _CastShadows: 0
     - _Cull: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _IntersectionDepth: 1.21
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
-    - _SrcBlend: 2
+    - _SrcBlend: 5
     - _Surface: 1
     - _WorkflowMode: 0
     - _ZTest: 4

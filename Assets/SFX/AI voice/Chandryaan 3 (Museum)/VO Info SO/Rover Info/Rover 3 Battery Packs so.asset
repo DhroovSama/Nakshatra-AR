@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 3 Battery Packs so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 422fecc1252ae6c4d86fbe029d949e38, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 422fecc1252ae6c4d86fbe029d949e38, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 7c5d157ec0c0ab44d8d6d4802b4c7f0a, type: 3}
   subtitles:
   - sentence: 50 W Battery Packs
     displayDuration: 0.35

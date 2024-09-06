@@ -4,7 +4,8 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "VoiceOverData", menuName = "ScriptableObjects/VoiceOverData", order = 1)]
 public class VoiceOverData : ScriptableObject
 {
-    public AudioClip voiceOverClip;
+    public AudioClip englishVoiceOverClip; // English audio clip
+    public AudioClip hindiVoiceOverClip;   // Hindi audio clip
 
     [System.Serializable]
     public class SubtitleLine

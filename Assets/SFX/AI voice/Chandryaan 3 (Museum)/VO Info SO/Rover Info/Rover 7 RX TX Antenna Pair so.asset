@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover 7 RX TX Antenna Pair so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: 47e990c8666be4a46a4d46a382645993, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: 47e990c8666be4a46a4d46a382645993, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 87b76528b9f1f64418746f8ba0f39871, type: 3}
   subtitles:
   - sentence: "RX TX Antenna Pair\r"
     displayDuration: 0

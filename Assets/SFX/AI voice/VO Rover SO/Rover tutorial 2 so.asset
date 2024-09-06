@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
   m_Name: Rover tutorial 2 so
   m_EditorClassIdentifier: 
-  voiceOverClip: {fileID: 8300000, guid: cc0d3949305eb344ca8514bf7f018a20, type: 3}
+  englishVoiceOverClip: {fileID: 8300000, guid: cc0d3949305eb344ca8514bf7f018a20, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: ef6d4e9637533004f962ce8d4543e313, type: 3}
   subtitles:
   - sentence: Use the buttons on the LEFT to steer your rover
     displayDuration: 0.8

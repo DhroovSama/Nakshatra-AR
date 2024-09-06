@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Dont land in red zone so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 5a46dd3a8d83c2b42af0220dea5ea46c, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 11b1d0f74212b3640b934d8d2e9d67c9, type: 3}
+  subtitles:
+  - sentence: Avoid landing in the red zones, doing so will result in mission failure.
+    displayDuration: 1
+  showButtonAtEnd: 1
+  buttonText: Tell me more
+  nextVoiceOverData: {fileID: 11400000, guid: 8b3afad53aa613d499fc93f945647ed3, type: 2}
