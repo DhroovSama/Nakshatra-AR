@@ -33,6 +33,8 @@ public class Rotatable : MonoBehaviour
 
     private Button lockObject;
 
+    private Button placeObject;
+
     private bool isInteractionAllowed = true;
 
     [SerializeField]

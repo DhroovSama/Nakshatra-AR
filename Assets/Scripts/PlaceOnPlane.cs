@@ -66,7 +66,12 @@ public class PlaceOnPlane : MonoBehaviour
                 {
                     spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, lowestPlane.center, Quaternion.identity);
                     isMoonSurfaceSpawned = true;
-                    disableARPlane.getDisableARPlane();
+                    //disableARPlane.getDisableARPlane();
+                }
+                else
+                {
+                    spawnedObjectMoonSurface.transform.position = hitPose.position;
+                    spawnedObjectMoonSurface.transform.rotation = hitPose.rotation;
                 }
 
                 vibrationController.VibratePhone_Medium();

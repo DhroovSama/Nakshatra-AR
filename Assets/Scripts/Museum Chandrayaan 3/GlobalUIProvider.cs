@@ -12,6 +12,9 @@ public class GlobalUIProvider : MonoBehaviour
     [SerializeField]
     private Button resetObejctButton;
 
+    [SerializeField]
+    private Button placeButton;
+
     private void Awake()
     {
         instance = this;    
@@ -20,5 +23,10 @@ public class GlobalUIProvider : MonoBehaviour
     public static Button getResetObejctButton()
     {
         return instance.resetObejctButton;
+    }
+
+    public static Button getPlaceButton()
+    {
+        return instance.placeButton;    
     }
 }
