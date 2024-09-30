@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Safety Protocol Check so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 658052784a23b3047918f415d4aac6dd, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 829b07f4fc3962c4fa15eaf1b09c948e, type: 3}
+  subtitles:
+  - sentence: Safety protocols activated.
+    displayDuration: 2
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}
