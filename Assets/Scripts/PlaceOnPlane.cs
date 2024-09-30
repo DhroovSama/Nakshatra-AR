@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Rendering;
 
 [RequireComponent(typeof(ARRaycastManager))]
 public class PlaceOnPlane : MonoBehaviour
@@ -31,6 +32,9 @@ public class PlaceOnPlane : MonoBehaviour
 
     [Space]
     [SerializeField] private bool isMoonSurfaceSpawned = false;
+
+    [Space]
+    [SerializeField] private bool isPSLVSpawned = false;
 
     private static PlaceOnPlane instance;
 
@@ -66,7 +70,10 @@ public class PlaceOnPlane : MonoBehaviour
                 {
                     spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, lowestPlane.center, Quaternion.identity);
                     isMoonSurfaceSpawned = true;
-                    //disableARPlane.getDisableARPlane();
+
+                    isPSLVSpawned = true;
+
+                    disableARPlane.getDisableARPlane();
                 }
                 else
                 {
@@ -116,6 +123,11 @@ public class PlaceOnPlane : MonoBehaviour
     public static bool IsMoonSurfaceSpawned()
     {
         return instance.isMoonSurfaceSpawned;
+    }
+
+    public static bool IsPSLVSpawned()
+    {
+        return instance.isPSLVSpawned;
     }
 
     public static GameObject getSpawnedObjectMoonSurface()

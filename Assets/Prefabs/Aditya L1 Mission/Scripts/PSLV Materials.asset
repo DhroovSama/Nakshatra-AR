@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811b32de6ab9b2e4b9c63b0a93c2d459, type: 3}
+  m_Name: PSLV Materials
+  m_EditorClassIdentifier: 
+  pslvMaterials:
+  - {fileID: 2100000, guid: ad6be84827985b34a8023c4fbcf2c012, type: 2}
+  - {fileID: 2100000, guid: ab6dd0b22ac7cea41abc2b8293a4dac6, type: 2}
+  - {fileID: 2100000, guid: 02215aec48a56b44892c6e948b28adce, type: 2}
+  - {fileID: 2100000, guid: 5b07017f3fdbad5428e22523cdde0b55, type: 2}
+  - {fileID: 2100000, guid: 4a23f3b3b04228c4c99d565c0f5dc206, type: 2}
+  - {fileID: 2100000, guid: a420450eace6e6b42aaf381f8134081a, type: 2}
+  - {fileID: 2100000, guid: a2a5bf45531cbe94bb7c64606c272d62, type: 2}
+  - {fileID: 2100000, guid: ed9795d4a730f00418dfc7a06c94747d, type: 2}
+  - {fileID: 2100000, guid: 20a83625cfd01334abfc0f10599e5277, type: 2}
+  - {fileID: 2100000, guid: e62a18f366fde6f4aba58837373c708b, type: 2}
