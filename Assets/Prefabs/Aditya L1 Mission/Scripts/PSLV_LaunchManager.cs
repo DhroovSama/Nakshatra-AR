@@ -7,15 +7,21 @@ using TMPro;
 public class PSLV_LaunchManager : MonoBehaviour
 {
     [SerializeField]
-    private Button launchButton;
+    private Button holdButton;
 
     [SerializeField]
     private Slider preCheckSlider;
 
+    [SerializeField, Tooltip("Holds all the checks TM UGUI texts")]
+    private GameObject checksUI;
+
     [SerializeField]
     private VibrationController vibrationController;
 
-    private HoldButton holdButton;
+    [SerializeField]
+    private VFX_manager vfxManager;
+
+    private HoldButton holdButtonComponent;
 
     [System.Serializable]
     public class RollingTextEntry
@@ -30,7 +36,6 @@ public class PSLV_LaunchManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI finalText;
 
-    // Add a VoiceOverData reference for the final text
     [SerializeField]
     private VoiceOverData finalVoiceOverData;
 
@@ -48,13 +53,22 @@ public class PSLV_LaunchManager : MonoBehaviour
     private bool isPlayingVoiceOver = false;
     private bool isFinalVoiceOverPlaying = false;
 
+    [SerializeField]
+    private Button launchButton;
+
+    [SerializeField]
+    private Animator pslvAnimator;
+
+    [SerializeField]
+    private AnimationClip launchAnimation;
+
     private void Start()
     {
-        holdButton = launchButton.GetComponent<HoldButton>();
+        holdButtonComponent = holdButton.GetComponent<HoldButton>();
 
-        if (holdButton == null)
+        if (holdButtonComponent == null)
         {
-            holdButton = launchButton.gameObject.AddComponent<HoldButton>();
+            holdButtonComponent = holdButton.gameObject.AddComponent<HoldButton>();
         }
 
         preCheckSlider.value = 0f;
@@ -64,22 +78,25 @@ public class PSLV_LaunchManager : MonoBehaviour
         bottomPosition = new Vector3(0, -offsetY, 0);
 
         HideAllTexts();
-        finalText.gameObject.SetActive(false); // Hide finalText at the start
+        finalText.gameObject.SetActive(false); 
+
+        launchButton.gameObject.SetActive(false);
     }
 
     private void Update()
     {
+        AssignPSLV_Animator();
+
         if (launchReady)
         {
-            // Do nothing, keep finalText displayed and timer/slider as they are
             return;
         }
 
-        if (holdButton.isHolding && !isPlayingVoiceOver)
+        if (holdButtonComponent.isHolding && !isPlayingVoiceOver)
         {
             StartCoroutine(PlayVoiceOverSequence());
         }
-        else if (!holdButton.isHolding && (isPlayingVoiceOver || isFinalVoiceOverPlaying))
+        else if (!holdButtonComponent.isHolding && (isPlayingVoiceOver || isFinalVoiceOverPlaying))
         {
             StopAllCoroutines();
             isPlayingVoiceOver = false;
@@ -88,15 +105,39 @@ public class PSLV_LaunchManager : MonoBehaviour
             preCheckSlider.value = 0f;
             HideAllTexts();
             finalText.gameObject.SetActive(false);
+
+            // Ensure the slider and hold button are active again
+            preCheckSlider.gameObject.SetActive(true);
+            holdButton.gameObject.SetActive(true);
+
+            // Hide the LAUNCH button if it's active
+            launchButton.gameObject.SetActive(false);
         }
     }
 
+
+    private void AssignPSLV_Animator()
+    {
+        if (PlaceOnPlane.IsPSLVSpawned())
+        {
+            ThrustVFXHandler_PSLV thrustVFXHandler_PSLV = FindObjectOfType<ThrustVFXHandler_PSLV>();
+
+            if (thrustVFXHandler_PSLV != null)
+            {
+                pslvAnimator = thrustVFXHandler_PSLV.gameObject.GetComponent<Animator>();
+            }
+            else
+            {
+                Debug.LogError("thrustVFXHandler_PSLV not found in the scene.");
+            }
+        }
+    }
     private IEnumerator PlayVoiceOverSequence()
     {
         isPlayingVoiceOver = true;
         while (currentTextIndex < rollingTextEntries.Count)
         {
-            if (!holdButton.isHolding)
+            if (!holdButtonComponent.isHolding)
             {
                 isPlayingVoiceOver = false;
                 yield break;
@@ -122,7 +163,7 @@ public class PSLV_LaunchManager : MonoBehaviour
             float timeElapsed = 0f;
             while (timeElapsed < clipLength)
             {
-                if (!holdButton.isHolding)
+                if (!holdButtonComponent.isHolding)
                 {
                     isPlayingVoiceOver = false;
                     yield break;
@@ -163,6 +204,8 @@ public class PSLV_LaunchManager : MonoBehaviour
     {
         Debug.Log("Launch Ready!");
 
+        vfxManager.smokeVFX_PSLV.Play();
+
         // Hide rolling texts
         HideAllTexts();
 
@@ -177,6 +220,13 @@ public class PSLV_LaunchManager : MonoBehaviour
 
         // Ensure the slider is full
         preCheckSlider.value = 1f;
+
+        // Deactivate the preCheckSlider and holdButton
+        preCheckSlider.gameObject.SetActive(false);
+        holdButton.gameObject.SetActive(false);
+
+        // Activate the LAUNCH button
+        launchButton.gameObject.SetActive(true);
 
         // Trigger the voice-over for the final text
         if (finalVoiceOverData != null)
@@ -199,15 +249,11 @@ public class PSLV_LaunchManager : MonoBehaviour
 
         float clipLength = GetVoiceOverClipLength(finalVoiceOverData);
 
-        // Wait for the duration of the clip or until the button is released
+        // Wait for the duration of the clip
         float timeElapsed = 0f;
         while (timeElapsed < clipLength)
         {
-            if (!holdButton.isHolding)
-            {
-                isFinalVoiceOverPlaying = false;
-                yield break;
-            }
+            // No need to check holdButton here since it's deactivated
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -215,7 +261,7 @@ public class PSLV_LaunchManager : MonoBehaviour
         isFinalVoiceOverPlaying = false;
 
         // Proceed with any additional logic after the final voice-over completes
-        // For example, you might want to transition to another scene or enable other UI elements
+        // For example, you might want to enable other UI elements or animations
     }
 
     private void UpdateRollingTextDisplay()
@@ -277,4 +323,32 @@ public class PSLV_LaunchManager : MonoBehaviour
             entry.text.gameObject.SetActive(false);
         }
     }
+
+    // Optional: Handle what happens when the LAUNCH button is clicked
+    private void OnEnable()
+    {
+        launchButton.onClick.AddListener(OnLaunchButtonClicked);
+    }
+
+    private void OnDisable()
+    {
+        launchButton.onClick.RemoveListener(OnLaunchButtonClicked);
+    }
+
+    private void OnLaunchButtonClicked()
+    {
+        if (pslvAnimator != null)
+        {
+            pslvAnimator.SetTrigger("triggerLaunch");
+
+            launchButton.gameObject.SetActive(false);
+
+            checksUI.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Animator is not assigned.");
+        }
+    }
+
 }

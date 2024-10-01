@@ -15,7 +15,7 @@ MonoBehaviour:
   englishVoiceOverClip: {fileID: 8300000, guid: 46965ea6026f56f4eae01dbad83c68ce, type: 3}
   hindiVoiceOverClip: {fileID: 8300000, guid: 375dadaaaeb94794b93855d0ec3234e3, type: 3}
   subtitles:
-  - sentence: Navigation system calibrated. Trajectory is on target.
+  - sentence: Navigation system calibrated.
     displayDuration: 2
   showButtonAtEnd: 0
   buttonText: 

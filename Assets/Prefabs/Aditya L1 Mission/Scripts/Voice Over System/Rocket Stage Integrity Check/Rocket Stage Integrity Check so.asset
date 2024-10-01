@@ -15,7 +15,7 @@ MonoBehaviour:
   englishVoiceOverClip: {fileID: 8300000, guid: e4f692c88f913ee4d8854185b63f44de, type: 3}
   hindiVoiceOverClip: {fileID: 8300000, guid: 7ab98bb839af6824a98de9664b65f896, type: 3}
   subtitles:
-  - sentence: All rocket stages checked and ready for ignition.
+  - sentence: All rocket stages checked.
     displayDuration: 0
   showButtonAtEnd: 0
   buttonText: 

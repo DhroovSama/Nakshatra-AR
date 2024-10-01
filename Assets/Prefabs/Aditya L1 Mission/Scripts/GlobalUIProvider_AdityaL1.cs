@@ -5,7 +5,7 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     private static GlobalUIProvider_AdityaL1 instance;
 
     [Header("UI Elements")]
-    public GameObject userTap; 
+    public GameObject userTap;
 
     private void Awake()
     {

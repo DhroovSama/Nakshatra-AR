@@ -15,8 +15,8 @@ MonoBehaviour:
   englishVoiceOverClip: {fileID: 8300000, guid: 5709b359ef050eb4884b50446e8818f8, type: 3}
   hindiVoiceOverClip: {fileID: 8300000, guid: 57a99f4dfeb13e14e8153f435d2aae5b, type: 3}
   subtitles:
-  - sentence: Communication system linked and functioning perfectly.
-    displayDuration: 3
+  - sentence: Communication system linked
+    displayDuration: 2
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}

@@ -12,7 +12,7 @@ public class UserTap_Handler : MonoBehaviour
     [Space]
     [SerializeField]
     [Range(0f, 15f)]
-    [Tooltip("How much time to enable user tap after delay")]
+    [Tooltip("How much time to enable user tap UI appears after delay")]
     private float delay;
 
     void Awake()

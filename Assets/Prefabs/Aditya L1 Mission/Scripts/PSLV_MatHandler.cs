@@ -13,6 +13,11 @@ public class PSLV_MatHandler : MonoBehaviour
     [SerializeField]
     private GameObject launchButton;
 
+    private void Awake()
+    {
+        ResetMaterials();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -67,7 +72,8 @@ public class PSLV_MatHandler : MonoBehaviour
         }
     }
 
-    void OnDisable()
+
+    private void ResetMaterials()
     {
         // Reset the materials to black with alpha 0 when the script is disabled (e.g., on scene change)
         if (materialScriptableObject != null && materialScriptableObject.pslvMaterials.Count > 0)
@@ -81,6 +87,11 @@ public class PSLV_MatHandler : MonoBehaviour
                 mat.SetColor("_BaseColor", color);
             }
         }
+    }
+
+    void OnDisable()
+    {
+        ResetMaterials();
     }
 
     public void print()
