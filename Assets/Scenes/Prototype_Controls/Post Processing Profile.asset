@@ -34,7 +34,7 @@ MonoBehaviour:
   highlightsEnd:
     m_OverrideState: 0
     m_Value: 1
---- !u!114 &-1080726784657096361
+--- !u!114 &-5998249658443818272
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   intensity:
-    m_OverrideState: 0
-    m_Value: -0.1
+    m_OverrideState: 1
+    m_Value: 0
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -58,10 +58,10 @@ MonoBehaviour:
     m_Value: 1
   center:
     m_OverrideState: 0
-    m_Value: {x: 0.79, y: 0.51}
+    m_Value: {x: 0.5, y: 0.5}
   scale:
     m_OverrideState: 0
-    m_Value: 5
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   - {fileID: 3605880162447513045}
   - {fileID: 8825227835631399740}
   - {fileID: -6556814028704455537}
-  - {fileID: -1080726784657096361}
+  - {fileID: -5998249658443818272}
 --- !u!114 &2113012968121167828
 MonoBehaviour:
   m_ObjectHideFlags: 3

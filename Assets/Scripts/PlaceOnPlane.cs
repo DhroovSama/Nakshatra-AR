@@ -24,6 +24,11 @@ public class PlaceOnPlane : MonoBehaviour
         set { spawnedObjectMoonSurface = value; }
     }
 
+    [SerializeField]
+    private Vector3 moonSurfacePosition;
+    [SerializeField]
+    private Quaternion moonSurfaceRotation;
+
     TouchControls controls;
     bool isPressed;
     ARRaycastManager aRRaycastManager;
@@ -69,8 +74,11 @@ public class PlaceOnPlane : MonoBehaviour
                 if (lowestPlane != null)
                 {
                     spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, lowestPlane.center, Quaternion.identity);
-                    isMoonSurfaceSpawned = true;
 
+                    moonSurfacePosition = lowestPlane.center;
+                    moonSurfaceRotation = Quaternion.identity;
+
+                    isMoonSurfaceSpawned = true;
                     isPSLVSpawned = true;
 
                     disableARPlane.getDisableARPlane();
@@ -79,6 +87,10 @@ public class PlaceOnPlane : MonoBehaviour
                 {
                     spawnedObjectMoonSurface.transform.position = hitPose.position;
                     spawnedObjectMoonSurface.transform.rotation = hitPose.rotation;
+
+                    // Store the position and rotation
+                    moonSurfacePosition = hitPose.position;
+                    moonSurfaceRotation = hitPose.rotation;
                 }
 
                 vibrationController.VibratePhone_Medium();
@@ -133,5 +145,15 @@ public class PlaceOnPlane : MonoBehaviour
     public static GameObject getSpawnedObjectMoonSurface()
     {
         return instance.spawnedObjectMoonSurface;
+    }
+
+    public Vector3 GetMoonSurfacePosition()
+    {
+        return moonSurfacePosition;
+    }
+
+    public Quaternion GetMoonSurfaceRotation()
+    {
+        return moonSurfaceRotation;
     }
 }

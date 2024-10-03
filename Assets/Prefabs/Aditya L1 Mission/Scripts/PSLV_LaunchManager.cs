@@ -324,7 +324,6 @@ public class PSLV_LaunchManager : MonoBehaviour
         }
     }
 
-    // Optional: Handle what happens when the LAUNCH button is clicked
     private void OnEnable()
     {
         launchButton.onClick.AddListener(OnLaunchButtonClicked);
@@ -344,6 +343,8 @@ public class PSLV_LaunchManager : MonoBehaviour
             launchButton.gameObject.SetActive(false);
 
             checksUI.SetActive(false);
+
+            holdButton.gameObject.SetActive(false); 
         }
         else
         {

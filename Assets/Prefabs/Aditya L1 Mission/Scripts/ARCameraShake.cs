@@ -5,7 +5,7 @@ using System.Collections;
 
 public class ARCameraShake : MonoBehaviour
 {
-    public Volume volume; 
+    public Volume volume;
     private LensDistortion lensDistortion;
 
     [SerializeField]
@@ -14,14 +14,14 @@ public class ARCameraShake : MonoBehaviour
     [Header("Shake parameters"), Space]
     [Tooltip("Duration of the shake effect")]
     public float duration = 0.5f;
-    [Tooltip("Magnitude of the shake effect")]
+    [Tooltip("Initial magnitude of the shake effect")]
     public float magnitude = 0.5f;
 
     [Header("Haptic feedback parameters"), Space]
     [Tooltip("Toggle haptic feedback")]
     public bool enableHaptics = true;
     [Tooltip("Duration of haptic feedback")]
-    public float hapticDuration = 0.1f; 
+    public float hapticDuration = 0.1f;
 
     void Start()
     {
@@ -35,7 +35,6 @@ public class ARCameraShake : MonoBehaviour
         }
     }
 
-    // Public method to trigger the camera shake
     public void TriggerShake()
     {
         if (lensDistortion != null)
@@ -52,10 +51,8 @@ public class ARCameraShake : MonoBehaviour
     {
         float elapsed = 0.0f;
 
-        // Store the original intensity
         float originalIntensity = lensDistortion.intensity.value;
 
-        // Haptic feedback
         if (enableHaptics)
         {
             TriggerHaptics();
@@ -63,10 +60,12 @@ public class ARCameraShake : MonoBehaviour
 
         while (elapsed < duration)
         {
-            // Generate a random intensity value for shake effect
-            float randomIntensity = Random.Range(-magnitude, magnitude);
+            float normalizedTime = elapsed / duration;
 
-            // Apply the random intensity to the lens distortion
+            float currentMagnitude = Mathf.Lerp(magnitude, 0f, normalizedTime);
+
+            float randomIntensity = Random.Range(-currentMagnitude, currentMagnitude);
+
             lensDistortion.intensity.value = randomIntensity;
 
             elapsed += Time.deltaTime;
@@ -74,7 +73,6 @@ public class ARCameraShake : MonoBehaviour
             yield return null;
         }
 
-        // Reset the intensity to the original value
         lensDistortion.intensity.value = originalIntensity;
     }
 

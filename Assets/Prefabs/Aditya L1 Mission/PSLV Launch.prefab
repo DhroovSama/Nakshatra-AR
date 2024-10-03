@@ -253,8 +253,10 @@ GameObject:
   - component: {fileID: 1836808520183455283}
   - component: {fileID: 2030127188052687028}
   - component: {fileID: 8692619316229209850}
+  - component: {fileID: 513232703957058873}
+  - component: {fileID: 3525390866768416398}
   m_Layer: 0
-  m_Name: PSLV
+  m_Name: PSLV Launch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,6 +330,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f25f0b6801b2e4fa7804b316e95748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arCameraShake: {fileID: 0}
+--- !u!114 &513232703957058873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411419313304815765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24552e024575194bb8b696464e74326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeHandler: {fileID: 0}
+--- !u!114 &3525390866768416398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411419313304815765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfcdc2cd971a264b898e3ab195ed40f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seperationPSLV: {fileID: 4041287408671344030, guid: 0138a50f91f35ad4abcef4f72107ed11, type: 3}
+  placeOnPlane: {fileID: 0}
 --- !u!1 &8889933017431828584
 GameObject:
   m_ObjectHideFlags: 0
