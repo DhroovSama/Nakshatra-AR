@@ -6,4 +6,6 @@ public class GameObjectAssigner : MonoBehaviour
 {
     [SerializeField]
     public ParticleSystem smokeVFX, thrustVFX;
+
+    
 }

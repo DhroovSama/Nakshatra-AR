@@ -1,10 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GlobalUIProvider_AdityaL1 : MonoBehaviour
 {
     private static GlobalUIProvider_AdityaL1 instance;
 
-    [Header("UI Elements")]
+    [SerializeField]
+    private GameObject seperationPhaseTutorial;
+
+    [SerializeField]
+    private Button nextPhaseButton;
+
+    [Header("UI Elements"), Tooltip("Auto Assigned")]
     public GameObject userTap;
 
     private void Awake()
@@ -14,7 +21,7 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
 
     private void Update()
     {
-        if(PlaceOnPlane.IsPSLVSpawned())
+        if(PlaceOnPlane.IsPSLVSpawned() && !PlaceOnPlane.IsPhase1Finished_PSLV())
         {
             UserTap_Handler userTapHandler = FindObjectOfType<UserTap_Handler>();
 
@@ -29,8 +36,18 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
         }
     }
 
+    public static GameObject getSeperationPhaseTutorial()
+    {
+        return instance.seperationPhaseTutorial;
+    }
+
     public static GameObject getuserTap()
     {
         return instance.userTap;
+    }
+
+    public static Button getNextPhaseButton()
+    {
+        return instance.nextPhaseButton;
     }
 }

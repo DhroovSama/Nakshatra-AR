@@ -48,11 +48,11 @@ public class SeperationPhaseValues_PSLV : MonoBehaviour, ISeperationPhaseValues
 
     private void UpdateAllInitialValues()
     {
-        timeText.text = $"Time: {time:F1}s";
-        velocityText.text = $"Velocity: {velocity:F1} m/s";
-        rangeText.text = $"Range: {range:F1} km";
-        altitudeText.text = $"Altitude: {altitude:F1} km";
-        azimuthText.text = $"Azimuth: {azimuth:F1} degrees";
+        timeText.text = $"{time:F1}";
+        velocityText.text = $"{velocity:F1}";
+        rangeText.text = $"{range:F1}";
+        altitudeText.text = $"{altitude:F1}";
+        azimuthText.text = $"{azimuth:F1}";
     }
 
     private IEnumerator UpdateMissionTime()
@@ -60,7 +60,7 @@ public class SeperationPhaseValues_PSLV : MonoBehaviour, ISeperationPhaseValues
         while (isMissionRunning)
         {
             time += Time.deltaTime;
-            timeText.text = $"Time: {time:F1}s";
+            timeText.text = $"{time:F1}";
             yield return null;
         }
     }
@@ -75,7 +75,7 @@ public class SeperationPhaseValues_PSLV : MonoBehaviour, ISeperationPhaseValues
         while (isMissionRunning)
         {
             velocity += velocityIncrement * Time.deltaTime;
-            velocityText.text = $"Velocity: {velocity:F1} m/s";
+            velocityText.text = $"{velocity:F1}";
             yield return null;
         }
     }
@@ -90,7 +90,7 @@ public class SeperationPhaseValues_PSLV : MonoBehaviour, ISeperationPhaseValues
         while (isMissionRunning)
         {
             range += rangeIncrement * Time.deltaTime;
-            rangeText.text = $"Range: {range:F1} km";
+            rangeText.text = $"{range:F1}";
             yield return null;
         }
     }
@@ -105,7 +105,7 @@ public class SeperationPhaseValues_PSLV : MonoBehaviour, ISeperationPhaseValues
         while (isMissionRunning)
         {
             altitude += altitudeIncrement * Time.deltaTime;
-            altitudeText.text = $"Altitude: {altitude:F1} km";
+            altitudeText.text = $"{altitude:F1}";
             yield return null;
         }
     }
@@ -120,7 +120,7 @@ public class SeperationPhaseValues_PSLV : MonoBehaviour, ISeperationPhaseValues
         while (isMissionRunning)
         {
             azimuth += azimuthIncrement * Time.deltaTime;
-            azimuthText.text = $"Azimuth: {azimuth:F1} degrees";
+            azimuthText.text = $"{azimuth:F1}";
             yield return null;
         }
     }

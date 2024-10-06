@@ -118,7 +118,7 @@ public class PSLV_LaunchManager : MonoBehaviour
 
     private void AssignPSLV_Animator()
     {
-        if (PlaceOnPlane.IsPSLVSpawned())
+        if (PlaceOnPlane.IsPSLVSpawned() && !PlaceOnPlane.IsPhase1Finished_PSLV())
         {
             ThrustVFXHandler_PSLV thrustVFXHandler_PSLV = FindObjectOfType<ThrustVFXHandler_PSLV>();
 

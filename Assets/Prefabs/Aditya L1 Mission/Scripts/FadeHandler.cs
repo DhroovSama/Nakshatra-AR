@@ -7,7 +7,7 @@ public class FadeHandler : MonoBehaviour
     [SerializeField]
     private RawImage cameraFade;
 
-    [SerializeField, Range(1f,10f), Tooltip("Duration of the fade in seconds")]
+    [SerializeField, Range(0f,10f), Tooltip("Duration of the fade in seconds")]
     private float fadeDuration = 1.0f; 
 
     private Coroutine fadeCoroutine;

@@ -8,7 +8,7 @@ public class VFX_manager : MonoBehaviour
 
     private void Update()
     {
-        if (PlaceOnPlane.IsPSLVSpawned())
+        if (PlaceOnPlane.IsPSLVSpawned() && !PlaceOnPlane.IsPhase1Finished_PSLV())
         {
             GameObjectAssigner gameObjectAssigner = FindObjectOfType<GameObjectAssigner>();
 
