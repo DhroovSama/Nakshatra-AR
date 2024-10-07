@@ -6,13 +6,16 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     private static GlobalUIProvider_AdityaL1 instance;
 
     [SerializeField]
-    private GameObject seperationPhaseTutorial;
+    private GameObject seperationPhaseTutorial, orbitShiftPhaseTutorial;
 
     [SerializeField]
     private Button nextPhaseButton;
 
     [SerializeField]
     private GameObject seperationPhaseUI;
+
+    [SerializeField]
+    private Button orbitShiftButton;
 
     [Header("UI Elements"), Tooltip("Auto Assigned")]
     public GameObject userTap;
@@ -43,6 +46,10 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     {
         return instance.seperationPhaseTutorial;
     }
+    public static GameObject getOrbitShiftPhaseTutorial()
+    {
+        return instance.orbitShiftPhaseTutorial;
+    }
 
     public static GameObject getuserTap()
     {
@@ -52,6 +59,10 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     public static Button getNextPhaseButton()
     {
         return instance.nextPhaseButton;
+    }
+    public static Button getOrbitShiftButton()
+    {
+        return instance.orbitShiftButton;
     }
 
     public static GameObject getSeperationPhaseUI()

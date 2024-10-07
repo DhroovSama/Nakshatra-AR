@@ -59,6 +59,15 @@ public class PlaceOnPlane : MonoBehaviour
         set { isPhase2Finished = value; }
     }
 
+    [Space]
+    [SerializeField]
+    private bool isPhase3Finished = false;
+    public bool IsPhase3Finished
+    {
+        get { return isPhase3Finished; }
+        set { isPhase3Finished = value; }
+    }
+
     private static PlaceOnPlane instance;
 
     [SerializeField]
@@ -168,6 +177,10 @@ public class PlaceOnPlane : MonoBehaviour
     public static bool IsPhase2Finished_PSLV()
     {
         return instance.isPhase2Finished;
+    }
+    public static bool IsPhase3Finished_PSLV()
+    {
+        return instance.isPhase3Finished;
     }
     public static GameObject getSpawnedObjectMoonSurface()
     {

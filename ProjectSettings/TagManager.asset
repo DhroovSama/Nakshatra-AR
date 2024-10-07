@@ -18,6 +18,8 @@ TagManager:
   - Phase2
   - PSLV_Seperation
   - Phase3
+  - AdityaL1
+  - Phase3Container
   layers:
   - Default
   - TransparentFX

@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NextPhaseManager_PSLVSeperation : MonoBehaviour
+public class NextPhaseManager_PSLVOrbitShift : MonoBehaviour
 {
     [SerializeField, Tooltip("Auto Assigned")]
     private PlaceOnPlane placeOnPlane;
 
     [SerializeField, Tooltip("Auto Assigned")]
+
     private FadeHandler fadeHandler;
     [Space]
-    [SerializeField, Tooltip("Assign the next Phase 3 Prefab i.e. Earth Orbit Escape Phase")]
-    private GameObject OrbitPSLV_Phase3;
+    [SerializeField, Tooltip("Assign the next Phase 4 Prefab i.e. Earth Orbit Escape Phase")]
+    private GameObject OrbitPSLV_Phase4;
 
     [Space]
-    [SerializeField]
-    private GameObject Phase2;
+    private GameObject Phase3;
 
     private void Start()
     {
@@ -28,28 +28,22 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
         {
             fadeHandler = FindObjectOfType<FadeHandler>();
         }
-
-        if(GlobalUIProvider_AdityaL1.getNextPhaseButton() != null)
-        {
-            GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.AddListener(StartHandleNextPhase);
-        }
-        else { Debug.Log("Next Phase Button is not Assigned"); }
     }
 
-    private void StartHandleNextPhase()
+    public void StartHandleNextPhase()
     {
         StartCoroutine(HandleNextPhase());
     }
 
-    public IEnumerator HandleNextPhase()
+    private IEnumerator HandleNextPhase()
     {
-        placeOnPlane.IsPhase2Finished = true;
+        placeOnPlane.IsPhase3Finished = true;
 
-        fadeHandler.FadeIn();
+        //fadeHandler.FadeIn();
 
         yield return new WaitForSeconds(2f);
 
-        DestroyPhase2();
+        DestroyPhase3();
 
         // Get the user-tapped coordinates and adjust the Y position
         var userTapCoordinates = placeOnPlane.GetMoonSurfacePosition();
@@ -79,31 +73,19 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
         Quaternion finalRotation = rotation * additionalRotation;
 
         // Instantiate the object with the calculated rotation and adjusted position
-        Instantiate(OrbitPSLV_Phase3, userTapCoordinates, finalRotation);
+        Instantiate(OrbitPSLV_Phase4, userTapCoordinates, finalRotation);
 
-        GlobalUIProvider_AdityaL1.getOrbitShiftPhaseTutorial().SetActive(true);
+        //GlobalUIProvider_AdityaL1.getOrbitShiftPhaseTutorial().SetActive(true);
     }
 
-
-
-    private void DestroyPhase2()
+    private void DestroyPhase3()
     {
-        Phase2 = GameObject.FindWithTag("Phase2");
+        Phase3 = GameObject.FindWithTag("Phase3");
 
-        Destroy(Phase2);
+        Destroy(Phase3);
 
-        GlobalUIProvider_AdityaL1.getNextPhaseButton().gameObject.SetActive(false);
-
-        GlobalUIProvider_AdityaL1.getSeperationPhaseUI().gameObject.SetActive(false);
+        GlobalUIProvider_AdityaL1.getOrbitShiftButton().gameObject.SetActive(false);
 
         fadeHandler.FadeOut();
-    }
-
-    private void OnDestroy()
-    {
-        if(GlobalUIProvider_AdityaL1.getNextPhaseButton() != null)
-        {
-            GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.RemoveListener(StartHandleNextPhase);
-        }
     }
 }
