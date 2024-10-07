@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ public class RocketPhase
     public string phaseName;           // For reference
     public string animatorTrigger;     // Animator trigger name
     public GameObject phaseGameObject; // Associated GameObject
-    // public AnimationClip animationClip; // Optional: Reference to the AnimationClip
+    // public AnimationClip animationClip; // Optional: Reference to the AnimationClip    
 }
 
 public class RocketSeperationStages_Manager : MonoBehaviour
@@ -32,6 +33,9 @@ public class RocketSeperationStages_Manager : MonoBehaviour
     // private Button backButton;
 
     private int currentPhaseIndex = -1; // Start before the first phase
+
+    [SerializeField, Range(1f, 15f), Tooltip("in how much time the next phase button will appear after Phase 5 Enables")]
+    private float nextPhaseButtonTime = 0f;
 
     private void Start()
     {
@@ -131,7 +135,19 @@ public class RocketSeperationStages_Manager : MonoBehaviour
             */
 
             Debug.Log($"Phase {currentPhase.phaseName} activated.");
+
+            if(currentPhase.phaseName == "(5) Satellite Seperation")
+            {
+                StartCoroutine(EnableNextPhaseButtonTimer());
+            }
         }
+    }
+
+    private IEnumerator EnableNextPhaseButtonTimer()
+    {
+        yield return new WaitForSeconds(nextPhaseButtonTime);
+
+        GlobalUIProvider_AdityaL1.getNextPhaseButton().gameObject.SetActive(true);
     }
 
     public void StartSeperationPhase()

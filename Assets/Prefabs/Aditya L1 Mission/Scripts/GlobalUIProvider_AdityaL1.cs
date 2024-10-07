@@ -11,6 +11,9 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     [SerializeField]
     private Button nextPhaseButton;
 
+    [SerializeField]
+    private GameObject seperationPhaseUI;
+
     [Header("UI Elements"), Tooltip("Auto Assigned")]
     public GameObject userTap;
 
@@ -49,5 +52,10 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     public static Button getNextPhaseButton()
     {
         return instance.nextPhaseButton;
+    }
+
+    public static GameObject getSeperationPhaseUI()
+    {
+        return instance.seperationPhaseUI;  
     }
 }

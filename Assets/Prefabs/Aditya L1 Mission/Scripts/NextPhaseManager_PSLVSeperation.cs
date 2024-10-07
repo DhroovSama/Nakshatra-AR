@@ -11,7 +11,11 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
     private FadeHandler fadeHandler;
     [Space]
     [SerializeField, Tooltip("Assign the next Phase 3 Prefab i.e. Earth Orbit Escape Phase")]
-    private GameObject OrbitPSLV_PHase3;
+    private GameObject OrbitPSLV_Phase3;
+
+    [Space]
+    [SerializeField]
+    private GameObject Phase2;
 
     private void Start()
     {
@@ -27,16 +31,25 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
 
         if(GlobalUIProvider_AdityaL1.getNextPhaseButton() != null)
         {
-            GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.AddListener(HandleNextPhase);
+            GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.AddListener(StartHandleNextPhase);
         }
         else { Debug.Log("Next Phase Button is not Assigned"); }
     }
 
-    public void HandleNextPhase()
+    private void StartHandleNextPhase()
+    {
+        StartCoroutine(HandleNextPhase());
+    }
+
+    public IEnumerator HandleNextPhase()
     {
         placeOnPlane.IsPhase2Finished = true;
 
         fadeHandler.FadeIn();
+
+        yield return new WaitForSeconds(2f);
+
+        DestroyPhase2();
 
         var userTapCordinates = placeOnPlane.GetMoonSurfacePosition();
 
@@ -56,14 +69,27 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(directionToCamera);
 
         // Instantiate the object with the calculated rotation
-        Instantiate(OrbitPSLV_PHase3, userTapCordinates, rotation);
+        Instantiate(OrbitPSLV_Phase3, userTapCordinates, rotation);
+    }
+
+    private void DestroyPhase2()
+    {
+        Phase2 = GameObject.FindWithTag("Phase2");
+
+        Destroy(Phase2);
+
+        GlobalUIProvider_AdityaL1.getNextPhaseButton().gameObject.SetActive(false);
+
+        GlobalUIProvider_AdityaL1.getSeperationPhaseUI().gameObject.SetActive(false);
+
+        fadeHandler.FadeOut();
     }
 
     private void OnDestroy()
     {
         if(GlobalUIProvider_AdityaL1.getNextPhaseButton() != null)
         {
-            GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.RemoveListener(HandleNextPhase);
+            GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.RemoveListener(StartHandleNextPhase);
         }
     }
 }

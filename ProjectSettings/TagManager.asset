@@ -17,6 +17,7 @@ TagManager:
   - PSLV Bottom
   - Phase2
   - PSLV_Seperation
+  - Phase3
   layers:
   - Default
   - TransparentFX
