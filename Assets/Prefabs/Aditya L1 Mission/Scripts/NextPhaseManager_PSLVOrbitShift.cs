@@ -19,6 +19,8 @@ public class NextPhaseManager_PSLVOrbitShift : MonoBehaviour
 
     private void Start()
     {
+        GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.AddListener(StartHandleNextPhase);
+
         if (placeOnPlane == null)
         {
             placeOnPlane = FindObjectOfType<PlaceOnPlane>();
@@ -76,6 +78,8 @@ public class NextPhaseManager_PSLVOrbitShift : MonoBehaviour
         Instantiate(OrbitPSLV_Phase4, userTapCoordinates, finalRotation);
 
         //GlobalUIProvider_AdityaL1.getOrbitShiftPhaseTutorial().SetActive(true);
+
+        GlobalUIProvider_AdityaL1.getNextPhaseButton().gameObject.SetActive(false);
     }
 
     private void DestroyPhase3()
@@ -87,5 +91,10 @@ public class NextPhaseManager_PSLVOrbitShift : MonoBehaviour
         GlobalUIProvider_AdityaL1.getOrbitShiftButton().gameObject.SetActive(false);
 
         fadeHandler.FadeOut();
+    }
+
+    private void OnDestroy()
+    {
+        GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.RemoveListener(StartHandleNextPhase);
     }
 }

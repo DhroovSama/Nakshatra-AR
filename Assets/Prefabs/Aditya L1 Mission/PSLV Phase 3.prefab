@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeOnPlane: {fileID: 0}
   fadeHandler: {fileID: 0}
-  OrbitPSLV_Phase4: {fileID: 0}
+  OrbitPSLV_Phase4: {fileID: 7953814579123347927, guid: cd04c5b1c06864a46b0c8d95c683dc76, type: 3}
 --- !u!1001 &1804981770263942753
 PrefabInstance:
   m_ObjectHideFlags: 0
