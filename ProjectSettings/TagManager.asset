@@ -20,6 +20,8 @@ TagManager:
   - Phase3
   - AdityaL1
   - Phase3Container
+  - Sattelite
+  - Rocket
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,397 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3635198437419213926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1332653965505274861}
+  m_Layer: 0
+  m_Name: Aditya Museum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1332653965505274861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3635198437419213926}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.26, y: 1.99, z: 27.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9101921727766040538}
+  - {fileID: 2971584372312064481}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4468799677963434016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1332653965505274861}
+    m_Modifications:
+    - target: {fileID: 233593746537676095, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: 977b72aebef7b6a4783ddbca6251f904, type: 2}
+    - target: {fileID: 553327350541413329, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: e9a640752db150a43811b37577e3db2b, type: 2}
+    - target: {fileID: 1338348420869542235, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: dd4eaf76a8d28444f845087b76a89449, type: 2}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2940107690999683811, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142017367522724273, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389666991863947103, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514195214573368123, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625719726557172094, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415927266872972767, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_Name
+      value: PSLV Rocket (Museum)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415927266872972767, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655718128939536595, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: c70c1595757720e49be6b238366f1056, type: 2}
+    - target: {fileID: 6720275770748689305, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607870289520076939, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: informationCanvases
+      value: 
+      objectReference: {fileID: 1641845735929275075}
+    - target: {fileID: 7784115681582035742, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: af317116bf745774d93e7047935bdd69, type: 2}
+    - target: {fileID: 8100493806209217203, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175255259538029049, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: b7387f0ef0bdef847a2a5393cdae1261, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+--- !u!1 &1641845735929275075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2940107690999683811, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+  m_PrefabInstance: {fileID: 4468799677963434016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2971584372312064481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1673489268135213505, guid: 11d66c60e75e52f4e95c35022c6a2f5e, type: 3}
+  m_PrefabInstance: {fileID: 4468799677963434016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5396573402845537214
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1332653965505274861}
+    m_Modifications:
+    - target: {fileID: 189286465300732588, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: 0d80d0eb22fafc94bac12cca97c80f40, type: 2}
+    - target: {fileID: 453425319198777136, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_Name
+      value: Aditya L1 (Museum)
+      objectReference: {fileID: 0}
+    - target: {fileID: 453425319198777136, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 453425319198777136, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_TagString
+      value: Sattelite
+      objectReference: {fileID: 0}
+    - target: {fileID: 989107552770067886, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449560054882114340, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468808769448641626, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_Name
+      value: 3 HEL1OS Payload
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468808769448641626, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645572392730587200, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: fc153ad91caf1564888a1638f6a91c70, type: 2}
+    - target: {fileID: 1719986974962522290, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1858931401805227842, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947701480024050726, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: 88ef7638085625244b9a9c9b9631cd01, type: 2}
+    - target: {fileID: 3357182166453827788, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3581510609266518594, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_text
+      value: 'Objective : Designed to study the X-ray flares from the Sun over a
+        wide X-ray energy range.
+
+
+        Developed : U R Rao Satellite Centre,
+        Bengaluru'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.15999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815534575060594128, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976889852575460934, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985508355647123768, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059187636281845306, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: 67acce1637a1c2547935b576f1f7d969, type: 2}
+    - target: {fileID: 4242776993389531680, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317262537071213266, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c95ef44065bd774fa09d52edd738389, type: 2}
+    - target: {fileID: 4920258112141721081, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: secondaryObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608976382987048652, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_text
+      value: 'Developed : Indian Institute of Astrophysics, Bengaluru
+
+
+        Weight
+        : 190 kg'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798452680939642174, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850815482373094731, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203657266063519705, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416976874113775835, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2afc20ec5d90e6549a52880360a1f31d, type: 2}
+    - target: {fileID: 6784737379169741385, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: infoVO
+      value: 
+      objectReference: {fileID: 11400000, guid: 71bf0401092e0ce498e574f4a3d900ea, type: 2}
+    - target: {fileID: 8056938516399112052, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_Name
+      value: 3 Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223391354725697577, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223424848988980498, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.03692
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223424848988980498, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.01345
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447290665535609531, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817574429453219332, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+      propertyPath: m_text
+      value: 'Developed : Inter University Centre for Astronomy & Astrophysics, Pune
+
+
+        Weight
+        : 45kg'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+--- !u!4 &9101921727766040538 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3797941296841780324, guid: 0c8fdb8ffd5309d45a9cac995c68b096, type: 3}
+  m_PrefabInstance: {fileID: 5396573402845537214}
+  m_PrefabAsset: {fileID: 0}

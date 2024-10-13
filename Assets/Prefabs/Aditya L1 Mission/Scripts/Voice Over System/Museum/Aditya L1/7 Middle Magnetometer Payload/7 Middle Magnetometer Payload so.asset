@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: 7 Middle Magnetometer Payload so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: c28e1c78333efe8489cae8c965c8df9d, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 6fe76122568f1ee4fb13839d10340ded, type: 3}
+  subtitles:
+  - sentence: End Magnetometer
+    displayDuration: 0.5
+  - sentence: "Objective: It is mounted on a 6-meter deployable \r"
+    displayDuration: 0.8
+  - sentence: boom, positioned 6 meters from the base, and
+    displayDuration: 0.9
+  - sentence: measures the low-intensity interplanetary magnetic field in space
+    displayDuration: 1.2
+  - sentence: 'Developed: The Laboratory for Electro-Optics Systems developed it.'
+    displayDuration: 1.5
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

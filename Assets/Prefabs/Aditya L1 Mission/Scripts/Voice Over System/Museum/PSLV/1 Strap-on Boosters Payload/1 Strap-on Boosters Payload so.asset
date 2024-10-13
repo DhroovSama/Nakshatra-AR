@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: 1 Strap-on Boosters Payload so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 4b40d42523fdd8a49bbb32f1282062f7, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 40df409bcf9877c418a4bc53198d98a3, type: 3}
+  subtitles:
+  - sentence: Strap-on Boosters
+    displayDuration: 0.5
+  - sentence: 'PSLV-XL uses 6 extended strap-ons of 12 tonnes each, the '
+    displayDuration: 1
+  - sentence: 'PSLV-CA (core alone version) does not use any strap-on '
+    displayDuration: 0.9
+  - sentence: motors, PSLV-DL uses 2 and PSLV QL uses 4.
+    displayDuration: 0.6
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: 1 VELC Payload so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: c437fe41b1bc8c2439470d66860ec5e0, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: f90c4f2ff5f749140a5e1d0476e8bf8c, type: 3}
+  subtitles:
+  - sentence: VELC (Visible Emission Line Coronagraph)
+    displayDuration: 0.8
+  - sentence: "Objective : Designed to study solar corona and \n"
+    displayDuration: 0.8
+  - sentence: dynamics of coronal mass ejections.
+    displayDuration: 0.7
+  - sentence: 'Developed : Indian Institute of Astrophysics, Bengaluru
+
+      Weight
+      : 190 kg'
+    displayDuration: 1.1
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

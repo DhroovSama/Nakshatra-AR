@@ -11,13 +11,13 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(ARRaycastManager))]
 public class PlaceOnPlane : MonoBehaviour
 {
-    [SerializeField] GameObject moonSurfacePrefab;
+    [SerializeField] private GameObject moonSurfacePrefab;
     [SerializeField] private DisableARPlaneWhenObjectSpawned disableARPlane;
 
     [SerializeField]
     private VibrationController vibrationController;
 
-    GameObject spawnedObjectMoonSurface;
+    private GameObject spawnedObjectMoonSurface;
     public GameObject SpawnedObjectMoonSurface
     {
         get { return spawnedObjectMoonSurface; }
@@ -29,11 +29,11 @@ public class PlaceOnPlane : MonoBehaviour
     [SerializeField]
     private Quaternion moonSurfaceRotation;
 
-    TouchControls controls;
-    bool isPressed;
-    ARRaycastManager aRRaycastManager;
-    ARPlaneManager aRPlaneManager;
-    static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    private TouchControls controls;
+    private bool isPressed;
+    private ARRaycastManager aRRaycastManager;
+    private ARPlaneManager aRPlaneManager;
+    private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     [Space]
     [SerializeField] private bool isMoonSurfaceSpawned = false;
@@ -73,6 +73,10 @@ public class PlaceOnPlane : MonoBehaviour
     [SerializeField]
     private VoiceOverData MoonSurfaceInitialisedSO;
 
+    // New boolean variable to control movement
+    [SerializeField]
+    private bool canMoveObject = false;
+
     private void Awake()
     {
         instance = this;
@@ -85,44 +89,55 @@ public class PlaceOnPlane : MonoBehaviour
 
     private void Update()
     {
-        if (Pointer.current == null || isPressed == false)
+        if (Pointer.current == null)
             return;
 
-        var touchPosition = Pointer.current.position.ReadValue();
-
-        if (aRRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
+        if (isPressed)
         {
-            var hitPose = hits[0].pose;
+            var touchPosition = Pointer.current.position.ReadValue();
 
-            if (spawnedObjectMoonSurface == null && !isMoonSurfaceSpawned)
+            if (aRRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
             {
-                ARPlane lowestPlane = GetLowestPlane();
+                var hitPose = hits[0].pose;
 
-                if (lowestPlane != null)
+                // Check if the object is spawned and can be moved
+                if (spawnedObjectMoonSurface != null && canMoveObject)
                 {
-                    spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, lowestPlane.center, Quaternion.identity);
-
-                    moonSurfacePosition = lowestPlane.center;
-                    moonSurfaceRotation = Quaternion.identity;
-
-                    isMoonSurfaceSpawned = true;
-                    isPSLVSpawned = true;
-
-                    disableARPlane.getDisableARPlane();
-                }
-                else
-                {
+                    // Move the object to the touch position
                     spawnedObjectMoonSurface.transform.position = hitPose.position;
-                    spawnedObjectMoonSurface.transform.rotation = hitPose.rotation;
 
-                    // Store the position and rotation
+                    // Store the position
                     moonSurfacePosition = hitPose.position;
-                    moonSurfaceRotation = hitPose.rotation;
                 }
+                else if (spawnedObjectMoonSurface == null && !isMoonSurfaceSpawned)
+                {
+                    ARPlane lowestPlane = GetLowestPlane();
 
-                vibrationController.VibratePhone_Medium();
+                    if (lowestPlane != null)
+                    {
+                        spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, lowestPlane.center, Quaternion.identity);
 
-                VoiceOverManager.Instance.TriggerVoiceOver(MoonSurfaceInitialisedSO);
+                        moonSurfacePosition = lowestPlane.center;
+                        moonSurfaceRotation = Quaternion.identity;
+
+                        isMoonSurfaceSpawned = true;
+                        isPSLVSpawned = true;
+
+                        disableARPlane.getDisableARPlane();
+                    }
+                    else
+                    {
+                        spawnedObjectMoonSurface = Instantiate(moonSurfacePrefab, hitPose.position, hitPose.rotation);
+
+                        // Store the position and rotation
+                        moonSurfacePosition = hitPose.position;
+                        moonSurfaceRotation = hitPose.rotation;
+                    }
+
+                    vibrationController.VibratePhone_Medium();
+
+                    VoiceOverManager.Instance.TriggerVoiceOver(MoonSurfaceInitialisedSO);
+                }
             }
         }
     }
@@ -195,5 +210,11 @@ public class PlaceOnPlane : MonoBehaviour
     public Quaternion GetMoonSurfaceRotation()
     {
         return moonSurfaceRotation;
+    }
+
+    // Public method to disable movement when the "Placed" button is clicked
+    public void OnPlacedButtonClicked()
+    {
+        canMoveObject = false;
     }
 }

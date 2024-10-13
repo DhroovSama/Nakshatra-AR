@@ -11594,8 +11594,15 @@ MonoBehaviour:
   moonSurfacePrefab: {fileID: 8306865213219369652, guid: 6855139f200bf6d41b6d00b15454042f, type: 3}
   disableARPlane: {fileID: 1941876818}
   vibrationController: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
+  moonSurfacePosition: {x: 0, y: 0, z: 0}
+  moonSurfaceRotation: {x: 0, y: 0, z: 0, w: 0}
   isMoonSurfaceSpawned: 0
+  isPSLVSpawned: 0
+  isPhase1Finished: 0
+  isPhase2Finished: 0
+  isPhase3Finished: 0
   MoonSurfaceInitialisedSO: {fileID: 11400000, guid: c034ed71bbab039478a0b9f4f7082535, type: 2}
+  canMoveObject: 1
 --- !u!114 &1941876813
 MonoBehaviour:
   m_ObjectHideFlags: 0

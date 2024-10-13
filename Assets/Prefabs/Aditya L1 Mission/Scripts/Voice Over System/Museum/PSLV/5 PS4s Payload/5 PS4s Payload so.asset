@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: 5 PS4s Payload so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: c826c9ced0efe7543b2a7818f9e103a7, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: ae4ed2ae252f8c04c90d14357b91909b, type: 3}
+  subtitles:
+  - sentence: 'PS4 is the fourth and final stage of pslv and it uses two '
+    displayDuration: 0.9
+  - sentence: 'liquid engines for propulsion. PS4 is responsible for the '
+    displayDuration: 0.9
+  - sentence: correct injection of PSLV's payloads into their respective desired
+      orbits.
+    displayDuration: 1.2
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

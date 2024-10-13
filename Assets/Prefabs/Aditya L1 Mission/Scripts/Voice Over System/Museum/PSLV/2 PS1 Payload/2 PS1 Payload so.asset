@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: 2 PS1 Payload so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 5960564409a05f243a2fba3c7052c48a, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: ef366a0abe46c834d9c869daa2ca8112, type: 3}
+  subtitles:
+  - sentence: 'PS1 is the first stage of PSLV and it provides the launcher '
+    displayDuration: 1
+  - sentence: 'the high thrust that is required for lift off. '
+    displayDuration: 0.8
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

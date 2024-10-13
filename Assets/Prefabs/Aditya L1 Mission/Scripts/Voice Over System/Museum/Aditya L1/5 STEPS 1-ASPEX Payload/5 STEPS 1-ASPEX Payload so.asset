@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: 5 STEPS 1-ASPEX Payload so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 2bc5010419f35f74c9f8efa302a0025d, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 23dd96e4dd99c08448d29042f236f228, type: 3}
+  subtitles:
+  - sentence: 'Suprathermal and Energetic Particle Spectrometer
+
+'
+    displayDuration: 0.8
+  - sentence: "Objective: It measures the high-energy ions of the solar \r"
+    displayDuration: 1
+  - sentence: wind using a high-energy spectrometer.
+    displayDuration: 0.8
+  - sentence: 'Developed: The Physical Research Laboratory, Ahmedabad developed it'
+    displayDuration: 1.5
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

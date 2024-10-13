@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: 2 SUIT Payload so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 19bee0c81d7944e4997823835e87c3c5, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 30b3576246066744c9d14af2080e6b95, type: 3}
+  subtitles:
+  - sentence: SUIT (Solar Ultraviolet Imaging Telescope)
+    displayDuration: 0.8
+  - sentence: 'Objective : Image the Solar Photosphere and '
+    displayDuration: 0.8
+  - sentence: Chromosphere in near Ultra-violet (UV) and, to .
+    displayDuration: 0.8
+  - sentence: 'measure the solar irradiance variations in near UV
+
+'
+    displayDuration: 0.8
+  - sentence: 'Developed : Inter University Centre for Astronomy & Astrophysics,
+      Pune'
+    displayDuration: 1.3
+  - sentence: 'Weight : 45kg'
+    displayDuration: 0.7
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}
