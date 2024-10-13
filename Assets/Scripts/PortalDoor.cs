@@ -27,6 +27,9 @@ public class PortalDoor : MonoBehaviour
     private bool isPortalPassed = false;
     public bool IsPortalPassed {  get { return isPortalPassed; } }
 
+    [SerializeField, Range(1f,15f), Tooltip("time it takes for the poratl to reste and camera can pass and the materials stencil test flip")]
+    private float timeToReset = 1f;
+
     //private bool isPortalPassedOnce = false;
 
     //[SerializeField]
@@ -74,7 +77,7 @@ public class PortalDoor : MonoBehaviour
             material.SetInt("stest", isCameraInside && other.gameObject.CompareTag("MainCamera") ? (int)CompareFunction.NotEqual : (int)CompareFunction.Equal);
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(timeToReset);
 
         // Rotate the portalLayer by 180 degrees around the Y-axis
         if (portalLayer != null)
@@ -84,9 +87,6 @@ public class PortalDoor : MonoBehaviour
 
         isCollisionProcessing = false;
     }
-
-
-
 }
 
 

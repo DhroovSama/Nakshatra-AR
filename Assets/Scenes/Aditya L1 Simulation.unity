@@ -6928,7 +6928,7 @@ MonoBehaviour:
   isPhase2Finished: 0
   isPhase3Finished: 0
   MoonSurfaceInitialisedSO: {fileID: 0}
-  canMoveObject: 1
+  canMoveObject: 0
 --- !u!114 &1941876813
 MonoBehaviour:
   m_ObjectHideFlags: 0

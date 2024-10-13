@@ -101,7 +101,10 @@ public class TriggerTerrainScanner : MonoBehaviour
             else { Debug.LogWarning("locationButtonUIProvider is null"); }
         }
 
-        DisableNoLandingZones();
+        if(uiManager.HasLanderSpawned)
+        {
+            DisableNoLandingZones();
+        }
     }
 
     private void OnDestroy()

@@ -5,7 +5,10 @@ using UnityEngine;
 public class LanderAnimation : MonoBehaviour
 {
     [SerializeField] private LanderMechanics landerMechanics;
+    [SerializeField] private UI_Manager ui_Manager;
     [SerializeField] private LanderAnimEventsHandler landerAnimEventsHandler;
+
+    [Space]
 
     [SerializeField] private GameObject LanderParent;
 
@@ -43,7 +46,7 @@ public class LanderAnimation : MonoBehaviour
         //    doorAnimationStartPoint = FindObjectOfType<LanderCollisionHandler>().gameObject;
         //}
 
-        if (landerAnimEventsHandler == null)
+        if (landerAnimEventsHandler == null && ui_Manager.HasLanderSpawned)
         {
             landerAnimEventsHandler = FindObjectOfType<LanderAnimEventsHandler>();
             LanderParent = FindObjectOfType<LanderAnimEventsHandler>().gameObject;

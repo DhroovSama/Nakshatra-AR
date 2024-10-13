@@ -70,7 +70,16 @@ public class UI_Manager : MonoBehaviour
 
     private void Update()
     {
-        spawnLanderSequence();
+        if(PlaceOnPlane.IsMoonSurfaceSpawned())
+        {
+            PlayerHasArrivedCheckTrigger playerHasArrivedCheckTrigger = FindObjectOfType<PlayerHasArrivedCheckTrigger>();
+
+            if(playerHasArrivedCheckTrigger != null)
+            {
+                spawnLanderSequence();
+            }
+            else { Debug.Log("playerHasArrivedCheckTrigger is NULL"); }
+        }
 
         if (landerPointingArrow == null)
         {

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
+using UnityEditor;
 
 public class LanderMechanics : MonoBehaviour
 {
@@ -146,9 +147,14 @@ public class LanderMechanics : MonoBehaviour
             moonTerrain = GameObject.FindGameObjectWithTag("moon");
         }
 
-        AddThrust();
+        if(uI_Manager.HasLanderSpawned)
+        {
+            AddThrust();
+            VelocityManager();
+        }
+        
 
-        VelocityManager();
+        
 
         UpdateUI();
         //AddDirectionalThrust();
@@ -156,7 +162,14 @@ public class LanderMechanics : MonoBehaviour
 
     private void FixedUpdate()
     {
-        AddDirecThrust();
+        if(uI_Manager != null)
+        {
+            if(uI_Manager.HasLanderSpawned)
+            {
+                AddDirecThrust();
+            }
+        }
+        else{ Debug.Log("uI_Manager is NULL"); }
     }
 
     private void UpdateUI()

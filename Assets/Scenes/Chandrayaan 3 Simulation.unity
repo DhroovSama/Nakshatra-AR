@@ -10984,6 +10984,7 @@ GameObject:
   - component: {fileID: 1911400748}
   - component: {fileID: 1911400749}
   - component: {fileID: 1911400750}
+  - component: {fileID: 1911400752}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -11199,6 +11200,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcced5cfce91c14bbfccceed74f35f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1911400752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911400738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcff0e6125085d8429b69ee500bf0ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalDoor: {fileID: 0}
+  timer: 0
+  enterPortalDoor: {fileID: 11400000, guid: 23e32717cee59b44c9a5c53fda325502, type: 2}
+  timeToWait: 30
 --- !u!1 &1920401723
 GameObject:
   m_ObjectHideFlags: 0
@@ -11602,7 +11619,7 @@ MonoBehaviour:
   isPhase2Finished: 0
   isPhase3Finished: 0
   MoonSurfaceInitialisedSO: {fileID: 11400000, guid: c034ed71bbab039478a0b9f4f7082535, type: 2}
-  canMoveObject: 1
+  canMoveObject: 0
 --- !u!114 &1941876813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13247,6 +13264,7 @@ MonoBehaviour:
   offsetForLanderDoorAnim: 0.87
   roverRB: {fileID: 0}
   isRoverAnimEnded: 0
+  ui_Manager: {fileID: 1911400739}
 --- !u!1 &2113898599
 GameObject:
   m_ObjectHideFlags: 0

@@ -1673,6 +1673,7 @@ MonoBehaviour:
   followFootstepsVO: {fileID: 11400000, guid: d327efbb82135574bb8d007644ef4936, type: 2}
   portalLayer: {fileID: 5890656474339349906}
   isPortalPassed: 0
+  timeToReset: 10
 --- !u!1 &5917558674637783551
 GameObject:
   m_ObjectHideFlags: 0
