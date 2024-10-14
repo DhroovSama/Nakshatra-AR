@@ -15,6 +15,7 @@ public class FactsCollectedGlobal : MonoBehaviour
 
     [SerializeField]
     private int factsCollected;
+    public int FactsCollected { get { return factsCollected; } }
 
     [SerializeField]
     private GameObject GameEndScreen;

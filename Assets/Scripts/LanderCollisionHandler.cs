@@ -32,6 +32,9 @@ public class LanderCollisionHandler : MonoBehaviour
     [SerializeField]
     private AudioClip failMissionSFX;
 
+    [SerializeField]
+    private VibrationController vibrationController;
+
     public static LanderCollisionHandler Instance { get; private set; }
 
     private void Awake()
@@ -74,7 +77,15 @@ public class LanderCollisionHandler : MonoBehaviour
     {
         if (!hasNotLandedSafely && speed <= -2)
         {
+            Handheld.Vibrate();
+
             VoiceOverManager.Instance.TriggerVoiceOver(landerMissionFailVO);
+
+            LanderControlsUIManager.GetLanderInfoUIContainer().SetActive(false);
+
+            LanderControlsUIManager.GetLanderControlsUIContainer().SetActive(false);
+
+            landerAnimation.LanderAnimator.enabled = false; 
 
             Debug.Log("DieSequenceToBeAdded");
 

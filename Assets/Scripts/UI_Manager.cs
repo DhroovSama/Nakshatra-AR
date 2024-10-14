@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class UI_Manager : MonoBehaviour
 {
     [SerializeField]
+    private PlayerHasArrivedCheckTrigger playerHasArrivedCheckTrigger;
+    [Space]
+
+    [SerializeField]
     private GameObject landerPointingArrow;
 
     [Header("Countdown Seconds")]
@@ -72,7 +76,7 @@ public class UI_Manager : MonoBehaviour
     {
         if(PlaceOnPlane.IsMoonSurfaceSpawned())
         {
-            PlayerHasArrivedCheckTrigger playerHasArrivedCheckTrigger = FindObjectOfType<PlayerHasArrivedCheckTrigger>();
+            playerHasArrivedCheckTrigger = FindObjectOfType<PlayerHasArrivedCheckTrigger>();
 
             if(playerHasArrivedCheckTrigger != null)
             {

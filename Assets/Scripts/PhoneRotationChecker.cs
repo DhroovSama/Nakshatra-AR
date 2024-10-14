@@ -13,7 +13,7 @@ public class PhoneRotationChecker : MonoBehaviour
     private VibrationController vibrationController;
 
     [SerializeField]
-    private GameObject rotatePhoneCnavas, AImuteButton;
+    private GameObject rotatePhoneCnavas, AImuteButton, CollapsibleMenu;
 
     public void CheckAndSetLeftLandscape()
     {
@@ -42,6 +42,8 @@ public class PhoneRotationChecker : MonoBehaviour
                 AImuteButton.SetActive(true);
 
                 rotatePhoneCnavas.SetActive(false); 
+
+                CollapsibleMenu.SetActive(true);   
             }
         }
     }

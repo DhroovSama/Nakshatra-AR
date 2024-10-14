@@ -46,12 +46,14 @@ public class LanderControlsUIManager : MonoBehaviour
     [SerializeField] private GameObject TerrainScannerControlButton;
 
     [Space]
+    [SerializeField] private GameObject TerrainScannerControlButtonHandTouchUI;
+
+    [Space]
     [SerializeField] private Button TerrainScannerControl;
 
     [SerializeField]
     [Space]
     private bool isAllFactsContainerSetActive = false;
-
 
     private void Awake()
     {
@@ -163,5 +165,10 @@ public class LanderControlsUIManager : MonoBehaviour
     {
         instance.isAllFactsContainerSetActive = isActive;
     }
+    public static GameObject GetTerrainScannerControlButtonHandTouchUI()
+    {
+        return instance.TerrainScannerControlButtonHandTouchUI;
+    }
+
 
 }

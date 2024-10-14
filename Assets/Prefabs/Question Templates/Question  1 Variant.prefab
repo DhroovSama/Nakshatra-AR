@@ -8,9 +8,145 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 50162561805380559, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50162561805380559, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50162561805380559, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
+    - target: {fileID: 50162561805380559, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50162561805380559, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibratePhone_Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 50162561805380559, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VibrationController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 50162561805380559, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166772445532986727, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166772445532986727, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166772445532986727, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
+    - target: {fileID: 2166772445532986727, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166772445532986727, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibratePhone_Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166772445532986727, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VibrationController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166772445532986727, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibratePhone_Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayTapSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VibrationController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UISoundSO, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626984161739266377, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7446737475884878162, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
       propertyPath: m_Name
-      value: Question Template 1
+      value: Question  1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374861399319836735, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374861399319836735, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374861399319836735, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: 16a1189adca29814cbc79f06e92cb0ad, type: 2}
+    - target: {fileID: 8374861399319836735, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374861399319836735, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VibratePhone_Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374861399319836735, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VibrationController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8374861399319836735, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8805824457133672570, guid: 76bbf79dcf0610448baf2c3376910727, type: 3}
       propertyPath: m_Pivot.x

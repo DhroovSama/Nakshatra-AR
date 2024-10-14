@@ -10,12 +10,17 @@ public class UISoundSO : ScriptableObject
     public AudioClip playerCheckerSound;
     public AudioClip landerLaunchSound;
     public AudioClip transitionSceneSound;
+    public AudioClip factCollectedSound;
 
     [Header("Rover SFX")]
     public AudioClip roverMovingSound;
     public AudioClip roverRotationSound;
     public AudioClip roverBrakeSound;
     public AudioClip roverRotationBrakeSound;
+
+    [Header("Quiz SFX")]
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
 
     public void PlayTapSound()
     {
@@ -66,5 +71,17 @@ public class UISoundSO : ScriptableObject
     public void PlaySceneTransitionSound()
     {
         GlobalAudioPlayer.GetPlaySound(transitionSceneSound);
+    }
+    public void PlayFactCollectedSound()
+    {
+        GlobalAudioPlayer.GetPlaySound(factCollectedSound);
+    }
+    public void PlayCorrectSound()
+    {
+        GlobalAudioPlayer.GetPlaySound(correctSound);
+    }
+    public void PlayWrongSound()
+    {
+        GlobalAudioPlayer.GetPlaySound(wrongSound);
     }
 }

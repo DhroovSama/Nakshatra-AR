@@ -163,4 +163,10 @@ public class InScreenUI_Manager : MonoBehaviour
         allFactsContainer.SetActive(true);
     }
 
+    public void EnableTerrainScannerButtonOscillation()
+    {
+        LanderControlsUIManager.GetTerrainScannerControlButtonHandTouchUI().SetActive(true);
+
+        LanderControlsUIManager.GetTerrainScannerControlButtonHandTouchUI().GetComponent<OscillateAlphaValue>().StartOscillation();
+    }
 }

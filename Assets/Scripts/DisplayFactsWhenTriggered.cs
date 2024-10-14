@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -21,6 +22,12 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
 
     private CollectibleManager collectibleManager;
 
+    [SerializeField]
+    private UISoundSO UISoundSO;
+
+    [SerializeField]
+    private VibrationController vibrationController;
+
     private void Start()
     {
         collectibleManager = FindObjectOfType<CollectibleManager>();
@@ -30,6 +37,10 @@ public class DisplayFactsWhenTriggered : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Rover") || other.gameObject.CompareTag("MainCamera"))
         {
+            UISoundSO.PlayFactCollectedSound();
+            vibrationController.VibratePhone_Medium();
+
+
             factToDisplay.SetActive(true);
 
             if (factToDisplay.activeSelf)

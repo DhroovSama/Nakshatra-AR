@@ -10,7 +10,7 @@ public class CollapsibleMenu_Main : MonoBehaviour
     private Button arrowButton;
 
     [SerializeField]
-    private float xOffset;
+    private Vector3 offset;
 
     [SerializeField]
     private GameObject collapsibleMenu;
@@ -75,7 +75,7 @@ public class CollapsibleMenu_Main : MonoBehaviour
     private void MoveCollapsibleMenuForward()
     {
         RectTransform menuRectTransform = collapsibleMenu.GetComponent<RectTransform>();
-        menuRectTransform.localPosition += new Vector3(xOffset, 0, 0);
+        menuRectTransform.localPosition += offset;
 
         optionsUI.SetActive(false);
     }
@@ -83,7 +83,7 @@ public class CollapsibleMenu_Main : MonoBehaviour
     private void MoveCollapsibleMenuBackward()
     {
         RectTransform menuRectTransform = collapsibleMenu.GetComponent<RectTransform>();
-        menuRectTransform.localPosition -= new Vector3(xOffset, 0, 0);
+        menuRectTransform.localPosition -= offset;
 
         optionsUI.SetActive(true);
     }

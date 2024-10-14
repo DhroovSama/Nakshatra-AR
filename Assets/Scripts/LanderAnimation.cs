@@ -17,8 +17,9 @@ public class LanderAnimation : MonoBehaviour
 
     [Header("Animator Component")]
     [SerializeField] private Animator landerAnimator;
+    public Animator LanderAnimator { get { return landerAnimator; } set { landerAnimator = value; } }
 
-    [Header("Animations Timer")]
+    [Header("Animations Timer")] 
     [SerializeField] private float playDurationOfLandingAnim, playDurationOfDoorAnim, playDurationOfRoverAnim = 0.0f;
 
     [SerializeField] private bool isDoorAnimEnded = false;
@@ -31,6 +32,7 @@ public class LanderAnimation : MonoBehaviour
 
     [SerializeField]
     private Rigidbody roverRB;
+    //public Rigidbody RoverRB { get { return roverRB; } set { roverRB = value; } }
 
     [SerializeField]
     private bool isRoverAnimEnded = false;

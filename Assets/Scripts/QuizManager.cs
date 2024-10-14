@@ -24,6 +24,9 @@ public class QuizManager : MonoBehaviour
     [SerializeField]
     private int correctOptionIndex = 0;
 
+    [SerializeField]
+    private UISoundSO uISoundSO;
+
     void Start()
     {
         option_1.onClick.AddListener(() => CheckOption(0));
@@ -44,6 +47,8 @@ public class QuizManager : MonoBehaviour
             case 0:
                 if (isCorrect)
                 {
+                    uISoundSO.PlayCorrectSound();
+
                     option_1.image.sprite = rightSprite;
                     OptionText_1.color = Color.white;
 
@@ -55,6 +60,8 @@ public class QuizManager : MonoBehaviour
                 }
                 else
                 {
+                    uISoundSO.PlayWrongSound();
+
                     option_1.image.sprite = wrongSprite;
 
                     HighlightCorrectAnswer();
@@ -64,6 +71,8 @@ public class QuizManager : MonoBehaviour
             case 1:
                 if (isCorrect)
                 {
+                    uISoundSO.PlayCorrectSound();
+
                     option_2.image.sprite = rightSprite;
                     OptionText_2.color = Color.white;
 
@@ -75,6 +84,8 @@ public class QuizManager : MonoBehaviour
                 }
                 else
                 {
+                    uISoundSO.PlayWrongSound();
+
                     option_2.image.sprite = wrongSprite;
                     HighlightCorrectAnswer();
                 }
@@ -83,6 +94,8 @@ public class QuizManager : MonoBehaviour
             case 2:
                 if (isCorrect)
                 {
+                    uISoundSO.PlayCorrectSound();
+
                     option_3.image.sprite = rightSprite;
                     OptionText_3.color = Color.white;
 
@@ -94,6 +107,8 @@ public class QuizManager : MonoBehaviour
                 }
                 else
                 {
+                    uISoundSO.PlayWrongSound();
+
                     option_3.image.sprite = wrongSprite;
                     HighlightCorrectAnswer();
                 }

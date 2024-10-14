@@ -9,7 +9,7 @@ public class PlayerHasArrivedCheckTrigger : MonoBehaviour
     private static PlayerHasArrivedCheckTrigger instance;
 
     [SerializeField]
-    private GameObject LanderTutorial;
+    private GameObject LanderTutorial, playerChecker;
 
     [Space]
     [SerializeField]
@@ -30,6 +30,8 @@ public class PlayerHasArrivedCheckTrigger : MonoBehaviour
     [Space]
     [SerializeField]
     private AudioClip playerCheckerSFX;
+
+
 
     private void Awake()
     {
@@ -52,7 +54,9 @@ public class PlayerHasArrivedCheckTrigger : MonoBehaviour
 
             LanderTutorial.SetActive(true);
 
-            this.gameObject.SetActive(false);   
+            playerChecker.SetActive(false);
+
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
