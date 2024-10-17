@@ -48,4 +48,8 @@ public class SceneLoad : MonoBehaviour
     {
         SceneManager.LoadScene(8);
     }
+    public void LoadScene9()
+    {
+        SceneManager.LoadScene(9);
+    }
 }

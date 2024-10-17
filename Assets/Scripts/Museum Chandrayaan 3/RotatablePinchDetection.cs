@@ -38,7 +38,22 @@ public class Rotatable : MonoBehaviour
     private bool isInteractionAllowed = true;
 
     [SerializeField]
-    private GameObject secondaryObject; // Add this field for the additional GameObject
+    private GameObject parentObject; // Reference to CombinedObject
+
+    [SerializeField]
+    private GameObject rotationChild; // Reference to the child to rotate
+
+    [Header("Lock Button Sprites")]
+
+    [Tooltip("Sprite displayed when interaction is allowed (unlocked).")]
+    [SerializeField]
+    private Sprite unlockedSprite;
+
+    [Tooltip("Sprite displayed when interaction is locked.")]
+    [SerializeField]
+    private Sprite lockedSprite;
+
+    private Image lockButtonImage;
 
     private void Awake()
     {
@@ -82,6 +97,25 @@ public class Rotatable : MonoBehaviour
             touchCount--;
             previousMagnitude = 0f;
         };
+
+        // Get the Image component from the lockObject Button
+        if (lockObject != null)
+        {
+            lockButtonImage = lockObject.GetComponent<Image>();
+            if (lockButtonImage == null)
+            {
+                Debug.LogError("Lock Object does not have an Image component.");
+            }
+            else
+            {
+                // Initialize the button sprite based on the initial state
+                UpdateLockButtonSprite();
+            }
+        }
+        else
+        {
+            Debug.LogError("Lock Object is not assigned.");
+        }
     }
 
     private void Update()
@@ -101,7 +135,7 @@ public class Rotatable : MonoBehaviour
             if (isInteractionAllowed && touchCount < 2)
             {
                 rotation *= rotationSpeed;
-                transform.Rotate(-Vector3.up, rotation.x, Space.World);
+                rotationChild.transform.Rotate(-Vector3.up, rotation.x, Space.World);
             }
 
             yield return null;
@@ -127,7 +161,7 @@ public class Rotatable : MonoBehaviour
         float difference = currentMagnitude - previousMagnitude;
 
         Vector3 scaleChange = new Vector3(difference, difference, difference) * pinchSpeed;
-        Vector3 newScale = transform.localScale + scaleChange;
+        Vector3 newScale = parentObject.transform.localScale + scaleChange;
 
         if (newScale.x <= 0.1f || newScale.y <= 0.1f || newScale.z <= 0.1f)
         {
@@ -143,12 +177,8 @@ public class Rotatable : MonoBehaviour
             newScale.z = Mathf.Max(newScale.z, 0.1f);
         }
 
-        // Update the scale of the primary and secondary GameObjects
-        transform.localScale = newScale;
-        if (secondaryObject != null)
-        {
-            secondaryObject.transform.localScale = newScale;
-        }
+        // Update the scale of the parent GameObject
+        parentObject.transform.localScale = newScale;
 
         previousMagnitude = currentMagnitude;
     }
@@ -171,5 +201,40 @@ public class Rotatable : MonoBehaviour
         }
 
         lockObject.colors = colors;
+
+        // Update the button sprite based on the new state
+        UpdateLockButtonSprite();
+    }
+
+    /// <summary>
+    /// Updates the lock button's sprite based on the current interaction state.
+    /// </summary>
+    private void UpdateLockButtonSprite()
+    {
+        if (lockButtonImage == null)
+            return;
+
+        if (isInteractionAllowed)
+        {
+            if (unlockedSprite != null)
+            {
+                lockButtonImage.sprite = unlockedSprite;
+            }
+            else
+            {
+                Debug.LogWarning("Unlocked Sprite is not assigned.");
+            }
+        }
+        else
+        {
+            if (lockedSprite != null)
+            {
+                lockButtonImage.sprite = lockedSprite;
+            }
+            else
+            {
+                Debug.LogWarning("Locked Sprite is not assigned.");
+            }
+        }
     }
 }

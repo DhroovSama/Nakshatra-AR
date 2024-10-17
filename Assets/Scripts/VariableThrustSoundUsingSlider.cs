@@ -34,8 +34,6 @@ public class VariableThrustSoundUsingSlider : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         vibrationController.VibratePhone_Light(); // Trigger vibration when the slider is touched
-
-        Debug.Log("Vibration played once");
     }
 
     public void OnPointerUp(PointerEventData eventData)

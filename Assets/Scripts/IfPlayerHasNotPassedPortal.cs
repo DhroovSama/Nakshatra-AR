@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class IfPlayerHasNotPassedPortal : MonoBehaviour
 {
-    [SerializeField,Tooltip("Auto Assigned")]
+    [SerializeField, Tooltip("Auto Assigned")]
     private PortalDoor portalDoor;
 
     private bool isTimerRunning = false;
+    private bool hasLoggedPortalPassed = false;
 
     [SerializeField]
     private float timer = 0f;
@@ -15,8 +16,10 @@ public class IfPlayerHasNotPassedPortal : MonoBehaviour
     [SerializeField]
     private VoiceOverData enterPortalDoor;
 
-    [SerializeField, Tooltip("how much time to waiiit after the portal has spawned before playing the vopice over"), Range(1f,40f)]
+    [SerializeField, Tooltip("How much time to wait after the portal has spawned before playing the voice over"), Range(1f, 40f)]
     private float timeToWait;
+
+    private bool hasTimerStarted = false;  // New flag to track if the timer has started before
 
     private void Update()
     {
@@ -27,10 +30,12 @@ public class IfPlayerHasNotPassedPortal : MonoBehaviour
                 portalDoor = FindObjectOfType<PortalDoor>();
             }
 
-            if (!isTimerRunning)
+            if (!hasTimerStarted)
             {
+                hasTimerStarted = true;
                 isTimerRunning = true;
                 timer = 0f;
+                hasLoggedPortalPassed = false;  // Reset the flag only once
             }
         }
 
@@ -39,7 +44,12 @@ public class IfPlayerHasNotPassedPortal : MonoBehaviour
             if (portalDoor != null && portalDoor.IsPortalPassed)
             {
                 isTimerRunning = false;
-                Debug.Log("Player has passed the portal. Timer stopped.");
+
+                if (!hasLoggedPortalPassed)
+                {
+                    Debug.Log("Player has passed the portal. Timer stopped.");
+                    hasLoggedPortalPassed = true;  // Set the flag to true to prevent further logging
+                }
             }
             else
             {
@@ -49,7 +59,7 @@ public class IfPlayerHasNotPassedPortal : MonoBehaviour
                     Debug.Log("20 seconds have passed and the player has not passed the portal.");
                     VoiceOverManager.Instance.TriggerVoiceOver(enterPortalDoor);
 
-                    isTimerRunning = false; 
+                    isTimerRunning = false;
                 }
             }
         }

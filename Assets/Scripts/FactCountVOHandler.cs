@@ -37,25 +37,32 @@ public class FactCountVOHandler : MonoBehaviour
         if(factsCollectedGlobal.FactsCollected == 1 && !playedVO_1)
         {
             VoiceOverManager.Instance.TriggerVoiceOver(factsCollectedVO_1);
-            Debug.Log("Playing factsCollectedVO_1");
 
             playedVO_1 = true;
         }
         else if(factsCollectedGlobal.FactsCollected == 2 && !playedVO_2)
         {
             VoiceOverManager.Instance.TriggerVoiceOver(factsCollectedVO_2);
+
+            playedVO_2 = true;
         }
         else if (factsCollectedGlobal.FactsCollected == 3 && !playedVO_3)
         {
             VoiceOverManager.Instance.TriggerVoiceOver(factsCollectedVO_3);
+
+            playedVO_3 = true;
         }
         else if (factsCollectedGlobal.FactsCollected == 4 && !playedVO_4)
         {
             VoiceOverManager.Instance.TriggerVoiceOver(factsCollectedVO_4);
+
+            playedVO_4 = true;
         }
         else if(factsCollectedGlobal.FactsCollected == 5 && !playedVO_5)
         {
             VoiceOverManager.Instance.TriggerVoiceOver(factsCollectedVO_5);
+
+            playedVO_5 = true;
         }
     }
 }

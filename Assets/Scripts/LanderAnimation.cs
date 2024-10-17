@@ -38,6 +38,9 @@ public class LanderAnimation : MonoBehaviour
     private bool isRoverAnimEnded = false;
     public bool IsRoverAnimEnded { get { return isRoverAnimEnded; } }
 
+    [SerializeField]
+    private bool isRoverPrefabEnabled = false;
+
     //[SerializeField]
     //private GameObject doorAnimationStartPoint;
 
@@ -54,9 +57,12 @@ public class LanderAnimation : MonoBehaviour
             LanderParent = FindObjectOfType<LanderAnimEventsHandler>().gameObject;
         }
 
-        if(roverRB == null && landerMechanics.IsLanderInstanceSpawned)
+        if(isRoverPrefabEnabled)
         {
-            roverRB = FindObjectOfType<FindRoverByScript>().gameObject.GetComponentInChildren<Rigidbody>();
+            if (roverRB == null && landerMechanics.IsLanderInstanceSpawned)
+            {
+                roverRB = FindObjectOfType<FindRoverByScript>().gameObject.GetComponentInChildren<Rigidbody>();
+            }
         }
     }
 
@@ -85,7 +91,6 @@ public class LanderAnimation : MonoBehaviour
 
     public void OnLandingAnimationEnd()
     {
-        Debug.Log("OnLandingAnimationEnd() running");
         landerMechanics.LanderThrustSlider.value = 0.1f;
         DisableLanderAnimator();
         EnableLanderRB();
@@ -111,19 +116,18 @@ public class LanderAnimation : MonoBehaviour
         if (landerAnimEventsHandler.RoverPrefab)
         {
             landerAnimEventsHandler.RoverPrefab.SetActive(true);
+
+            isRoverPrefabEnabled = true;
         }
         else { Debug.Log("Rover NO"); }
 
         //// Set the door animation's position to the landing point
         //doorAnimationStartPoint.transform.position = landingPoint;
 
-        Debug.Log(landingPoint);
 
         landingPoint.y += offsetForLanderDoorAnim; 
 
         LanderParent.transform.position = landingPoint;
-
-        Debug.Log("new: " + landingPoint);
 
         EnableLanderAnimator();
         landerAnimator.SetBool("DoorAnim", true);
@@ -137,7 +141,6 @@ public class LanderAnimation : MonoBehaviour
     {
         landerAnimator.SetBool("DoorAnim", false);
 
-        Debug.Log("OnDoorAnimationEnd() running");
         //DisableLanderAnimator();
         DisableLanderRB();
 
@@ -147,7 +150,6 @@ public class LanderAnimation : MonoBehaviour
 
         if (isDoorAnimEnded)
         {
-            Debug.Log("hehehehhe");
             EnableLanderAnimator();
 
             StartCoroutine(playRoverAnimation());

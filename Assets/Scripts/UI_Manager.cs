@@ -135,7 +135,7 @@ public class UI_Manager : MonoBehaviour
     {
         if (isSpawningCountdownFinished)
         {
-            Debug.Log("lander spawned");
+            //Debug.Log("lander spawned");
             landerSpawnerButtonContainer.SetActive(false);
             LanderMechanics.getSpawnLanderOnMoonSurface();
 

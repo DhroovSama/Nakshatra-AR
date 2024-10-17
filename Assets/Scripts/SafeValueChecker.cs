@@ -18,7 +18,7 @@ public class SafeValueChecker : MonoBehaviour
     {
         fuel = landerMechanics.CurrentFuel;
         thrust = landerMechanics.DescendVelocityValue;
-        altitude = ConvertTextToFloat(altitudeValue);
+        //altitude = ConvertTextToFloat(altitudeValue);
 
         UpdateFuelColor(fuel);
         UpdateThrustColor(thrust);

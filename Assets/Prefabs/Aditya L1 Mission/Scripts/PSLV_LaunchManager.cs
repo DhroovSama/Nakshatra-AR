@@ -26,8 +26,14 @@ public class PSLV_LaunchManager : MonoBehaviour
     [System.Serializable]
     public class RollingTextEntry
     {
+        [Tooltip("The UI text associated with this entry.")]
         public TextMeshProUGUI text;
+
+        [Tooltip("Voice-over data for this entry.")]
         public VoiceOverData voiceOverData;
+
+        [Tooltip("Audio clip to play when this entry is activated.")]
+        public AudioClip audioClip; // Individual audio clips for each entry
     }
 
     [SerializeField]
@@ -38,6 +44,9 @@ public class PSLV_LaunchManager : MonoBehaviour
 
     [SerializeField]
     private VoiceOverData finalVoiceOverData;
+
+    [SerializeField, Tooltip("Audio clip to play when the final voice-over is activated.")]
+    private AudioClip finalAudioClip; // New field for the final audio clip
 
     private int currentTextIndex = 0;
 
@@ -78,8 +87,7 @@ public class PSLV_LaunchManager : MonoBehaviour
         bottomPosition = new Vector3(0, -offsetY, 0);
 
         HideAllTexts();
-        finalText.gameObject.SetActive(false); 
-
+        finalText.gameObject.SetActive(false);
         launchButton.gameObject.SetActive(false);
     }
 
@@ -99,22 +107,9 @@ public class PSLV_LaunchManager : MonoBehaviour
         else if (!holdButtonComponent.isHolding && (isPlayingVoiceOver || isFinalVoiceOverPlaying))
         {
             StopAllCoroutines();
-            isPlayingVoiceOver = false;
-            isFinalVoiceOverPlaying = false;
-            currentTextIndex = 0;
-            preCheckSlider.value = 0f;
-            HideAllTexts();
-            finalText.gameObject.SetActive(false);
-
-            // Ensure the slider and hold button are active again
-            preCheckSlider.gameObject.SetActive(true);
-            holdButton.gameObject.SetActive(true);
-
-            // Hide the LAUNCH button if it's active
-            launchButton.gameObject.SetActive(false);
+            ResetLaunchSequence();
         }
     }
-
 
     private void AssignPSLV_Animator()
     {
@@ -132,9 +127,21 @@ public class PSLV_LaunchManager : MonoBehaviour
             }
         }
     }
+
     private IEnumerator PlayVoiceOverSequence()
     {
         isPlayingVoiceOver = true;
+        float totalDuration = CalculateTotalVoiceOverDuration();
+
+        if (totalDuration <= 0f)
+        {
+            Debug.LogError("Total Voice-Over Duration is zero or negative. Slider cannot be updated.");
+            isPlayingVoiceOver = false;
+            yield break;
+        }
+
+        float elapsedTime = 0f;
+
         while (currentTextIndex < rollingTextEntries.Count)
         {
             if (!holdButtonComponent.isHolding)
@@ -144,58 +151,61 @@ public class PSLV_LaunchManager : MonoBehaviour
             }
 
             UpdateRollingTextDisplay();
+            vibrationController?.VibratePhone_Medium();
 
-            // Call vibration every time the next text plays
-            if (vibrationController != null)
+            // Play the individual audio clip for the current entry
+            AudioClip currentAudioClip = rollingTextEntries[currentTextIndex].audioClip;
+            if (currentAudioClip != null)
             {
-                vibrationController.VibratePhone_Medium();
+                GlobalAudioPlayer.GetPlaySound(currentAudioClip);
+            }
+            else
+            {
+                Debug.LogWarning($"No audio clip assigned for RollingTextEntry at index {currentTextIndex}.");
             }
 
-            var middleEntry = rollingTextEntries[currentTextIndex];
+            VoiceOverManager.Instance.TriggerVoiceOver(rollingTextEntries[currentTextIndex].voiceOverData);
 
-            // Trigger the voice-over using the existing VoiceOverManager
-            VoiceOverManager.Instance.TriggerVoiceOver(middleEntry.voiceOverData);
+            float clipLength = GetVoiceOverClipLength(rollingTextEntries[currentTextIndex].voiceOverData);
+            float clipTime = 0f;
 
-            // Get the length of the voice-over clip
-            float clipLength = GetVoiceOverClipLength(middleEntry.voiceOverData);
-
-            // Wait for the duration of the clip or until the button is released
-            float timeElapsed = 0f;
-            while (timeElapsed < clipLength)
+            while (clipTime < clipLength)
             {
                 if (!holdButtonComponent.isHolding)
                 {
                     isPlayingVoiceOver = false;
                     yield break;
                 }
-                timeElapsed += Time.deltaTime;
+
+                clipTime += Time.deltaTime;
+                elapsedTime += Time.deltaTime;
+
+                preCheckSlider.value = Mathf.Clamp01(elapsedTime / totalDuration);
                 yield return null;
             }
 
-            // Increase the index
             currentTextIndex++;
-
-            // Update the preCheckSlider
-            preCheckSlider.value = (float)(currentTextIndex) / rollingTextEntries.Count;
         }
 
-        // All voice-overs have been played, proceed to OnLaunchReady()
         OnLaunchReady();
         isPlayingVoiceOver = false;
     }
 
+    private float CalculateTotalVoiceOverDuration()
+    {
+        float totalDuration = 0f;
+        foreach (var entry in rollingTextEntries)
+        {
+            totalDuration += GetVoiceOverClipLength(entry.voiceOverData);
+        }
+        return totalDuration;
+    }
+
     private float GetVoiceOverClipLength(VoiceOverData voiceOverData)
     {
-        AudioClip clipToPlay;
-
-        if (LanguageManager.Instance.useHindiAudio && voiceOverData.hindiVoiceOverClip != null)
-        {
-            clipToPlay = voiceOverData.hindiVoiceOverClip;
-        }
-        else
-        {
-            clipToPlay = voiceOverData.englishVoiceOverClip;
-        }
+        AudioClip clipToPlay = LanguageManager.Instance.useHindiAudio && voiceOverData.hindiVoiceOverClip != null
+            ? voiceOverData.hindiVoiceOverClip
+            : voiceOverData.englishVoiceOverClip;
 
         return clipToPlay != null ? clipToPlay.length : 0f;
     }
@@ -205,30 +215,19 @@ public class PSLV_LaunchManager : MonoBehaviour
         Debug.Log("Launch Ready!");
 
         vfxManager.smokeVFX_PSLV.Play();
-
-        // Hide rolling texts
         HideAllTexts();
-
-        // Display the finalText
         finalText.gameObject.SetActive(true);
         SetTextAlpha(finalText, 1f);
         SetTextSize(finalText, bigFontSize);
         SetTextPosition(finalText, centerPosition);
 
-        // Indicate that the launch is ready
         launchReady = true;
-
-        // Ensure the slider is full
         preCheckSlider.value = 1f;
 
-        // Deactivate the preCheckSlider and holdButton
         preCheckSlider.gameObject.SetActive(false);
         holdButton.gameObject.SetActive(false);
-
-        // Activate the LAUNCH button
         launchButton.gameObject.SetActive(true);
 
-        // Trigger the voice-over for the final text
         if (finalVoiceOverData != null)
         {
             StartCoroutine(PlayFinalVoiceOver());
@@ -239,64 +238,48 @@ public class PSLV_LaunchManager : MonoBehaviour
     {
         isFinalVoiceOverPlaying = true;
 
-        // Call vibration when the final text is displayed
-        if (vibrationController != null)
+        // Trigger vibration
+        vibrationController?.VibratePhone_Medium();
+
+        // Play the final audio clip using GlobalAudioPlayer
+        if (finalAudioClip != null)
         {
-            vibrationController.VibratePhone_Medium();
+            GlobalAudioPlayer.GetPlaySound(finalAudioClip);
+        }
+        else
+        {
+            Debug.LogWarning("No final audio clip assigned.");
         }
 
+        // Trigger the final voice-over
         VoiceOverManager.Instance.TriggerVoiceOver(finalVoiceOverData);
 
+        // Get the length of the voice-over clip to wait for its completion
         float clipLength = GetVoiceOverClipLength(finalVoiceOverData);
-
-        // Wait for the duration of the clip
-        float timeElapsed = 0f;
-        while (timeElapsed < clipLength)
-        {
-            // No need to check holdButton here since it's deactivated
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(clipLength);
 
         isFinalVoiceOverPlaying = false;
-
-        // Proceed with any additional logic after the final voice-over completes
-        // For example, you might want to enable other UI elements or animations
     }
 
     private void UpdateRollingTextDisplay()
     {
-        // Hide all texts first
         HideAllTexts();
 
-        // Get indices for top, middle, bottom texts
         int middleIndex = currentTextIndex % rollingTextEntries.Count;
         int topIndex = (currentTextIndex - 1 + rollingTextEntries.Count) % rollingTextEntries.Count;
         int bottomIndex = (currentTextIndex + 1) % rollingTextEntries.Count;
 
-        // Activate and set up the middle text
-        var middleEntry = rollingTextEntries[middleIndex];
-        var middleText = middleEntry.text;
-        middleText.gameObject.SetActive(true);
-        SetTextAlpha(middleText, 1f); // Full alpha
-        SetTextSize(middleText, bigFontSize); // Bigger size
-        SetTextPosition(middleText, centerPosition);
+        SetTextProperties(rollingTextEntries[middleIndex].text, bigFontSize, 1f, centerPosition);
+        SetTextProperties(rollingTextEntries[topIndex].text, smallFontSize, 30f / 255f, topPosition);
+        SetTextProperties(rollingTextEntries[bottomIndex].text, smallFontSize, 30f / 255f, bottomPosition);
+    }
 
-        // Activate and set up the top text
-        var topEntry = rollingTextEntries[topIndex];
-        var topText = topEntry.text;
-        topText.gameObject.SetActive(true);
-        SetTextAlpha(topText, 30f / 255f); // Reduced alpha
-        SetTextSize(topText, smallFontSize); // Smaller size
-        SetTextPosition(topText, topPosition);
-
-        // Activate and set up the bottom text
-        var bottomEntry = rollingTextEntries[bottomIndex];
-        var bottomText = bottomEntry.text;
-        bottomText.gameObject.SetActive(true);
-        SetTextAlpha(bottomText, 30f / 255f); // Reduced alpha
-        SetTextSize(bottomText, smallFontSize); // Smaller size
-        SetTextPosition(bottomText, bottomPosition);
+    private void SetTextProperties(TextMeshProUGUI text, float size, float alpha, Vector3 position)
+    {
+        text.gameObject.SetActive(true);
+        SetTextAlpha(text, alpha);
+        SetTextSize(text, size);
+        SetTextPosition(text, position);
     }
 
     private void SetTextAlpha(TextMeshProUGUI text, float alpha)
@@ -324,6 +307,19 @@ public class PSLV_LaunchManager : MonoBehaviour
         }
     }
 
+    private void ResetLaunchSequence()
+    {
+        isPlayingVoiceOver = false;
+        isFinalVoiceOverPlaying = false;
+        currentTextIndex = 0;
+        preCheckSlider.value = 0f;
+        HideAllTexts();
+        finalText.gameObject.SetActive(false);
+        preCheckSlider.gameObject.SetActive(true);
+        holdButton.gameObject.SetActive(true);
+        launchButton.gameObject.SetActive(false);
+    }
+
     private void OnEnable()
     {
         launchButton.onClick.AddListener(OnLaunchButtonClicked);
@@ -339,17 +335,13 @@ public class PSLV_LaunchManager : MonoBehaviour
         if (pslvAnimator != null)
         {
             pslvAnimator.SetTrigger("triggerLaunch");
-
             launchButton.gameObject.SetActive(false);
-
             checksUI.SetActive(false);
-
-            holdButton.gameObject.SetActive(false); 
+            holdButton.gameObject.SetActive(false);
         }
         else
         {
             Debug.LogWarning("Animator is not assigned.");
         }
     }
-
 }

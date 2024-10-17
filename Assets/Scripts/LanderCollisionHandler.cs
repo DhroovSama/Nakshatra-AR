@@ -111,8 +111,6 @@ public class LanderCollisionHandler : MonoBehaviour
         {
             VoiceOverManager.Instance.TriggerVoiceOver(landerMissionPassVO);
 
-            Debug.Log("safely landed at " + landingPoint);
-
             LanderControlsUIManager.getsliderControls().value = 0;
             LanderControlsUIManager.getDirectionalThrustJoystickContainer().SetActive(false);
             LanderControlsUIManager.getsliderControlsContainer().SetActive(false);

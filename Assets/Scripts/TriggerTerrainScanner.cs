@@ -75,6 +75,9 @@ public class TriggerTerrainScanner : MonoBehaviour
     [SerializeField]
     public GameObject targetCollectible;
 
+    [SerializeField]
+    private bool areNoLandingZonesDisabled = false;
+
     private void Start()
     {
         EnableTerrainScanner.onClick.AddListener(() => TriggerTerrainScanEffect());
@@ -101,7 +104,7 @@ public class TriggerTerrainScanner : MonoBehaviour
             else { Debug.LogWarning("locationButtonUIProvider is null"); }
         }
 
-        if(uiManager.HasLanderSpawned)
+        if(uiManager.HasLanderSpawned && !areNoLandingZonesDisabled)
         {
             DisableNoLandingZones();
         }
@@ -175,7 +178,12 @@ public class TriggerTerrainScanner : MonoBehaviour
             StartCoroutine(FadeOutNoLandingZones());
 
             noLandingZones.SetActive(false);
+
+            areNoLandingZonesDisabled = true;
+
+            Debug.Log("Disabled No Landing Zones");
         }
+        else { Debug.Log("noLandingZones is NULL"); }
     }
 
     private IEnumerator FadeOutNoLandingZones()
