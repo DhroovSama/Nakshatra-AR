@@ -7,6 +7,10 @@ public class SwitchObjectsUI_AdityaL1 : MonoBehaviour
 {
     [SerializeField]
     private Scrollbar scrollBar;
+    [Space] 
+
+    //[SerializeField]
+    //private Button rightButton, leftButton;
 
     [Space]
     [SerializeField, Tooltip("Auto Assigned")]

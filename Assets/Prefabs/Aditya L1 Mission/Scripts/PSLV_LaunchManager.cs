@@ -7,6 +7,15 @@ using TMPro;
 public class PSLV_LaunchManager : MonoBehaviour
 {
     [SerializeField]
+    private PSLV_CountdownManager pSLV_CountdownManager;
+
+    [SerializeField]
+    private PlaceOnPlane placeOnPlane;
+
+    [SerializeField]
+    private GameObject welcomeBox;
+
+    [SerializeField]
     private Button holdButton;
 
     [SerializeField]
@@ -71,6 +80,8 @@ public class PSLV_LaunchManager : MonoBehaviour
     [SerializeField]
     private AnimationClip launchAnimation;
 
+    private bool hasWelcomeMessageDisplayed = true;
+
     private void Start()
     {
         holdButtonComponent = holdButton.GetComponent<HoldButton>();
@@ -108,6 +119,13 @@ public class PSLV_LaunchManager : MonoBehaviour
         {
             StopAllCoroutines();
             ResetLaunchSequence();
+        }
+
+        if(PlaceOnPlane.IsMoonSurfaceSpawned() && hasWelcomeMessageDisplayed)
+        {
+            welcomeBox.gameObject.SetActive(true);
+
+            hasWelcomeMessageDisplayed = false;
         }
     }
 
@@ -322,20 +340,33 @@ public class PSLV_LaunchManager : MonoBehaviour
 
     private void OnEnable()
     {
-        launchButton.onClick.AddListener(OnLaunchButtonClicked);
+        launchButton.onClick.AddListener(StartLaunchProcess);
     }
 
     private void OnDisable()
     {
-        launchButton.onClick.RemoveListener(OnLaunchButtonClicked);
+        launchButton.onClick.RemoveListener(StartLaunchProcess);
     }
+
+    private void StartLaunchProcess()
+    {
+        StartCoroutine(WaitForCountdown());
+    }
+
+    private IEnumerator WaitForCountdown()
+    {
+        yield return StartCoroutine(pSLV_CountdownManager.StartCountdown());
+
+        OnLaunchButtonClicked();
+    }
+
 
     private void OnLaunchButtonClicked()
     {
         if (pslvAnimator != null)
         {
             pslvAnimator.SetTrigger("triggerLaunch");
-            launchButton.gameObject.SetActive(false);
+            //launchButton.gameObject.SetActive(false);
             checksUI.SetActive(false);
             holdButton.gameObject.SetActive(false);
         }
@@ -344,4 +375,5 @@ public class PSLV_LaunchManager : MonoBehaviour
             Debug.LogWarning("Animator is not assigned.");
         }
     }
+
 }

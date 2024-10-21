@@ -7,7 +7,10 @@ public class UserTap_Handler : MonoBehaviour
     public GameObject userTap;
 
     [SerializeField]
-    VibrationController vibrationController;
+    private VibrationController vibrationController;
+
+    [SerializeField]
+    private UISoundSO uISoundSO;
 
     [Space]
     [SerializeField]
@@ -24,7 +27,9 @@ public class UserTap_Handler : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        uISoundSO.PlayTapSound();
         vibrationController.VibratePhone_Medium();
+
         userTap.SetActive(true);
     }
 }

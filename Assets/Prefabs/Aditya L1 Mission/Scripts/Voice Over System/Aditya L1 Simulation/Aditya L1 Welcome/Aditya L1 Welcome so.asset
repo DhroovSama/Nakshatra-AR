@@ -18,10 +18,8 @@ MonoBehaviour:
   - sentence: "Hi, I\u2019m Kalpana, your AI guide for this exciting journey to study "
     displayDuration: 1
   - sentence: "the Sun! We\u2019re about to experience India\u2019s first solar mission
-      together. !"
+      together."
     displayDuration: 1.3
-  - sentence: Ready to begin? Tap the rocket to see the PSLV
-    displayDuration: 0.6
   showButtonAtEnd: 0
   buttonText: 
   nextVoiceOverData: {fileID: 0}
