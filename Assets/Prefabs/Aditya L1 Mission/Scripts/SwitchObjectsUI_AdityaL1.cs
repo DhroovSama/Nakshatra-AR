@@ -7,7 +7,13 @@ public class SwitchObjectsUI_AdityaL1 : MonoBehaviour
 {
     [SerializeField]
     private Scrollbar scrollBar;
-    [Space] 
+    [Space]
+
+    [SerializeField]
+    private VibrationController vibrationController;
+
+    [SerializeField]
+    private UISoundSO uISoundSO;
 
     //[SerializeField]
     //private Button rightButton, leftButton;
@@ -76,14 +82,24 @@ public class SwitchObjectsUI_AdityaL1 : MonoBehaviour
 
         if (value <= 0.5f)
         {
+            //PerformUserFeedback();
+
             Object_1.SetActive(true);
             Object_2.SetActive(false);
         }
         else
         {
+            //PerformUserFeedback();
+
             Object_1.SetActive(false);
             Object_2.SetActive(true);
         }
+    }
+
+    private void PerformUserFeedback()
+    {
+        vibrationController.VibratePhone_Light();
+        uISoundSO.PlayTapSound();
     }
 
     private void OnDestroy()

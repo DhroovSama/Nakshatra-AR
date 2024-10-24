@@ -11,6 +11,12 @@ public class SwitchObjectsUI : MonoBehaviour
     [SerializeField, Tooltip("Auto Assigned")]
     private GameObject Object_1, Object_2;
 
+    [SerializeField]
+    private VibrationController vibrationController;
+
+    [SerializeField]
+    private UISoundSO uISoundSO;
+
     [Space]
     [SerializeField]
     private GameObject selectionMenu;
@@ -71,14 +77,24 @@ public class SwitchObjectsUI : MonoBehaviour
 
         if (value <= 0.5f)
         {
+            //PerformUserFeedback();
+
             Object_1.SetActive(true);
             Object_2.SetActive(false);
         }
         else
         {
+            //PerformUserFeedback();
+
             Object_1.SetActive(false);
             Object_2.SetActive(true);
         }
+    }
+
+    private void PerformUserFeedback()
+    {
+        vibrationController.VibratePhone_Light();
+        uISoundSO.PlayTapSound();
     }
 
     private void OnDestroy()

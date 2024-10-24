@@ -12,8 +12,8 @@ public class PSLV_LaunchManager : MonoBehaviour
     [SerializeField]
     private PlaceOnPlane placeOnPlane;
 
-    [SerializeField]
-    private GameObject welcomeBox;
+    //[SerializeField]
+    //private GameObject welcomeBox;
 
     [SerializeField]
     private Button holdButton;
@@ -31,6 +31,9 @@ public class PSLV_LaunchManager : MonoBehaviour
     private VFX_manager vfxManager;
 
     private HoldButton holdButtonComponent;
+
+    [SerializeField]
+    private RawImage precheckBG, finalTextPrecheckBG;
 
     [System.Serializable]
     public class RollingTextEntry
@@ -113,20 +116,24 @@ public class PSLV_LaunchManager : MonoBehaviour
 
         if (holdButtonComponent.isHolding && !isPlayingVoiceOver)
         {
+            precheckBG.gameObject.SetActive(true);
+
             StartCoroutine(PlayVoiceOverSequence());
         }
         else if (!holdButtonComponent.isHolding && (isPlayingVoiceOver || isFinalVoiceOverPlaying))
         {
+            precheckBG.gameObject.SetActive(false);
+
             StopAllCoroutines();
             ResetLaunchSequence();
         }
 
-        if(PlaceOnPlane.IsMoonSurfaceSpawned() && hasWelcomeMessageDisplayed)
-        {
-            welcomeBox.gameObject.SetActive(true);
+        //if(PlaceOnPlane.IsMoonSurfaceSpawned() && hasWelcomeMessageDisplayed)
+        //{
+        //    welcomeBox.gameObject.SetActive(true);
 
-            hasWelcomeMessageDisplayed = false;
-        }
+        //    hasWelcomeMessageDisplayed = false;
+        //}
     }
 
     private void AssignPSLV_Animator()
@@ -234,10 +241,9 @@ public class PSLV_LaunchManager : MonoBehaviour
 
         vfxManager.smokeVFX_PSLV.Play();
         HideAllTexts();
-        finalText.gameObject.SetActive(true);
-        SetTextAlpha(finalText, 1f);
-        SetTextSize(finalText, bigFontSize);
-        SetTextPosition(finalText, centerPosition);
+        precheckBG.gameObject.SetActive(false);
+
+        StartCoroutine(EnableFinalLaunchTextForSomeTime());
 
         launchReady = true;
         preCheckSlider.value = 1f;
@@ -332,7 +338,9 @@ public class PSLV_LaunchManager : MonoBehaviour
         currentTextIndex = 0;
         preCheckSlider.value = 0f;
         HideAllTexts();
-        finalText.gameObject.SetActive(false);
+
+        StartCoroutine(EnableFinalLaunchTextForSomeTime());
+
         preCheckSlider.gameObject.SetActive(true);
         holdButton.gameObject.SetActive(true);
         launchButton.gameObject.SetActive(false);
@@ -374,6 +382,20 @@ public class PSLV_LaunchManager : MonoBehaviour
         {
             Debug.LogWarning("Animator is not assigned.");
         }
+    }
+
+    private IEnumerator EnableFinalLaunchTextForSomeTime()
+    {
+        finalTextPrecheckBG.gameObject.SetActive(true);
+        finalText.gameObject.SetActive(true);//final text enabled
+        SetTextAlpha(finalText, 1f);
+        SetTextSize(finalText, bigFontSize);
+        SetTextPosition(finalText, centerPosition);
+
+        yield return new WaitForSeconds(2f);
+
+        finalTextPrecheckBG.gameObject.SetActive(false); 
+        finalText.gameObject.SetActive(false);
     }
 
 }

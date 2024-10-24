@@ -22,6 +22,8 @@ public class ObjectDisabler_PSLVSeperation : MonoBehaviour
     [SerializeField]
     private List<GameObject> heatShield = new List<GameObject>();
 
+    [SerializeField] private AudioClip rocketSeperationSFX;
+
     public void DestroyObjects_Phase1()
     {
         foreach (GameObject go in bigRocket)
@@ -54,5 +56,11 @@ public class ObjectDisabler_PSLVSeperation : MonoBehaviour
     public void DestroyObjects_Phase5()
     {
         Destroy(boosterTop);
+    }
+
+    public void PlayRocketSeperationSFX()
+    {
+        Handheld.Vibrate();
+        GlobalAudioPlayer.GetPlaySound(rocketSeperationSFX);
     }
 }

@@ -19,6 +19,11 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
 
     [Header("UI Elements"), Tooltip("Auto Assigned")]
     public GameObject userTap;
+    public GameObject UserTap
+    {
+        get => userTap;
+        set => userTap = value;
+    }
 
     private void Awake()
     {

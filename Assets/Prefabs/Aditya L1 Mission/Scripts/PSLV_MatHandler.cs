@@ -1,9 +1,14 @@
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PSLV_MatHandler : MonoBehaviour
 {
+
+    [SerializeField]
+    private AdityaL1_TutorialHandler adityaL1_TutorialHandler;
+
     public PSLV_MatSO materialScriptableObject;
 
     [SerializeField]
@@ -12,6 +17,12 @@ public class PSLV_MatHandler : MonoBehaviour
     [Space]
     [SerializeField]
     private GameObject launchButton;
+
+    [SerializeField]
+    private VibrationController vibrationController;
+
+    [SerializeField]
+    private UISoundSO soundSO;
 
     private void Awake()
     {
@@ -45,6 +56,11 @@ public class PSLV_MatHandler : MonoBehaviour
         {
             if (hit.collider.CompareTag("PSLV Bottom"))
             {
+                vibrationController.VibratePhone_Light();
+                soundSO.PlayTapSound();
+
+                adityaL1_TutorialHandler.EnableHoldButtonTutorial();
+
                 globalUI.userTap.SetActive(false);
 
                 launchButton.SetActive(true);
