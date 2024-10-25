@@ -187,8 +187,8 @@ MonoBehaviour:
   m_PlayOnAwake: 1
   m_LoopMode: 1
   m_Method: 0
-  m_Duration: 30
-  m_MaxSpeed: 0.54254925
+  m_Duration: 10
+  m_MaxSpeed: 1.6276478
   m_EasingMode: 0
   m_AlignmentMode: 1
   m_ObjectForwardAxis: 1
@@ -217,8 +217,8 @@ MonoBehaviour:
   thresholdDistance: 0.015
   targetKnotIndices: 010000000100000001000000010000000100000001000000
   hasLoggedNow: 0
-  initialDuration: 30
-  durationDecrement: 5
+  initialDuration: 10
+  durationDecrement: 1.5
 --- !u!1001 &2166661119659392562
 PrefabInstance:
   m_ObjectHideFlags: 0

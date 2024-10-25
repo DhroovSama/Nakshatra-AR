@@ -6,6 +6,9 @@ using UnityEngine.Splines;
 public class SplineKnotChecker : MonoBehaviour
 {
     [SerializeField]
+    private ARCameraShake aRCameraShake;
+
+    [SerializeField]
     private NextPhaseManager_PSLVOrbitShift nextPhaseManager_PSLVOrbitShift;
 
     [SerializeField]
@@ -36,6 +39,16 @@ public class SplineKnotChecker : MonoBehaviour
 
     private float currentDuration;
 
+    // Variable to track if time is slowed down
+    private bool isTimeSlowed = false;
+    private void OnEnable()
+    {
+        if(aRCameraShake == null)
+        {
+            aRCameraShake = FindObjectOfType<ARCameraShake>();
+        }
+        else { Debug.Log("ARCameraShake not found"); }
+    }
     private void Start()
     {
         ChangeButtonNormalColor(Color.white);
@@ -115,6 +128,13 @@ public class SplineKnotChecker : MonoBehaviour
                 hasLoggedNow = true; // Set the flag to prevent multiple logs
                 ChangeButtonNormalColor(Color.green);
                 Debug.Log("now");
+
+                // Slow down the game time
+                Time.timeScale = 0.25f;
+                Time.fixedDeltaTime = 0.02f * Time.timeScale;
+                isTimeSlowed = true;
+
+                aRCameraShake.TriggerBlackAndWhite_withTime(.1f);
             }
 
             canPressButton = true; // Allow the button to be pressed
@@ -128,6 +148,14 @@ public class SplineKnotChecker : MonoBehaviour
         }
         else
         {
+            if (hasLoggedNow)
+            {
+                // Reset time scale to normal when moving away from the knot
+                Time.timeScale = 1f;
+                Time.fixedDeltaTime = 0.02f;
+                isTimeSlowed = false;
+            }
+
             hasLoggedNow = false; // Reset the log flag when the object moves away
             canPressButton = false; // Disable button press when not near the knot
             ChangeButtonNormalColor(Color.red);
@@ -143,6 +171,14 @@ public class SplineKnotChecker : MonoBehaviour
             OnCrossedKnot();
             hasLoggedNow = false; // Reset the log flag for the next knot
             canPressButton = false; // Reset the button press flag
+
+            // Reset time scale to normal
+            if (isTimeSlowed)
+            {
+                Time.timeScale = 1f;
+                Time.fixedDeltaTime = 0.02f;
+                isTimeSlowed = false;
+            }
         }
         else
         {
@@ -235,5 +271,12 @@ public class SplineKnotChecker : MonoBehaviour
     {
         GlobalUIProvider_AdityaL1.getOrbitShiftButton().onClick.RemoveListener(OnButtonPressed);
         GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.RemoveListener(nextPhaseManager_PSLVOrbitShift.StartHandleNextPhase);
+
+        // Reset time scale to normal if the object is destroyed
+        if (isTimeSlowed)
+        {
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = 0.02f;
+        }
     }
 }

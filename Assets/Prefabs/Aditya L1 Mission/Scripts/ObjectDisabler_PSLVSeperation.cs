@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class ObjectDisabler_PSLVSeperation : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject phaseSeperationUI;
+
     [SerializeField]
     private List<GameObject> bigRocket = new List<GameObject>();
 
@@ -62,5 +66,10 @@ public class ObjectDisabler_PSLVSeperation : MonoBehaviour
     {
         Handheld.Vibrate();
         GlobalAudioPlayer.GetPlaySound(rocketSeperationSFX);
+    }
+
+    public void DisableSeperationPhaseUI()
+    {
+        GlobalUIProvider_AdityaL1.getSeperationPhaseUI().SetActive(false);
     }
 }

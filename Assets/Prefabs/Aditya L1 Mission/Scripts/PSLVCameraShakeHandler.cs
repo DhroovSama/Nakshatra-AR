@@ -16,4 +16,10 @@ public class PSLVCameraShakeHandler : MonoBehaviour
     {
         arCameraShake.TriggerShake();
     }
+
+    public void TriggerSeperationStageCameraShake()
+    {
+        arCameraShake.TriggerBlackAndWhite();
+        arCameraShake.TriggerLightShake();
+    }
 }
