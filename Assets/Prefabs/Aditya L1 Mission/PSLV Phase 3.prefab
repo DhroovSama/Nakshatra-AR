@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df6df1dd7481a244eb6253dc6bfdb78a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aRCameraShake: {fileID: 0}
   nextPhaseManager_PSLVOrbitShift: {fileID: 7930412021898999701}
   splines:
   - {fileID: 4617678355946161345}
@@ -219,6 +220,17 @@ MonoBehaviour:
   hasLoggedNow: 0
   initialDuration: 10
   durationDecrement: 1.5
+  whiteSprite: {fileID: 21300000, guid: a472dcb2f57a5be4d9895f6020f72f5b, type: 3}
+  redSprite: {fileID: 21300000, guid: deed590eec7cabd4a8e50905dbfb05d7, type: 3}
+  greenSprite: {fileID: 21300000, guid: f6aaf3ac324055c4d88573aa2d2c0da9, type: 3}
+  uISoundSO: {fileID: 11400000, guid: 6ccb2e6406385e745be234b0eedfafc9, type: 2}
+  orbit_1_vo: {fileID: 11400000, guid: d7412a74042ec1b47be9fcfe338f8004, type: 2}
+  orbit_2_vo: {fileID: 11400000, guid: be32b0c8e1664c340943ae765831ecd7, type: 2}
+  orbit_3_vo: {fileID: 11400000, guid: ea5cab0c8c3feaf4a8b69e97d0bfa4ef, type: 2}
+  orbit_4_vo: {fileID: 11400000, guid: f6e376074bca48a449471f5e557edc9a, type: 2}
+  orbit_5_vo: {fileID: 11400000, guid: b5464580523623843ac0facc751b97bd, type: 2}
+  orbit_6_vo: {fileID: 0}
+  knotMessages: []
 --- !u!1001 &2166661119659392562
 PrefabInstance:
   m_ObjectHideFlags: 0

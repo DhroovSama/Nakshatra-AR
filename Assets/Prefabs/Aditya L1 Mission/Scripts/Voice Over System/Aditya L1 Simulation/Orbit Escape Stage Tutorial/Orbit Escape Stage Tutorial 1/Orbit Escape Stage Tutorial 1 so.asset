@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Orbit Escape Stage Tutorial 1 so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: d1c6c0d5e451382459f30704d22c7d19, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 2d18dff3a2e8c4840aec005eef847a0c, type: 3}
+  subtitles:
+  - sentence: "Get ready to escape Earth\u2019s gravity!"
+    displayDuration: 0.8
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

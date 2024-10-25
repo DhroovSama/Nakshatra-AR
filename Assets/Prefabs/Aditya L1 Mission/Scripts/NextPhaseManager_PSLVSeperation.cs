@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class NextPhaseManager_PSLVSeperation : MonoBehaviour
@@ -16,6 +17,9 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
     [Space]
     [SerializeField]
     private GameObject Phase2;
+
+    [SerializeField]
+    private VoiceOverData phase3OrbitShiftStageVO;
 
     private void Start()
     {
@@ -82,6 +86,9 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
         Instantiate(OrbitPSLV_Phase3, userTapCoordinates, finalRotation);
 
         GlobalUIProvider_AdityaL1.getOrbitShiftPhaseTutorial().SetActive(true);
+        VoiceOverManager.Instance.TriggerVoiceOver(phase3OrbitShiftStageVO);
+
+        GlobalUIProvider_AdityaL1.getBlurBG().SetActive(true);
     }
 
 

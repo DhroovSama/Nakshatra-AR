@@ -6,7 +6,7 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     private static GlobalUIProvider_AdityaL1 instance;
 
     [SerializeField]
-    private GameObject seperationPhaseTutorial, orbitShiftPhaseTutorial;
+    private GameObject seperationPhaseTutorial, orbitShiftPhaseTutorial, blurBG;
 
     [SerializeField]
     private Button nextPhaseButton;
@@ -74,4 +74,9 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     {
         return instance.seperationPhaseUI;  
     }
+    public static GameObject getBlurBG()
+    {
+        return instance.blurBG;
+    }
 }
+

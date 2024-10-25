@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Orbit Phase Number 3 so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 3fabb3506109a594288809a7474d64ee, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: 5d8846e0600889846abaa6812f42abf6, type: 3}
+  subtitles:
+  - sentence: You've reached Orbit 4
+    displayDuration: 0.45
+  - sentence: keep going, you're getting closer to the mission goal!
+    displayDuration: 0.8
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}

@@ -9,14 +9,14 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
     [Space]
 
     [SerializeField]
-    private RawImage blurBgIMG, holdButtonHandTapUI, nextStageHandTapUI;
+    private RawImage blurBgIMG, holdButtonHandTapUI, nextStageHandTapUI, orbitShiftHandTapUI;
     [Space]
     [SerializeField]
     private GameObject welcomeBox, holdButtonTutorial, SeperationPhaseUI, nextStageButtonTutorial;
 
     [Space] 
     [SerializeField]
-    private Button holdbutton, nextStageButton_SeperationStage;
+    private Button holdbutton, nextStageButton_SeperationStage, orbitShiftButton;
 
     private bool isWelcomeBoxDisplayed = false;
 
@@ -39,6 +39,7 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
     {
         holdbutton.onClick.AddListener(DisableHoldButtonUI);
         nextStageButton_SeperationStage.onClick.AddListener(DisableNextStageHandTapUI);
+        orbitShiftButton.onClick.AddListener(DisableOrbitShfitHandTapUI);
     }
 
     private void Start()
@@ -135,6 +136,25 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
             yield return null;
         }
     }
+    private IEnumerator HighlightOrbutShiftStageHandTapButtonUI()
+    {
+        while (true)
+        {
+            // Calculate the lerp factor using a sine wave to smoothly transition between colors
+            float lerpFactor = (Mathf.Sin(Time.time * colorLerpRate * 2 * Mathf.PI) + 1f) / 2f; // Normalizes between 0 and 1
+
+            // Lerp the color from white to green based on the lerp factor
+            orbitShiftHandTapUI.color = Color.Lerp(Color.white, Color.green, lerpFactor);
+
+            // Wait for the next frame
+            yield return null;
+        }
+    }
+
+    public void StartHighlightOrbutShiftStageHandTapButtonUI()
+    {
+        StartCoroutine(HighlightOrbutShiftStageHandTapButtonUI());
+    }
 
 
     public void EnableHoldButtonTutorial()
@@ -181,10 +201,15 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
     {
         nextStageHandTapUI.gameObject.SetActive(false);
     }
+    private void DisableOrbitShfitHandTapUI()
+    {
+        orbitShiftHandTapUI.gameObject.SetActive(false);
+    }
 
     private void OnDisable()
     {
         holdbutton.onClick.RemoveListener(DisableHoldButtonUI);
         nextStageButton_SeperationStage.onClick.RemoveListener(DisableNextStageHandTapUI);
+        orbitShiftButton.onClick.RemoveListener(DisableOrbitShfitHandTapUI);
     }
 }

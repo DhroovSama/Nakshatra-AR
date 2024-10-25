@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108dc0eff0ee1564c867a873cb0d0c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Phase2SeperationStageVO: {fileID: 11400000, guid: 251defc16656e9c4b9f64fae105d4e3e, type: 2}
 --- !u!114 &4433675342672720236
 MonoBehaviour:
   m_ObjectHideFlags: 0

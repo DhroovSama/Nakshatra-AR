@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Include this namespace to work with UI components
 using UnityEngine.Splines;
 
 [RequireComponent(typeof(SplineAnimate))]
@@ -41,17 +42,42 @@ public class SplineKnotChecker : MonoBehaviour
 
     // Variable to track if time is slowed down
     private bool isTimeSlowed = false;
+
+    // Sprites for button states
+    [SerializeField]
+    private Sprite whiteSprite;
+
+    [SerializeField]
+    private Sprite redSprite;
+
+    [SerializeField]
+    private Sprite greenSprite;
+
+    [SerializeField,Space]
+    private UISoundSO uISoundSO;
+
+    [SerializeField]
+    private VoiceOverData orbit_1_vo, orbit_2_vo, orbit_3_vo, orbit_4_vo, orbit_5_vo, orbit_6_vo;
+
+    // List of messages corresponding to each knot index
+    [SerializeField]
+    private List<VoiceOverData> knotMessages = new List<VoiceOverData>();
+
     private void OnEnable()
     {
-        if(aRCameraShake == null)
+        if (aRCameraShake == null)
         {
             aRCameraShake = FindObjectOfType<ARCameraShake>();
         }
-        else { Debug.Log("ARCameraShake not found"); }
+        else
+        {
+            Debug.Log("ARCameraShake not found");
+        }
     }
+
     private void Start()
     {
-        ChangeButtonNormalColor(Color.white);
+        ChangeButtonSprite(whiteSprite);
 
         splineAnimate = GetComponent<SplineAnimate>();
 
@@ -78,6 +104,20 @@ public class SplineKnotChecker : MonoBehaviour
 
         // Set the initial spline to the first one in the list
         SetSpline(splines[currentSplineIndex]);
+
+        // Initialize messages if not set
+        if (knotMessages == null || knotMessages.Count == 0)
+        {
+            knotMessages = new List<VoiceOverData>
+            {
+                orbit_1_vo,
+                orbit_2_vo,
+                orbit_3_vo,
+                orbit_4_vo,
+                orbit_5_vo,
+                orbit_6_vo
+            };
+        }
     }
 
     private void ValidateTargetKnotIndices()
@@ -126,15 +166,16 @@ public class SplineKnotChecker : MonoBehaviour
             if (!hasLoggedNow)
             {
                 hasLoggedNow = true; // Set the flag to prevent multiple logs
-                ChangeButtonNormalColor(Color.green);
+                ChangeButtonSprite(greenSprite);
                 Debug.Log("now");
 
                 // Slow down the game time
-                Time.timeScale = 0.25f;
+                Time.timeScale = 0.1f;
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
                 isTimeSlowed = true;
 
-                aRCameraShake.TriggerBlackAndWhite_withTime(.1f);
+                aRCameraShake.TriggerBlackAndWhite_withTime(1f);
+                aRCameraShake.TriggerLightShake();
             }
 
             canPressButton = true; // Allow the button to be pressed
@@ -158,7 +199,7 @@ public class SplineKnotChecker : MonoBehaviour
 
             hasLoggedNow = false; // Reset the log flag when the object moves away
             canPressButton = false; // Disable button press when not near the knot
-            ChangeButtonNormalColor(Color.red);
+            ChangeButtonSprite(redSprite);
         }
     }
 
@@ -168,6 +209,7 @@ public class SplineKnotChecker : MonoBehaviour
         if (canPressButton && !hasCrossedKnot)
         {
             hasCrossedKnot = true; // Prevent multiple triggers for this knot
+            uISoundSO.PlayCorrectSound();
             OnCrossedKnot();
             hasLoggedNow = false; // Reset the log flag for the next knot
             canPressButton = false; // Reset the button press flag
@@ -182,6 +224,7 @@ public class SplineKnotChecker : MonoBehaviour
         }
         else
         {
+            uISoundSO.PlayWrongSound();
             Debug.Log("Button pressed at the wrong time.");
         }
     }
@@ -189,6 +232,17 @@ public class SplineKnotChecker : MonoBehaviour
     private void OnCrossedKnot()
     {
         Debug.Log($"Object has crossed knot {targetKnotIndices[currentSplineIndex]} on spline {currentSplineIndex}.");
+
+        // Check if the message list has a message for the current spline index
+        if (knotMessages != null && knotMessages.Count > currentSplineIndex)
+        {
+            VoiceOverData orbitVO = knotMessages[currentSplineIndex];
+            VoiceOverManager.Instance.TriggerVoiceOver(orbitVO);
+        }
+        else
+        {
+            Debug.Log("No message defined for this knot.");
+        }
 
         // Check if we are on the last spline
         if (currentSplineIndex < splines.Count - 1)
@@ -203,10 +257,13 @@ public class SplineKnotChecker : MonoBehaviour
             currentSplineIndex++;
             SetSpline(splines[currentSplineIndex]);
             hasCrossedKnot = false; // Reset for the next spline
+
+            // Change button sprite back to white after crossing the knot
+            ChangeButtonSprite(whiteSprite);
         }
         else
         {
-            // This is the last spline, but action is handled by the Update method to ensure it's only triggered once
+            // This is the last spline, but action is handled elsewhere
             Debug.Log("Reached the target point on the last spline.");
         }
     }
@@ -222,22 +279,16 @@ public class SplineKnotChecker : MonoBehaviour
         }
     }
 
-    private void ChangeButtonNormalColor(Color newColor)
+    private void ChangeButtonSprite(Sprite newSprite)
     {
         // Get the button from the GlobalUIProvider
         var button = GlobalUIProvider_AdityaL1.getOrbitShiftButton();
 
-        // Get the current color block of the button
-        var colorBlock = button.colors;
+        // Get the Image component of the button
+        var image = button.GetComponent<Image>();
 
-        // Change the colors to the new color
-        colorBlock.normalColor = newColor;
-        colorBlock.highlightedColor = newColor;
-        colorBlock.pressedColor = newColor;
-        colorBlock.selectedColor = newColor;
-
-        // Reassign the updated color block back to the button
-        button.colors = colorBlock;
+        // Assign the new sprite
+        image.sprite = newSprite;
     }
 
     private void OnDrawGizmos()

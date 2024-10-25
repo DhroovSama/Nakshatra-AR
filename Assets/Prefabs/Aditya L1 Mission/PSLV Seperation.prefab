@@ -4726,6 +4726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93f3603580551c478dad34e6a6f6b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phaseSeperationUI: {fileID: 0}
   bigRocket:
   - {fileID: 8601977751803457169}
   - {fileID: 8617956745859122468}
@@ -4755,6 +4756,7 @@ MonoBehaviour:
   fadeHandler: {fileID: 0}
   OrbitPSLV_Phase3: {fileID: 2449012509116092542, guid: 1d0ccbf8fc9fc8041925ff00f610f860, type: 3}
   Phase2: {fileID: 0}
+  phase3OrbitShiftStageVO: {fileID: 11400000, guid: 5c4a8b998fbb7be45bf7ac1ca4be0f49, type: 2}
 --- !u!114 &143068166773380663
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2448e1cd8198b0b449cb89b6f1237dfb, type: 3}
+  m_Name: Orbit Phase Number 5 so
+  m_EditorClassIdentifier: 
+  englishVoiceOverClip: {fileID: 8300000, guid: 7fe854d4c3c1ac44e8657bd0d1e31e0f, type: 3}
+  hindiVoiceOverClip: {fileID: 8300000, guid: a8dc073f6839ee543aa8bd54e9458e51, type: 3}
+  subtitles:
+  - sentence: 'Amazing! You''ve reached Orbit 6 and achieved escape '
+    displayDuration: 0.8
+  - sentence: 'velocity to break free from Earth''s gravitational pull. Click the '
+    displayDuration: 0.8
+  - sentence: '''Next Phase'' button to proceed to the observation phase!'
+    displayDuration: 0.8
+  showButtonAtEnd: 0
+  buttonText: 
+  nextVoiceOverData: {fileID: 0}
