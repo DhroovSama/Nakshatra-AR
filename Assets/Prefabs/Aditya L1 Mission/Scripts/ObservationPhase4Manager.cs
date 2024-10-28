@@ -40,9 +40,6 @@ public class ObservationPhase4Manager : MonoBehaviour
         {
             Debug.Log("Maximum observations reached.");
             nextObservationButton.interactable = false;
-
-            VoiceOverManager.Instance.TriggerVoiceOver(endSimulationVo);
-            GlobalUIProvider_AdityaL1.getEndSimulationUI().SetActive(true);
             
             return;
         }
@@ -121,6 +118,9 @@ public class ObservationPhase4Manager : MonoBehaviour
         StartCoroutine(EnableDisableNextObservationButton(observationVO_5));
 
         GlobalUIProvider_AdityaL1.getPhase4UI().SetActive(false);
+
+        VoiceOverManager.Instance.TriggerVoiceOver(endSimulationVo);
+        GlobalUIProvider_AdityaL1.getEndSimulationUI().SetActive(true);
     }
 
     private IEnumerator EnableDisableNextObservationButton(VoiceOverData voiceOverData)
