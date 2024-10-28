@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 303153287}
   - component: {fileID: 303153289}
   m_Layer: 5
-  m_Name: Chandrayaan
+  m_Name: Chandrayaan 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5c7091e355b3ef040b1040816f6ac9d6, type: 3}
+  m_Texture: {fileID: 2800000, guid: 625b6b3ed911bfd4d8837b5faf197114, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4015,7 +4015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5f26e448a039a05469da1b5a35c62849, type: 3}
+  m_Texture: {fileID: 2800000, guid: e22ac8d6f2d91194ab8bfb8a9820fb6a, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4088,7 +4088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5f26e448a039a05469da1b5a35c62849, type: 3}
+  m_Texture: {fileID: 2800000, guid: 9f7b0bc418a18a845878f805cbe44f3f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4196,7 +4196,7 @@ GameObject:
   - component: {fileID: 2007970479}
   - component: {fileID: 2007970478}
   m_Layer: 5
-  m_Name: Chandrayaan
+  m_Name: Chandrayaan 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4321,7 +4321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5c7091e355b3ef040b1040816f6ac9d6, type: 3}
+  m_Texture: {fileID: 2800000, guid: c72d243aca6ff934cbc9313f94295823, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

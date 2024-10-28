@@ -52,4 +52,9 @@ public class SceneLoad : MonoBehaviour
     {
         SceneManager.LoadScene(9);
     }
+
+    public void SetOrientation_Portrait()
+    {
+        Screen.orientation = ScreenOrientation.Portrait;
+    }
 }

@@ -17,6 +17,9 @@ public class NextPhaseManager_PSLVOrbitShift : MonoBehaviour
     [Space]
     private GameObject Phase3;
 
+    [SerializeField]
+    private VoiceOverData observationPhaseTutorial1VO;
+
     private void Start()
     {
         GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.AddListener(StartHandleNextPhase);
@@ -69,7 +72,7 @@ public class NextPhaseManager_PSLVOrbitShift : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(directionToCamera);
 
         // Apply an additional rotation of 90 degrees along the X-axis
-        Quaternion additionalRotation = Quaternion.Euler(90, 0, 0);
+        Quaternion additionalRotation = Quaternion.Euler(0, 0, 0);
 
         // Combine the rotations
         Quaternion finalRotation = rotation * additionalRotation;
@@ -80,11 +83,15 @@ public class NextPhaseManager_PSLVOrbitShift : MonoBehaviour
         //GlobalUIProvider_AdityaL1.getOrbitShiftPhaseTutorial().SetActive(true);
 
         GlobalUIProvider_AdityaL1.getNextPhaseButton().gameObject.SetActive(false);
+
+        VoiceOverManager.Instance.TriggerVoiceOver(observationPhaseTutorial1VO);
+        GlobalUIProvider_AdityaL1.getBlurBG().gameObject.SetActive(true);
+        GlobalUIProvider_AdityaL1.getPhase4Tutorial().SetActive(true);
     }
 
     private void DestroyPhase3()
     {
-        Phase3 = GameObject.FindWithTag("Phase3");
+        Phase3 = GameObject.FindWithTag("Phase3Container");
 
         Destroy(Phase3);
 

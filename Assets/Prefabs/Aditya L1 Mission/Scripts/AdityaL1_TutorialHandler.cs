@@ -9,14 +9,14 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
     [Space]
 
     [SerializeField]
-    private RawImage blurBgIMG, holdButtonHandTapUI, nextStageHandTapUI, orbitShiftHandTapUI;
+    private RawImage blurBgIMG, holdButtonHandTapUI, nextStageHandTapUI, orbitShiftHandTapUI, L1HandTapUI;
     [Space]
     [SerializeField]
-    private GameObject welcomeBox, holdButtonTutorial, SeperationPhaseUI, nextStageButtonTutorial;
+    private GameObject welcomeBox, holdButtonTutorial, SeperationPhaseUI, nextStageButtonTutorial, L1Phase4Tutorial;
 
     [Space] 
     [SerializeField]
-    private Button holdbutton, nextStageButton_SeperationStage, orbitShiftButton;
+    private Button holdbutton, nextStageButton_SeperationStage, orbitShiftButton, observationButton;
 
     private bool isWelcomeBoxDisplayed = false;
 
@@ -40,6 +40,7 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
         holdbutton.onClick.AddListener(DisableHoldButtonUI);
         nextStageButton_SeperationStage.onClick.AddListener(DisableNextStageHandTapUI);
         orbitShiftButton.onClick.AddListener(DisableOrbitShfitHandTapUI);
+        observationButton.onClick.AddListener(DisableObservationHandTapUI);
     }
 
     private void Start()
@@ -150,6 +151,24 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
             yield return null;
         }
     }
+    private IEnumerator HighlightL1ObservationHandTapButtonUI()
+    {
+        while (true)
+        {
+            // Calculate the lerp factor using a sine wave to smoothly transition between colors
+            float lerpFactor = (Mathf.Sin(Time.time * colorLerpRate * 2 * Mathf.PI) + 1f) / 2f; // Normalizes between 0 and 1
+
+            // Lerp the color from white to green based on the lerp factor
+            L1HandTapUI.color = Color.Lerp(Color.white, Color.green, lerpFactor);
+
+            // Wait for the next frame
+            yield return null;
+        }
+    }
+    public void StartHighlightL1ObservationHandTapButtonUI()
+    {
+        StartCoroutine(HighlightL1ObservationHandTapButtonUI());
+    }
 
     public void StartHighlightOrbutShiftStageHandTapButtonUI()
     {
@@ -206,10 +225,16 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
         orbitShiftHandTapUI.gameObject.SetActive(false);
     }
 
+    private void DisableObservationHandTapUI()
+    {
+        L1HandTapUI.gameObject.SetActive(false);
+    }
+
     private void OnDisable()
     {
         holdbutton.onClick.RemoveListener(DisableHoldButtonUI);
         nextStageButton_SeperationStage.onClick.RemoveListener(DisableNextStageHandTapUI);
         orbitShiftButton.onClick.RemoveListener(DisableOrbitShfitHandTapUI);
+        observationButton.onClick.RemoveListener(DisableObservationHandTapUI);
     }
 }

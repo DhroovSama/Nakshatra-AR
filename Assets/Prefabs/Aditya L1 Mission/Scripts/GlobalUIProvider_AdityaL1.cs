@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,10 +8,16 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     private static GlobalUIProvider_AdityaL1 instance;
 
     [SerializeField]
-    private GameObject seperationPhaseTutorial, orbitShiftPhaseTutorial, blurBG;
+    private GameObject seperationPhaseTutorial, orbitShiftPhaseTutorial, blurBG, simulationEndUI, Phase4UI;
 
     [SerializeField]
-    private Button nextPhaseButton;
+    private GameObject Phase4Tutorial;
+
+    [SerializeField]
+    private Button nextPhaseButton, nextObservationButton;
+
+    [SerializeField]
+    private TextMeshProUGUI observationCount;
 
     [SerializeField]
     private GameObject seperationPhaseUI;
@@ -77,6 +85,28 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     public static GameObject getBlurBG()
     {
         return instance.blurBG;
+    }
+    public static GameObject getPhase4Tutorial()
+    {
+        return instance.Phase4Tutorial;
+    }
+    public static Button getnextObservationButton()
+    {
+        return instance.nextObservationButton;
+    }
+
+    public static TextMeshProUGUI getObservationCount()
+    {
+        return instance.observationCount;
+    }
+
+    public static GameObject getEndSimulationUI()
+    {
+        return instance.simulationEndUI;
+    }
+    public static GameObject getPhase4UI()
+    {
+        return instance.Phase4UI;
     }
 }
 
