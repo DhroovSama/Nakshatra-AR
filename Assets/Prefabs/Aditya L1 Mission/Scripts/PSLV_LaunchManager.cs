@@ -339,8 +339,6 @@ public class PSLV_LaunchManager : MonoBehaviour
         preCheckSlider.value = 0f;
         HideAllTexts();
 
-        StartCoroutine(EnableFinalLaunchTextForSomeTime());
-
         preCheckSlider.gameObject.SetActive(true);
         holdButton.gameObject.SetActive(true);
         launchButton.gameObject.SetActive(false);

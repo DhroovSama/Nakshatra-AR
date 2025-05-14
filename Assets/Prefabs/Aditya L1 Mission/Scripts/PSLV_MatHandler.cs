@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PSLV_MatHandler : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class PSLV_MatHandler : MonoBehaviour
 
     [SerializeField]
     private UISoundSO soundSO;
+
+    [SerializeField]
+    private bool canClickPslvBottom = false;
+
+    [HideInInspector]
+    public UnityEvent rocketBottomEvent = new UnityEvent();
 
     private void Awake()
     {
@@ -47,12 +54,19 @@ public class PSLV_MatHandler : MonoBehaviour
         }
     }
 
+    public void EnablePslvBottomClick()
+    {
+        canClickPslvBottom = true;
+
+        rocketBottomEvent?.Invoke();
+    }
+
     void PerformRaycast(Vector2 screenPosition)
     {
         Ray ray = Camera.main.ScreenPointToRay(screenPosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit) && canClickPslvBottom)
         {
             if (hit.collider.CompareTag("PSLV Bottom"))
             {
@@ -85,6 +99,8 @@ public class PSLV_MatHandler : MonoBehaviour
             {
                 Debug.Log("The object clicked does not have the tag 'PSLV Bottom'.");
             }
+
+            canClickPslvBottom = false;
         }
     }
 

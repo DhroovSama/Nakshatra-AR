@@ -168,7 +168,7 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
     public void StartHighlightL1ObservationHandTapButtonUI()
     {
         StartCoroutine(HighlightL1ObservationHandTapButtonUI());
-    }
+    } 
 
     public void StartHighlightOrbutShiftStageHandTapButtonUI()
     {
@@ -178,19 +178,15 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
 
     public void EnableHoldButtonTutorial()
     {
-        // If needed, stop the HandUIMoveAndHighlight_PSLVUserTapper coroutine here
-
-        blurBgIMG.gameObject.SetActive(true);
-        holdButtonTutorial.SetActive(true);
         holdButtonHandTapUI.gameObject.SetActive(true);
+
+        EnableUserToUseHoldButton();
     }
 
     public void EnableUserToUseHoldButton()
     {
         holdbutton.interactable = true;
 
-        blurBgIMG.gameObject.SetActive(false);
-        holdButtonTutorial.SetActive(false);
         StartCoroutine(HighlightHoldButtonUI());
     }
 
