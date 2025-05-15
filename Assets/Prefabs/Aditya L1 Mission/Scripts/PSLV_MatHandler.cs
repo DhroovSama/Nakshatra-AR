@@ -66,9 +66,9 @@ public class PSLV_MatHandler : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(screenPosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit) && canClickPslvBottom)
+        if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.CompareTag("PSLV Bottom"))
+            if (hit.collider.CompareTag("PSLV Bottom") && canClickPslvBottom)
             {
                 vibrationController.VibratePhone_Light();
                 soundSO.PlayTapSound();
@@ -89,6 +89,7 @@ public class PSLV_MatHandler : MonoBehaviour
 
                         mat.SetColor("_BaseColor", color);
                     }
+                    canClickPslvBottom = false;
                 }
                 else
                 {
@@ -99,8 +100,6 @@ public class PSLV_MatHandler : MonoBehaviour
             {
                 Debug.Log("The object clicked does not have the tag 'PSLV Bottom'.");
             }
-
-            canClickPslvBottom = false;
         }
     }
 
