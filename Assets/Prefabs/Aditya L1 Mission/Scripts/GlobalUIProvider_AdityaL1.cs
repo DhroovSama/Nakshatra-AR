@@ -8,7 +8,7 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     private static GlobalUIProvider_AdityaL1 instance;
 
     [SerializeField]
-    private GameObject seperationPhaseTutorial, orbitShiftPhaseTutorial, blurBG, simulationEndUI, Phase4UI;
+    private GameObject seperationPhaseTutorial, orbitShiftPhaseTutorial, orbitShiftPhaseButton, blurBG, simulationEndUI, Phase4UI;
 
     [SerializeField]
     private GameObject Phase4Tutorial;
@@ -24,6 +24,9 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
 
     [SerializeField]
     private Button orbitShiftButton;
+
+    [SerializeField, Tooltip("PSLV Seperation stage button")]
+    private Button nextSeperationStageButton;
 
     [Header("UI Elements"), Tooltip("Auto Assigned")]
     public GameObject userTap;
@@ -59,9 +62,15 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     {
         return instance.seperationPhaseTutorial;
     }
+
     public static GameObject getOrbitShiftPhaseTutorial()
     {
         return instance.orbitShiftPhaseTutorial;
+    }
+
+    public static GameObject getOrbitShiftPhaseButton()
+    {
+        return instance.orbitShiftPhaseButton;
     }
 
     public static GameObject getuserTap()
@@ -90,9 +99,15 @@ public class GlobalUIProvider_AdityaL1 : MonoBehaviour
     {
         return instance.Phase4Tutorial;
     }
+
     public static Button getnextObservationButton()
     {
         return instance.nextObservationButton;
+    }
+
+    public static Button getNextSeperationStageButton()
+    {
+        return instance.nextSeperationStageButton;
     }
 
     public static TextMeshProUGUI getObservationCount()

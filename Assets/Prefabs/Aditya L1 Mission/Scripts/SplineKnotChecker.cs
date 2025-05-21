@@ -315,6 +315,7 @@ public class SplineKnotChecker : MonoBehaviour
     private void TriggerFinalAction()
     {
         GlobalUIProvider_AdityaL1.getNextPhaseButton().gameObject.SetActive(true);
+        GlobalUIProvider_AdityaL1.getOrbitShiftButton().gameObject.SetActive(false);
         GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.AddListener(nextPhaseManager_PSLVOrbitShift.StartHandleNextPhase);
     }
 

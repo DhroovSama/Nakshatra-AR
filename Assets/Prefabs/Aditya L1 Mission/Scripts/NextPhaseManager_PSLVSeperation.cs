@@ -37,7 +37,31 @@ public class NextPhaseManager_PSLVSeperation : MonoBehaviour
         {
             GlobalUIProvider_AdityaL1.getNextPhaseButton().onClick.AddListener(StartHandleNextPhase);
         }
-        else { Debug.Log("Next Phase Button is not Assigned"); }
+        else { Debug.Log("Next Phase Button is not Assigned"); }  
+    }
+
+    public void EnableNextStageButton()
+    {
+        if (GlobalUIProvider_AdityaL1.getNextSeperationStageButton() != null)
+        {
+            GlobalUIProvider_AdityaL1.getNextSeperationStageButton().interactable = true;
+        }
+        else
+        {
+            Debug.Log("Next Stage Button is not Assigned");
+        }
+    }
+
+    public void DisableNextStageBuutton()
+    {
+        if (GlobalUIProvider_AdityaL1.getNextSeperationStageButton() != null)
+        {
+            GlobalUIProvider_AdityaL1.getNextSeperationStageButton().interactable = false;
+        }
+        else
+        {
+            Debug.Log("Next Stage Button is not Assigned");
+        }
     }
 
     private void StartHandleNextPhase()

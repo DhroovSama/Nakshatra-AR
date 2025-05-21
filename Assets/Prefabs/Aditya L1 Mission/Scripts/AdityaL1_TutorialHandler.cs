@@ -6,6 +6,7 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
 {
     [SerializeField]
     private GlobalUIProvider_AdityaL1 globalUIProvider_AdityaL1;
+
     [Space]
 
     [SerializeField]
@@ -45,7 +46,7 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
 
     private void Start()
     {
-        nextStageButton_SeperationStage.interactable = false;
+        //nextStageButton_SeperationStage.interactable = false;
         holdbutton.interactable = false;
         enableWelcomeBoxCoroutine = StartCoroutine(EnableWelcomeBox());
     }
@@ -76,7 +77,7 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
 
     private IEnumerator HandUIMoveAndHighlight_PSLVUserTapper()
     {
-        while (true)
+        while (!PlaceOnPlane.IsPhase1Finished_PSLV())
         {
             var PSLV_RevealButton = globalUIProvider_AdityaL1.UserTap;
 
@@ -85,27 +86,25 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
                 var revealButtonIMG = PSLV_RevealButton.GetComponentInChildren<RawImage>();
                 if (revealButtonIMG != null)
                 {
-                    // Calculate the lerp factor using a sine wave to smoothly transition between colors
-                    float lerpFactor = (Mathf.Sin(Time.time * colorLerpRate * 2 * Mathf.PI) + 1f) / 2f; // Normalizes between 0 and 1
+                    float lerpFactor = (Mathf.Sin(Time.time * colorLerpRate * 2 * Mathf.PI) + 1f) / 2f; 
 
-                    // Lerp the color from white to green based on the lerp factor
                     revealButtonIMG.color = Color.Lerp(Color.white, Color.green, lerpFactor);
 
-                    // Wait for the next frame
                     yield return null;
                 }
                 else
                 {
                     Debug.Log("revealButtonIMG is NULL");
-                    yield return null; // Ensure the loop doesn't become a tight loop
+                    yield return null; 
                 }
             }
             else
             {
                 Debug.Log("PSLV_RevealButton is NULL");
-                yield return null; // Ensure the loop doesn't become a tight loop
+                yield return null; 
             }
         }
+        yield break;
     }
 
     private IEnumerator HighlightHoldButtonUI()
@@ -201,7 +200,7 @@ public class AdityaL1_TutorialHandler : MonoBehaviour
         blurBgIMG.gameObject.SetActive(true);
         nextStageButtonTutorial.SetActive(true);
         nextStageHandTapUI.gameObject.SetActive(true);  
-        nextStageButton_SeperationStage.interactable = true;
+        //nextStageButton_SeperationStage.interactable = true;
 
     }
 

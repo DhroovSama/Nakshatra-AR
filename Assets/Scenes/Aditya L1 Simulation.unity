@@ -5459,6 +5459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seperationPhaseTutorial: {fileID: 2072984232}
   orbitShiftPhaseTutorial: {fileID: 128518544}
+  orbitShiftPhaseButton: {fileID: 1289237944}
   blurBG: {fileID: 2036313230}
   simulationEndUI: {fileID: 942906836}
   Phase4UI: {fileID: 920716685}
@@ -5468,6 +5469,7 @@ MonoBehaviour:
   observationCount: {fileID: 1019801432}
   seperationPhaseUI: {fileID: 948100231}
   orbitShiftButton: {fileID: 560251474}
+  nextSeperationStageButton: {fileID: 1808990345}
   userTap: {fileID: 0}
 --- !u!1 &731484068
 GameObject:
@@ -12780,7 +12782,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: 3a04d5476f95f644985339f0ca670a06, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: c33615895525a8d4e84dafae732c32f8, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -13985,7 +13987,7 @@ MonoBehaviour:
   m_FocusMode: -1
   m_LightEstimationMode: -1
   m_AutoFocus: 0
-  m_LightEstimation: 0
+  m_LightEstimation: -1
   m_FacingDirection: 1
   m_RenderMode: 0
 --- !u!81 &1966862288

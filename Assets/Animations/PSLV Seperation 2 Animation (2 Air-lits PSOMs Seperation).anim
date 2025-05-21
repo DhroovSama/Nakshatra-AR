@@ -2564,6 +2564,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: DisableNextStageBuutton
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.016666668
     functionName: TriggerSeperationStageCameraShake
     data: 
@@ -2573,6 +2580,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1.6666666
     functionName: DestroyObjects_Phase2
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.6666666
+    functionName: EnableNextStageButton
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
